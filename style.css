@@ -1,73 +1,224 @@
+/* =========================================================
+   GLOBAL RESET & BASE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Georgia, "Times New Roman", serif;
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-  line-height: 1.65;
-  color: #222;
-  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  background-color: #ffffff;
+  color: #1f1f1f;
+  line-height: 1.7;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 40px;
+/* =========================================================
+   SITE WRAPPER
+   ========================================================= */
+
+.site-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 28px;
 }
 
-h1 {
-  margin-bottom: 5px;
-  font-size: 2.4em;
+/* =========================================================
+   PROFILE HEADER
+   ========================================================= */
+
+.site-header {
+  margin-bottom: 32px;
 }
 
-.subtitle {
-  font-size: 1.1em;
-  color: #444;
+.profile-header {
+  display: flex;
+  gap: 28px;
+  align-items: center;
 }
 
-.affiliation {
-  font-size: 0.95em;
-  color: #666;
+.profile-header img {
+  width: 170px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #ddd;
 }
 
-nav {
-  text-align: center;
-  margin-bottom: 40px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
+.profile-text h1 {
+  margin: 0;
+  font-size: 2.35em;
+  font-weight: normal;
 }
 
-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #003366;
+.profile-text .title {
+  margin-top: 6px;
+  font-size: 1.05em;
   font-weight: bold;
+  color: #003366;
 }
 
-nav a:hover {
+.profile-text .affiliation {
+  margin-top: 6px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.profile-text .email {
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #333;
+}
+
+/* =========================================================
+   TOP NAVIGATION
+   ========================================================= */
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+  margin-bottom: 36px;
+}
+
+.top-nav a {
+  margin-right: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95em;
+  color: #003366;
+}
+
+.top-nav a:hover {
   text-decoration: underline;
 }
 
-section {
-  margin-bottom: 45px;
+.top-nav a.active {
+  text-decoration: underline;
 }
 
-h2 {
-  color: #003366;
+/* =========================================================
+   ANNOUNCEMENTS
+   ========================================================= */
+
+.announcements-section {
+  margin-bottom: 48px;
+}
+
+.announcements-section h2 {
+  margin-bottom: 12px;
+}
+
+.announcement-ticker {
+  background-color: #f9f9f9;
+  border-left: 4px solid #003366;
+  padding: 12px 16px;
+  min-height: 38px;
+}
+
+.announcement-ticker p {
+  margin: 0;
+  font-size: 0.95em;
+}
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.main-content section {
+  margin-bottom: 56px;
+}
+
+.main-content h2 {
+  font-size: 1.45em;
+  font-weight: normal;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
   border-bottom: 1px solid #ddd;
-  padding-bottom: 5px;
+  color: #003366;
 }
 
-h3 {
+.main-content h3 {
+  font-size: 1.1em;
   margin-top: 20px;
+  margin-bottom: 6px;
+  font-weight: bold;
 }
 
-ul {
-  margin-left: 20px;
+.main-content p {
+  margin-bottom: 12px;
 }
 
-footer {
+.main-content ul {
+  padding-left: 22px;
+  margin-bottom: 14px;
+}
+
+.main-content li {
+  margin-bottom: 6px;
+}
+
+/* =========================================================
+   CONTENT BLOCKS (used by JS renderer)
+   ========================================================= */
+
+.block {
+  margin-bottom: 14px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  margin-top: 70px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
   text-align: center;
   font-size: 0.85em;
-  color: #777;
-  border-top: 1px solid #ddd;
-  padding-top: 20px;
+  color: #666;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-header img {
+    width: 140px;
+  }
+
+  .top-nav a {
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+}
+
+/* =========================================================
+   PRINT FRIENDLY (BONUS)
+   ========================================================= */
+
+@media print {
+  body {
+    font-size: 11pt;
+  }
+
+  .top-nav,
+  .announcements-section {
+    display: none;
+  }
+
+  .site-wrapper {
+    padding: 0;
+  }
 }
