@@ -1,0 +1,329 @@
+{
+  "navigation": [
+    "about",
+    "experience",
+    "education",
+    "publications",
+    "research",
+    "projects",
+    "academic_service",
+    "teaching",
+    "achievements",
+    "talks_and_presentations",
+    "activities",
+    "technical_skills",
+    "references"
+  ],
+
+  "about": {
+    "name": "Dr. Gargi Sarkar",
+    "title": "Postdoctoral Research Scientist",
+    "affiliation": [
+      "International Institute of Information Technology Hyderabad",
+      "Indian Institute of Technology Kanpur"
+    ],
+    "email": "gsarkar@cse.iitk.ac.in",
+    "photo": {
+      "src": "images/profile.jpg",
+      "alt": "Dr. Gargi Sarkar"
+    },
+    "summary": [
+      "As a researcher at the intersection of computer security and criminology, I investigate cybercrimes targeting everyday individuals.",
+      "My work aims to develop efficient and systematic policing procedures to combat these crimes.",
+      "I have been actively involved in mitigating and synthesizing solutions for cyber-enabled human trafficking and forced criminality affecting victims of trafficking.",
+      "Currently, I am developing standard operating procedures for police to systematically investigate digital artifacts involved in cybercrimes, incorporating open-source intelligence, and fostering private-government collaboration."
+    ]
+  },
+
+  "experience": [
+    {
+      "institution": "International Institute of Information Technology Hyderabad",
+      "location": "Hyderabad, India",
+      "role": "Post-PhD Research Scientist",
+      "period": "August 2025 – Present",
+      "responsibilities": [
+        "Leading research in cybercrime investigation, digital evidence analysis, and emerging cybercrime analysis"
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "institution": "Indian Institute of Technology Kanpur",
+      "degree": "Ph.D. in Computer Science and Engineering",
+      "period": "2021 - 2025",
+      "location": "Kanpur, India",
+      "details": "Coursework CGPA: 9.5 / 10"
+    },
+    {
+      "institution": "Presidency University",
+      "degree": "Master of Science (M.Sc.) in Mathematics",
+      "period": "2018 - 2020",
+      "location": "Kolkata, India",
+      "details": "Marks Percentage: 65.00%"
+    },
+    {
+      "institution": "University of North Bengal",
+      "degree": "Bachelor of Science (B.Sc.) in Mathematics",
+      "period": "2015 - 2018",
+      "location": "Siliguri, India",
+      "details": "Marks Percentage: 60.20%"
+    },
+    {
+      "institution": "West Bengal Council of Higher Secondary Education",
+      "degree": "Higher Secondary (H.S.)",
+      "year": "2015",
+      "location": "Jalpaiguri, India",
+      "details": "Marks Percentage: 84.20%"
+    },
+    {
+      "institution": "West Bengal Board of Secondary Education",
+      "degree": "Secondary Education",
+      "year": "2013",
+      "location": "Jalpaiguri, India",
+      "details": "Marks Percentage: 85.71%"
+    }
+  ],
+
+  "publications": {
+    "journals": [
+      {
+        "year": 2025,
+        "status": "preprint",
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime",
+        "venue": "arXiv"
+      },
+      {
+        "year": 2025,
+        "status": "preprint",
+        "authors": ["A. Sachdeva", "R. Saravanan", "Gargi Sarkar", "K. Vemuri", "Sandeep K. Shukla"],
+        "title": "BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models",
+        "venue": "arXiv"
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime",
+        "venue": "Journal of Human Trafficking"
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Reconceptualizing online offenses: A framework for distinguishing cybercrime, cyberattacks, and cyberterrorism in the Indian legal context",
+        "venue": "Journal of Economic Criminology"
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "authors": ["A. Aljaradat", "Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Modelling the Impact of Cybersecurity on Digital Payment Adoption: A Game-Theoretic Approach",
+        "venue": "Journal of Economic Criminology"
+      },
+      {
+        "year": 2023,
+        "status": "published",
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Behavioral analysis of cybercrime: Paving the way for effective policing strategies",
+        "venue": "Journal of Economic Criminology"
+      },
+      {
+        "year": "Under Review",
+        "status": "under_review",
+        "authors": ["Gargi Sarkar", "P.V.S. Charan", "Sandeep K. Shukla"],
+        "title": "Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks",
+        "venue": "Humanities & Social Sciences Communications (Nature Portfolio)"
+      },
+      {
+        "year": "Under Review",
+        "status": "under_review",
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Policing Transnational Cybercrime: A Critical Assessment of the Anticipated Impact of the United Nations Convention against Cybercrime in India and Worldwide",
+        "venue": "International Journal of Police Science and Management"
+      },
+      {
+        "year": "Under Review",
+        "status": "under_review",
+        "authors": ["R. Negi", "Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
+        "venue": "Computers & Security"
+      }
+    ],
+
+    "conference_proceedings": [
+      {
+        "year": 2023,
+        "authors": ["Gargi Sarkar", "Hardeep Singh", "Subodh Kumar", "Sandeep K. Shukla"],
+        "title": "Tactics, techniques and procedures of cybercrime: A methodology and tool for cybercrime investigation process",
+        "venue": "Proceedings of the 18th International Conference on Availability, Reliability and Security",
+        "pages": "1–10"
+      }
+    ]
+  },
+
+  "research": [
+    {
+      "title": "Doctoral Research (Ph.D.) | Indian Institute of Technology Kanpur",
+      "details": [
+        "Thesis: Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India’s Policing Perspective",
+        "Supervisor: Prof. Sandeep Kumar Shukla",
+        "Research integrates investigative tooling, human-centric cybercrime analysis, organized cybercriminal networks, cyber slavery, and international cybercrime law from an Indian policing perspective."
+      ]
+    },
+    {
+      "title": "Building Framework for Cybercrime Investigations | Funded by Microsoft Research India",
+      "details": [
+        "Led the development of Cybercrime Navigator.",
+        "Developed a TTP-based framework dividing the cybercrime lifecycle into 14 stages.",
+        "Defined techniques, sub-techniques, and digital artifacts for each stage.",
+        "Designed and implemented an interactive investigative tool with automated modus operandi identification."
+      ]
+    },
+    {
+      "title": "Studied Indian Organized Cybercriminal Networks",
+      "details": [
+        "Analyzed organizational structures, social engineering techniques, division of labor, and tiered operational hierarchies.",
+        "Highlighted transformation into family-run enterprises and cybercrime-as-a-service models."
+      ]
+    },
+    {
+      "title": "Cybercrime and Human Trafficking",
+      "details": [
+        "Explored bidirectional relationship between cybercrime and human trafficking.",
+        "Developed a five-tier victimization model illustrating trafficking, confinement, and forced participation."
+      ]
+    },
+    {
+      "title": "Legal and Policy Analysis of Cybercrime",
+      "details": [
+        "Constructed actor-intent and target-impact models to differentiate cybercrime, cyberattacks, and cyberterrorism.",
+        "Evaluated the Budapest Convention and the proposed UN Convention against Cybercrime."
+      ]
+    },
+    {
+      "title": "Dark Web Analysis and Monitoring | M.Sc. Thesis",
+      "details": [
+        "Conducted theoretical analysis of Dark Web crawling using Tor.",
+        "Developed onion URL connectivity graphs.",
+        "Assessed feasibility of tracing users."
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Cyber Commando Operational Manual",
+      "sponsor": "Ministry of Home Affairs, India",
+      "details": [
+        "Co-authored national-level training resource for law enforcement cyber units.",
+        "Contributed sections on digital forensics, electronic evidence handling, and legal compliance."
+      ]
+    },
+    {
+      "title": "AI-Enabled National Portal for Efficient Search of Missing People",
+      "sponsor": "Department of Science and Technology, India",
+      "details": [
+        "Designed AI/ML-enabled web portal for missing persons identification.",
+        "Integrated facial recognition and NLP-based FIR analysis."
+      ]
+    },
+    {
+      "title": "Comparison of Network-based Intrusion Detection Systems",
+      "details": [
+        "Compared Snort and Suricata IDS on IIT Kanpur C3i Centre network.",
+        "Integrated machine learning to reduce false positives."
+      ]
+    },
+    {
+      "title": "Developing Risk-Assessment Interface",
+      "details": [
+        "Developed web application to query national vulnerability databases.",
+        "Computed risk scores based on system threats."
+      ]
+    },
+    {
+      "title": "Breaking down Cryptosystems",
+      "details": [
+        "Implemented attacks on DES, AES, RSA, and classical cryptosystems using Python and C."
+      ]
+    }
+  ],
+
+  "academic_service": {
+    "sub_reviewer": [
+      "ACM SAC 2024",
+      "Behaviour & Information Technology",
+      "Computers & Security"
+    ],
+    "reviewer": [
+      "Deviant Behavior",
+      "Journal of Criminal Psychology",
+      "Psychology, Crime and Law",
+      "Security Journal",
+      "Safer Communities"
+    ]
+  },
+
+  "teaching": [
+    "Project Mentor – IIIT Hyderabad (Neuroeconomics, Cyber Frauds)",
+    "Teaching Assistant – IIT Kanpur (CS203, CS202, CS201, CS633, CS771, CS641, CS628, CS345, CS961, CS972)",
+    "Tutor – ESC101: Fundamentals of Computing",
+    "Teaching Assistant – NPTEL (Modern Algebra)"
+  ],
+
+  "achievements": [
+    "C3iHub Research Fellowship Awardee (2022–2025)",
+    "Darkathon 2022 Finalist – Narcotics Control Bureau, Government of India",
+    "Qualified GATE 2021 in Mathematics",
+    "Qualified JAM 2018 in Mathematics",
+    "Qualified JEE Mains 2015"
+  ],
+
+  "talks_and_presentations": [
+    "Invited talk at International Conference on Availability, Reliability and Security (ARES), 2023, Italy",
+    "Invited talk at c0c0n XVI International Cyber Security Conference",
+    "Delivered lecture in Advanced Certification Program in Cyber Security and Cyber Defense (TalentSprint)"
+  ],
+
+  "activities": [
+    "Founder and Lead, Cybercrime Victim Support Initiative at IIT Kanpur",
+    "Organizer, HACK IITK 2024",
+    "Presented Cybercrime Navigator at DST Technology Innovation in Cyber-Physical Systems (TIPS) Workshop"
+  ],
+
+  "technical_skills": [
+    "MATLAB",
+    "C programming",
+    "Python",
+    "HTML",
+    "CSS",
+    "LaTeX",
+    "Markdown"
+  ],
+
+  "references": [
+    {
+      "name": "Prof. Sandeep Kumar Shukla",
+      "designation": "Poonam and Prabhu Goel Chair Professor",
+      "institution": "Indian Institute of Technology Kanpur",
+      "email": "sandeeps@cse.iitk.ac.in",
+      "relation": "Ph.D. Thesis Supervisor"
+    },
+    {
+      "name": "Prof. Manindra Agrawal",
+      "designation": "Institute Director and Professor",
+      "institution": "Indian Institute of Technology Kanpur",
+      "email": "manindra@iitk.ac.in",
+      "relation": "Ph.D. Coursework Instructor and TA Supervisor"
+    },
+    {
+      "name": "Prof. Avishek Adhikari",
+      "designation": "Professor and Head",
+      "institution": "Presidency University, Kolkata",
+      "email": "avishek.maths@presiuniv.ac.in",
+      "relation": "M.Sc. Thesis Supervisor"
+    }
+  ]
+}
