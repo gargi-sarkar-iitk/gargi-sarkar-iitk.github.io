@@ -17,12 +17,84 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
   color: var(--text);
   background: #ffffff;
   line-height: 1.6;
+
+  /* layout */
+  display: flex;
+  align-items: flex-start;
+}
+
+/* =====================================================
+   LEFT SIDEBAR
+   ===================================================== */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  padding: 32px 22px;
+
+  position: sticky;
+  top: 0;
+
+  background: #f4f6f9;
+  border-right: 1px solid var(--border);
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+.sidebar-block {
+  margin-bottom: 28px;
+}
+
+.sidebar h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 4px;
+}
+
+.sidebar ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.sidebar p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* =====================================================
+   MAIN CONTENT WRAPPER
+   ===================================================== */
+.main-content {
+  flex: 1;
+  min-width: 0;
 }
 
 /* =====================================================
@@ -37,9 +109,9 @@ header {
 }
 
 nav {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 14px 20px;
+  padding: 14px 24px;
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
@@ -57,29 +129,13 @@ nav a:hover {
 }
 
 /* =====================================================
-   SECTIONS
-   ===================================================== */
-section {
-  max-width: 1000px;
-  margin: 70px auto;
-  padding: 0 22px;
-}
-
-section h2 {
-  font-size: 1.7rem;
-  color: var(--accent);
-  border-bottom: 3px solid var(--accent);
-  display: inline-block;
-  padding-bottom: 6px;
-  margin-bottom: 26px;
-}
-
-/* =====================================================
    HERO
    ===================================================== */
 .hero {
+  max-width: 900px;
+  margin: 60px auto 80px;
+  padding: 0 24px;
   text-align: center;
-  margin-top: 60px;
 }
 
 .hero img {
@@ -110,11 +166,29 @@ section h2 {
 }
 
 /* =====================================================
+   SECTIONS
+   ===================================================== */
+section {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 0 24px;
+}
+
+section h2 {
+  font-size: 1.7rem;
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 26px;
+}
+
+/* =====================================================
    ANNOUNCEMENTS
    ===================================================== */
 #announcements {
   background: var(--bg-light);
-  padding: 40px 22px;
+  padding: 40px 24px;
 }
 
 .announce {
@@ -132,7 +206,7 @@ section h2 {
 }
 
 /* =====================================================
-   CARDS (shared)
+   CONTENT CARDS
    ===================================================== */
 .pub-item,
 .item,
@@ -168,7 +242,7 @@ section h2 {
 }
 
 /* =====================================================
-   SCROLL REVEAL (used by JS)
+   SCROLL REVEAL (JS)
    ===================================================== */
 .reveal {
   opacity: 0;
@@ -184,17 +258,20 @@ section h2 {
 /* =====================================================
    RESPONSIVE
    ===================================================== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
   nav {
-    gap: 12px;
-  }
-
-  section {
-    margin: 50px auto;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
+    justify-content: center;
   }
 }
 
@@ -207,92 +284,3 @@ section h2 {
     transition: none !important;
   }
 }
-
-/* =========================================================
-   LAYOUT: SIDEBAR + MAIN CONTENT
-   ========================================================= */
-
-body {
-  display: flex;
-  align-items: flex-start;
-}
-
-/* -------- LEFT SIDEBAR -------- */
-.sidebar {
-  width: 260px;
-  min-height: 100vh;
-  padding: 32px 20px;
-
-  position: sticky;
-  top: 0;
-
-  background: #f4f6f9;
-  border-right: 1px solid #ddd;
-
-  font-family: "Segoe UI", sans-serif;
-}
-
-.sidebar-block {
-  margin-bottom: 28px;
-}
-
-.sidebar h3 {
-  font-size: 1.05rem;
-  margin-bottom: 10px;
-  color: #0b3c5d;
-  border-bottom: 2px solid #0b3c5d;
-  padding-bottom: 4px;
-}
-
-.sidebar ul {
-  padding-left: 18px;
-  margin: 0;
-}
-
-.sidebar li {
-  margin-bottom: 6px;
-  font-size: 0.95rem;
-}
-
-.sidebar p {
-  font-size: 0.9rem;
-  line-height: 1.45;
-  color: #333;
-}
-
-.sidebar a {
-  display: inline-block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: #0266c8;
-  text-decoration: none;
-}
-
-.sidebar a:hover {
-  text-decoration: underline;
-}
-
-/* -------- MAIN CONTENT -------- */
-.main-content {
-  flex: 1;
-  padding-left: 40px;
-}
-
-/* -------- RESPONSIVE -------- */
-@media (max-width: 900px) {
-  body {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    position: relative;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .main-content {
-    padding-left: 0;
-  }
-}
-
