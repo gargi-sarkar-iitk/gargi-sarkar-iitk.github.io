@@ -1,135 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dr. Gargi Sarkar</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Dr. Gargi Sarkar | Cybercrime & Digital Investigations</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Academic homepage of Dr. Gargi Sarkar, Postdoctoral Research Scientist working on cybercrime, digital forensics, cyber slavery, and policing systems." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Dr. Gargi Sarkar</h1>
-  <p class="subtitle">
-    Postdoctoral Research Scientist · Cybercrime & Digital Investigations
-  </p>
-  <p class="affiliation">
-    International Institute of Information Technology Hyderabad<br>
-    Indian Institute of Technology Kanpur
-  </p>
-</header>
+  <!-- =========================
+       PROFILE HEADER (JS FILLS)
+       ========================= -->
+  <header id="profile-header"></header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#research">Research</a>
-  <a href="#publications">Publications</a>
-  <a href="#projects">Projects</a>
-  <a href="#teaching">Teaching</a>
-  <a href="#service">Service</a>
-  <a href="#talks">Talks</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- =========================
+       TOP NAVIGATION (JS FILLS)
+       ========================= -->
+  <nav id="top-nav" class="top-nav"></nav>
 
-<section id="about">
-  <h2>About</h2>
-  <p>
-    I am a researcher working at the intersection of computer security and
-    criminology, focusing on cybercrimes targeting everyday individuals.
-    My work develops systematic, human-centric policing procedures for
-    cybercrime investigation, with particular emphasis on cyber-enabled
-    human trafficking, forced criminality, digital forensics, and
-    open-source intelligence.
-  </p>
-</section>
+  <!-- =========================
+       ANNOUNCEMENTS
+       ========================= -->
+  <section id="announcements">
+    <h2>Recent Announcements</h2>
+    <div id="announcement-ticker" class="announcement-ticker">
+      <!-- JS injects rotating announcements here -->
+    </div>
+  </section>
 
-<section id="research">
-  <h2>Research Interests</h2>
-  <ul>
-    <li>Cybercrime investigations and policing systems</li>
-    <li>Digital forensics and electronic evidence analysis</li>
-    <li>Cyber-enabled human trafficking and forced criminality</li>
-    <li>Organized cybercriminal networks</li>
-    <li>OSINT and investigative tooling</li>
-    <li>Cybercrime law, policy, and global governance</li>
-  </ul>
-</section>
+  <!-- =========================
+       MAIN CONTENT (JS FILLS)
+       ========================= -->
+  <main id="content">
+    <!-- All CV sections rendered dynamically from index.json -->
+  </main>
 
-<section id="publications">
-  <h2>Publications</h2>
+  <!-- =========================
+       FOOTER
+       ========================= -->
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> Gargi Sarkar ·
+      Built with HTML, CSS, JavaScript & GitHub Pages
+    </p>
+  </footer>
 
-  <h3>Journals</h3>
-  <p>
-    Sarkar, G., & Shukla, S. K. (2024).  
-    <i>Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime.</i>  
-    Journal of Human Trafficking.
-  </p>
+  <!-- =========================
+       SCRIPTS
+       ========================= -->
+  <script>
+    // Auto-update footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
-  <p>
-    Sarkar, G., & Shukla, S. K. (2023).  
-    <i>Behavioral analysis of cybercrime: Paving the way for effective policing strategies.</i>  
-    Journal of Economic Criminology.
-  </p>
-
-  <h3>Conferences</h3>
-  <p>
-    Sarkar, G., et al. (2023).  
-    <i>Tactics, techniques and procedures of cybercrime: A methodology and tool for cybercrime investigation.</i>  
-    ARES 2023.
-  </p>
-</section>
-
-<section id="projects">
-  <h2>Research & Projects</h2>
-
-  <p>
-    <b>Ph.D. Thesis</b><br>
-    <i>Digital Investigative Infrastructures for Cybercrime:  
-    A Human-Centric Approach from India’s Policing Perspective</i>
-  </p>
-
-  <p>
-    Developed investigative frameworks and tools to systematize cybercrime
-    investigation, integrating digital forensics, criminology, and legal
-    analysis from an Indian policing perspective.
-  </p>
-</section>
-
-<section id="teaching">
-  <h2>Teaching</h2>
-  <p>
-    Teaching Assistant, IIT Kanpur — Mathematics for Computer Science,
-    Cryptography, Machine Learning, Computer Systems Security.
-  </p>
-</section>
-
-<section id="service">
-  <h2>Academic Service</h2>
-  <p>
-    Reviewer: Journal of Criminal Psychology, Security Journal, Safer Communities<br>
-    Sub-Reviewer: ACM SAC 2024
-  </p>
-</section>
-
-<section id="talks">
-  <h2>Talks & Outreach</h2>
-  <p>
-    Invited talks at ARES 2023, c0c0n International Cyber Security Conference,
-    and national law-enforcement training programs.
-  </p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>
-    Email: gsarkar@cse.iitk.ac.in<br>
-    LinkedIn · Google Scholar · GitHub
-  </p>
-</section>
-
-<footer>
-  © 2026 Gargi Sarkar
-</footer>
+  <script src="script.js"></script>
 
 </body>
 </html>
