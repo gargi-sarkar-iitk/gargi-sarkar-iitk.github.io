@@ -83,6 +83,3 @@ function renderReferences(arr) {
     c.appendChild(d);
   });
 }
-
-
-
