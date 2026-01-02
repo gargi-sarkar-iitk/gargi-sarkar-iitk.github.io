@@ -207,3 +207,92 @@ section h2 {
     transition: none !important;
   }
 }
+
+/* =========================================================
+   LAYOUT: SIDEBAR + MAIN CONTENT
+   ========================================================= */
+
+body {
+  display: flex;
+  align-items: flex-start;
+}
+
+/* -------- LEFT SIDEBAR -------- */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  padding: 32px 20px;
+
+  position: sticky;
+  top: 0;
+
+  background: #f4f6f9;
+  border-right: 1px solid #ddd;
+
+  font-family: "Segoe UI", sans-serif;
+}
+
+.sidebar-block {
+  margin-bottom: 28px;
+}
+
+.sidebar h3 {
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  color: #0b3c5d;
+  border-bottom: 2px solid #0b3c5d;
+  padding-bottom: 4px;
+}
+
+.sidebar ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.sidebar p {
+  font-size: 0.9rem;
+  line-height: 1.45;
+  color: #333;
+}
+
+.sidebar a {
+  display: inline-block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #0266c8;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* -------- MAIN CONTENT -------- */
+.main-content {
+  flex: 1;
+  padding-left: 40px;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 900px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .main-content {
+    padding-left: 0;
+  }
+}
+
