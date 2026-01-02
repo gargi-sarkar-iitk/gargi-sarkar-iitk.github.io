@@ -1,6 +1,7 @@
 /**
  * Gargi Sarkar — Academic Website Renderer
- * JSON → DOM | No templates | No frameworks
+ * Robust JSON → DOM rendering
+ * Explicit handling of nested objects (NO [object Object] bugs)
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
       renderHeader(data.about);
       renderNavigation(data.navigation);
       renderAnnouncements(data.publications);
-      renderSections(data);
+      renderAllSections(data);
       activateScrollSpy();
     })
-    .catch(err => console.error("Failed to load index.json", err));
+    .catch(err => console.error("Error loading index.json:", err));
 });
 
 /* =========================================================
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function renderHeader(about) {
   const header = document.getElementById("profile-header");
+  if (!header || !about) return;
 
   header.innerHTML = `
     <div class="profile-header">
@@ -42,27 +44,34 @@ function renderHeader(about) {
 
 function renderNavigation(navItems) {
   const nav = document.getElementById("top-nav");
+  if (!nav || !Array.isArray(navItems)) return;
 
-  navItems.forEach(id => {
-    const link = document.createElement("a");
-    link.href = `#${id}`;
-    link.textContent = titleCase(id.replace(/_/g, " "));
-    nav.appendChild(link);
+  nav.innerHTML = "";
+
+  navItems.forEach(section => {
+    const a = document.createElement("a");
+    a.href = `#${section}`;
+    a.textContent = titleCase(section.replace(/_/g, " "));
+    nav.appendChild(a);
   });
 }
 
 /* =========================================================
-   ANNOUNCEMENTS (derived from publications)
+   ANNOUNCEMENTS (DERIVED FROM PUBLICATIONS)
    ========================================================= */
 
 function renderAnnouncements(publications) {
   const ticker = document.getElementById("announcement-ticker");
-  const all = [
-    ...publications.journals,
-    ...publications.conference_proceedings
+  if (!ticker || !publications) return;
+
+  ticker.innerHTML = "";
+
+  const allPubs = [
+    ...(publications.journals || []),
+    ...(publications.conference_proceedings || [])
   ];
 
-  all
+  allPubs
     .filter(p => typeof p.year === "number")
     .sort((a, b) => b.year - a.year)
     .slice(0, 6)
@@ -90,96 +99,126 @@ function rotateTicker(container) {
 }
 
 /* =========================================================
-   SECTIONS
+   MAIN SECTION RENDERER (STRICT CONTROL FLOW)
    ========================================================= */
 
-function renderSections(data) {
+function renderAllSections(data) {
   const container = document.getElementById("content");
+  if (!container || !Array.isArray(data.navigation)) return;
 
-  data.navigation.forEach(section => {
+  container.innerHTML = "";
+
+  data.navigation.forEach(sectionKey => {
     const sectionEl = document.createElement("section");
-    sectionEl.id = section;
-    sectionEl.innerHTML = `<h2>${titleCase(section.replace(/_/g, " "))}</h2>`;
+    sectionEl.id = sectionKey;
 
-    if (section === "publications") {
+    const h2 = document.createElement("h2");
+    h2.textContent = titleCase(sectionKey.replace(/_/g, " "));
+    sectionEl.appendChild(h2);
+
+    /* ---- PUBLICATIONS (SPECIAL CASE) ---- */
+    if (sectionKey === "publications") {
       renderPublications(sectionEl, data.publications);
-    } else if (Array.isArray(data[section])) {
-      renderListSection(sectionEl, data[section]);
-    } else if (typeof data[section] === "object") {
-      renderObjectSection(sectionEl, data[section]);
+      container.appendChild(sectionEl);
+      return; // ⛔ ABSOLUTELY STOP HERE
+    }
+
+    const sectionData = data[sectionKey];
+
+    /* ---- ARRAY SECTIONS ---- */
+    if (Array.isArray(sectionData)) {
+      renderArraySection(sectionEl, sectionData);
+      container.appendChild(sectionEl);
+      return;
+    }
+
+    /* ---- OBJECT SECTIONS (SAFE) ---- */
+    if (typeof sectionData === "object" && sectionData !== null) {
+      renderFlatObjectSection(sectionEl, sectionData);
+      container.appendChild(sectionEl);
+      return;
     }
 
     container.appendChild(sectionEl);
   });
 }
 
-function renderListSection(parent, items) {
+/* =========================================================
+   ARRAY SECTION RENDERER
+   ========================================================= */
+
+function renderArraySection(parent, items) {
   items.forEach(item => {
     const block = document.createElement("div");
     block.className = "block";
 
     if (typeof item === "string") {
       block.textContent = item;
-    } else {
-      block.innerHTML = Object.entries(item)
-        .map(([k, v]) => {
-          if (Array.isArray(v)) return `<strong>${titleCase(k)}:</strong> ${v.join(", ")}`;
-          return `<strong>${titleCase(k)}:</strong> ${v}`;
-        })
-        .join("<br>");
+    } else if (typeof item === "object" && item !== null) {
+      Object.entries(item).forEach(([k, v]) => {
+        if (typeof v === "object") return; // ⛔ NEVER stringify objects
+        const line = document.createElement("div");
+        line.innerHTML = `<strong>${titleCase(k)}:</strong> ${v}`;
+        block.appendChild(line);
+      });
     }
 
     parent.appendChild(block);
   });
 }
 
-function renderObjectSection(parent, obj) {
+/* =========================================================
+   FLAT OBJECT SECTION RENDERER (SAFE)
+   ========================================================= */
+
+function renderFlatObjectSection(parent, obj) {
   Object.entries(obj).forEach(([key, value]) => {
     if (key === "photo") return;
+    if (typeof value === "object") return; // ⛔ HARD STOP
 
     const p = document.createElement("p");
-    p.innerHTML = `<strong>${titleCase(key)}:</strong> ${
-      Array.isArray(value) ? value.join(", ") : value
-    }`;
+    p.innerHTML = `<strong>${titleCase(key)}:</strong> ${value}`;
     parent.appendChild(p);
   });
 }
 
 /* =========================================================
-   PUBLICATIONS (DEDICATED RENDERER)
+   PUBLICATIONS RENDERER (DEDICATED)
    ========================================================= */
 
 function renderPublications(parent, publications) {
+  if (!publications) return;
 
-  if (publications.journals?.length) {
+  /* ---- Journals ---- */
+  if (Array.isArray(publications.journals)) {
     parent.appendChild(makeSubheading("Journals"));
 
     publications.journals
       .sort(sortByYear)
-      .forEach(pub => {
-        parent.appendChild(formatPublication(pub));
-      });
+      .forEach(pub => parent.appendChild(formatPublication(pub)));
   }
 
-  if (publications.conference_proceedings?.length) {
+  /* ---- Conferences ---- */
+  if (Array.isArray(publications.conference_proceedings)) {
     parent.appendChild(makeSubheading("Conference Proceedings"));
 
     publications.conference_proceedings
       .sort(sortByYear)
-      .forEach(pub => {
-        parent.appendChild(formatPublication(pub));
-      });
+      .forEach(pub => parent.appendChild(formatPublication(pub)));
   }
 }
 
 function formatPublication(pub) {
   const p = document.createElement("p");
+
   p.innerHTML = `
-    <strong>${pub.authors.join(", ")}</strong> (${pub.year}).<br>
+    <strong>${pub.authors.join(", ")}</strong>
+    (${pub.year}).<br>
     <em>${pub.title}</em>.<br>
     ${pub.venue}${pub.pages ? `, pp. ${pub.pages}` : ""}
     ${pub.status ? ` — ${formatStatus(pub.status)}` : ""}
   `;
+
   return p;
 }
 
@@ -215,8 +254,7 @@ function activateScrollSpy() {
     let current = "";
 
     sections.forEach(section => {
-      const top = section.offsetTop - 120;
-      if (window.scrollY >= top) {
+      if (window.scrollY >= section.offsetTop - 120) {
         current = section.id;
       }
     });
@@ -235,5 +273,5 @@ function activateScrollSpy() {
    ========================================================= */
 
 function titleCase(str) {
-  return str.replace(/\b\w/g, char => char.toUpperCase());
+  return str.replace(/\b\w/g, c => c.toUpperCase());
 }
