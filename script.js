@@ -83,3 +83,27 @@ function renderReferences(arr) {
     c.appendChild(d);
   });
 }
+/* =========================
+   Announcement Carousel
+========================= */
+function startAnnouncementCarousel() {
+  const items = document.querySelectorAll(".announce");
+  if (!items.length) return;
+
+  let current = 0;
+  items.forEach((el, i) => el.style.display = i === 0 ? "block" : "none");
+
+  setInterval(() => {
+    items[current].classList.remove("active");
+    items[current].style.display = "none";
+
+    current = (current + 1) % items.length;
+
+    items[current].style.display = "block";
+    items[current].classList.add("active");
+  }, 4000);
+}
+
+/* Call AFTER announcements are rendered */
+setTimeout(startAnnouncementCarousel, 500);
+
