@@ -45,59 +45,6 @@ function renderAbout(a) {
 }
 
 
-function renderList(section, arr = []) {
-  const container = el("#" + section);
-  if (!container || !Array.isArray(arr)) return;
-
-  arr.forEach(item => {
-    const d = document.createElement("div");
-    d.className = "item";
-
-    /* CASE 1: plain string (teaching, achievements, activities) */
-    if (typeof item === "string") {
-      d.textContent = "• " + item;
-      container.appendChild(d);
-      return;
-    }
-
-    /* CASE 2: research / projects (title + details[]) */
-    if (item.title && Array.isArray(item.details)) {
-      d.innerHTML = `
-        <strong>${item.title}</strong>
-        <ul>
-          ${item.details.map(x => `<li>${x}</li>`).join("")}
-        </ul>
-      `;
-      container.appendChild(d);
-      return;
-    }
-
-    /* CASE 3: education / experience */
-    const heading =
-      item.degree ||
-      item.role ||
-      item.institution ||
-      "";
-
-    let body = "";
-
-    if (Array.isArray(item.details)) {
-      body = item.details.join("<br>");
-    } else if (typeof item.details === "string") {
-      body = item.details;
-    } else if (item.period) {
-      body = item.period;
-    }
-
-    d.innerHTML = `
-      <strong>${heading}</strong><br>
-      ${body}
-    `;
-    container.appendChild(d);
-  });
-}
-
-
 /* =========================================================
    ANNOUNCEMENTS (DERIVED SAFELY)
    ========================================================= */
