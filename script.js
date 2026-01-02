@@ -1,144 +1,162 @@
-/* ===== GLOBAL HELPERS ===== */
-const el = (selector) => document.querySelector(selector);
+/* ========= HELPERS ========= */
+const $ = (q) => document.querySelector(q);
 
-const formatDate = (str) => {
-  const d = new Date(str);
-  return isNaN(d) ? str : d.toLocaleDateString(undefined, { year: 'numeric', month: 'short' });
-};
+const sortByYearDesc = (arr) =>
+  arr.slice().sort((a, b) => {
+    const ya = typeof a.year === "number" ? a.year : 0;
+    const yb = typeof b.year === "number" ? b.year : 0;
+    return yb - ya;
+  });
 
-const sortRecentOld = (arr, key = 'date') =>
-  arr.sort((a, b) => new Date(b[key]) - new Date(a[key]));
-
-/* ===== FETCH JSON & INIT ===== */
-fetch('index.json')
+/* ========= LOAD JSON ========= */
+fetch("index.json")
   .then(res => res.json())
-  .then(data => {
-    renderProfile(data.profile);
-    renderAnnouncements(data.announcements);
-    renderPublications(sortRecentOld(data.publications, 'year'));
-    renderExperience(data.experience);
-    renderEducation(data.education);
-    renderSkills(data.skills);
-    setupNavigation();
-  })
-  .catch(err => console.error("JSON load failed:", err));
+  .then(data => initSite(data))
+  .catch(err => console.error("Failed to load JSON:", err));
 
-/* ===== RENDER FUNCTIONS ===== */
-function renderProfile(p) {
-  el('#name').textContent = p.name;
-  el('#title').textContent = p.title;
-  if (p.photo) el('#photo').src = p.photo;
-  if (p.contact) {
-    el('#email').href = `mailto:${p.contact.email}`;
-    el('#linkedin').href = p.contact.linkedin;
-    el('#github').href = p.contact.github;
-  }
+function initSite(data) {
+  renderHero(data.about);
+  renderNavigation(data.navigation);
+  renderAnnouncements(data.publications);
+  renderExperience(data.experience);
+  renderEducation(data.education);
+  renderPublications(data.publications);
+  renderResearch(data.research);
+  renderProjects(data.projects);
+  renderAcademicService(data.academic_service);
+  renderList("teaching", data.teaching);
+  renderList("achievements", data.achievements);
+  renderList("talks_and_presentations", data.talks_and_presentations);
+  renderList("activities", data.activities);
+  renderSkills(data.technical_skills);
+  renderReferences(data.references);
 }
 
-function renderAnnouncements(arr) {
-  if (!arr || !arr.length) return;
-  sortRecentOld(arr, 'date');
-  const container = el('#announcements');
-  container.innerHTML = '';
-  arr.forEach(item => {
-    const div = document.createElement('div');
-    div.classList.add('announce');
-    div.innerHTML = `
-      <h4>${item.title}</h4>
-      <small>${formatDate(item.date)}</small>
-      <p>${item.text}</p>
+/* ========= HERO ========= */
+function renderHero(a) {
+  $("#name").textContent = a.name;
+  $("#title").textContent = a.title;
+  $("#affiliation").innerHTML = a.affiliation.join("<br>");
+  $("#email").textContent = a.email;
+  $("#email").href = `mailto:${a.email}`;
+  $("#photo").src = a.photo.src;
+}
+
+/* ========= NAV ========= */
+function renderNavigation(nav) {
+  const n = $("#top-nav");
+  nav.forEach(id => {
+    const a = document.createElement("a");
+    a.href = `#${id}`;
+    a.textContent = id.replace(/_/g, " ").toUpperCase();
+    n.appendChild(a);
+  });
+}
+
+/* ========= ANNOUNCEMENTS (AUTO FROM PUBLICATIONS) ========= */
+function renderAnnouncements(pubs) {
+  const c = $("#announcements");
+  const all = [...pubs.journals, ...pubs.conference_proceedings];
+  sortByYearDesc(all).slice(0, 5).forEach(p => {
+    c.innerHTML += `
+      <div class="announce">
+        <strong>${p.title}</strong><br>
+        <small>${p.venue} (${p.year})</small>
+      </div>
     `;
-    container.appendChild(div);
-  });
-  startAnnouncementCarousel();
-}
-
-function startAnnouncementCarousel() {
-  let current = 0;
-  const items = document.querySelectorAll('.announce');
-  if (!items.length) return;
-  items.forEach((el, i) => {
-    el.style.display = i === 0 ? 'block' : 'none';
-  });
-  setInterval(() => {
-    items[current].style.display = 'none';
-    current = (current + 1) % items.length;
-    items[current].style.display = 'block';
-  }, 5000);
-}
-
-function renderPublications(arr) {
-  const container = el('#publications');
-  container.innerHTML = '';
-  arr.forEach(pub => {
-    const div = document.createElement('div');
-    div.classList.add('pub-item');
-    div.innerHTML = `
-      <h5>${pub.title}</h5>
-      <p><em>${pub.venue || ''} (${pub.year})</em></p>
-      <p>${pub.authors.join(', ')}</p>
-    `;
-    container.appendChild(div);
   });
 }
 
+/* ========= EXPERIENCE ========= */
 function renderExperience(arr) {
-  const container = el('#experience');
-  container.innerHTML = '';
-  arr.forEach(exp => {
-    const div = document.createElement('div');
-    div.classList.add('exp-item');
-    div.innerHTML = `
-      <h5>${exp.role} @ ${exp.org}</h5>
-      <small>${formatDate(exp.start)} – ${formatDate(exp.end)}</small>
-      <p>${exp.description}</p>
+  const c = $("#experience");
+  arr.forEach(e => {
+    c.innerHTML += `
+      <div class="card">
+        <strong>${e.role}</strong><br>
+        ${e.institution}, ${e.location}<br>
+        <small>${e.period}</small>
+      </div>
     `;
-    container.appendChild(div);
   });
 }
 
+/* ========= EDUCATION ========= */
 function renderEducation(arr) {
-  const container = el('#education');
-  container.innerHTML = '';
-  arr.forEach(ed => {
-    const div = document.createElement('div');
-    div.classList.add('edu-item');
-    div.innerHTML = `
-      <h5>${ed.degree}, ${ed.institution}</h5>
-      <small>${formatDate(ed.start)} – ${formatDate(ed.end)}</small>
+  const c = $("#education");
+  arr.forEach(e => {
+    c.innerHTML += `
+      <div class="card">
+        <strong>${e.degree}</strong><br>
+        ${e.institution}<br>
+        <small>${e.period || e.year}</small>
+      </div>
     `;
-    container.appendChild(div);
   });
+}
+
+/* ========= PUBLICATIONS ========= */
+function renderPublications(p) {
+  const c = $("#publications");
+  c.innerHTML += "<h3>Journals</h3>";
+  sortByYearDesc(p.journals).forEach(x => pubItem(c, x));
+  c.innerHTML += "<h3>Conference Proceedings</h3>";
+  p.conference_proceedings.forEach(x => pubItem(c, x));
+}
+
+function pubItem(c, p) {
+  c.innerHTML += `
+    <div class="card">
+      <strong>${p.title}</strong><br>
+      ${p.authors.join(", ")}<br>
+      <em>${p.venue}</em> (${p.year})
+    </div>
+  `;
+}
+
+/* ========= GENERIC SECTIONS ========= */
+function renderResearch(arr) {
+  const c = $("#research");
+  arr.forEach(r => {
+    c.innerHTML += `<strong>${r.title}</strong><ul>${r.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
+  });
+}
+
+function renderProjects(arr) {
+  const c = $("#projects");
+  arr.forEach(p => {
+    c.innerHTML += `<strong>${p.title}</strong><ul>${p.details.map(d => `<li>${d}</li>`).join("")}</ul>`;
+  });
+}
+
+function renderAcademicService(obj) {
+  const c = $("#academic_service");
+  Object.entries(obj).forEach(([k, v]) => {
+    c.innerHTML += `<strong>${k.replace("_", " ")}</strong><ul>${v.map(i => `<li>${i}</li>`).join("")}</ul>`;
+  });
+}
+
+function renderList(id, arr) {
+  const c = $("#" + id);
+  c.innerHTML += `<ul>${arr.map(i => `<li>${i}</li>`).join("")}</ul>`;
 }
 
 function renderSkills(arr) {
-  const container = el('#skills');
-  container.innerHTML = '';
-  arr.forEach(skill => {
-    const span = document.createElement('span');
-    span.classList.add('skill');
-    span.textContent = skill;
-    container.appendChild(span);
+  const c = $("#technical_skills");
+  arr.forEach(s => {
+    c.innerHTML += `<span class="skill">${s}</span>`;
   });
 }
 
-/* ===== NAVIGATION ===== */
-function setupNavigation() {
-  document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      e.preventDefault();
-      const target = e.target.getAttribute('href').replace('#','');
-      document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
-    });
+function renderReferences(arr) {
+  const c = $("#references");
+  arr.forEach(r => {
+    c.innerHTML += `
+      <p>
+        <strong>${r.name}</strong><br>
+        ${r.designation}, ${r.institution}<br>
+        ${r.email}
+      </p>
+    `;
   });
 }
-
-/* ===== RESPONSIVE MENU ===== */
-el('#menuToggle').addEventListener('click', () => {
-  el('nav ul').classList.toggle('open');
-});
-
-/* ===== FIX LAYOUT CENTERING ===== */
-window.addEventListener('DOMContentLoaded', () => {
-  document.body.classList.remove('left-align');
-});
