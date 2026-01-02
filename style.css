@@ -1,7 +1,3 @@
-/* =========================================================
-   VARIABLES
-   ========================================================= */
-
 :root {
   --primary: #0b3c5d;
   --text: #1f1f1f;
@@ -10,18 +6,9 @@
   --light-bg: #f9fafb;
 }
 
-/* =========================================================
-   RESET
-   ========================================================= */
-
-*,
-*::before,
-*::after {
+/* RESET */
+* {
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -31,20 +18,14 @@ body {
   background: #ffffff;
 }
 
-/* =========================================================
-   PAGE CONTAINER (CENTERING FIX)
-   ========================================================= */
-
+/* CENTERED WRAPPER */
 .site-wrapper {
   max-width: 1150px;
   margin: 0 auto;
   padding: 42px 36px 64px;
 }
 
-/* =========================================================
-   PROFILE HEADER
-   ========================================================= */
-
+/* HEADER */
 #profile-header {
   margin-bottom: 40px;
 }
@@ -78,27 +59,19 @@ body {
 .profile-text .email {
   margin-top: 6px;
   color: var(--muted);
-  font-size: 0.95rem;
 }
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
+/* NAV */
 .top-nav {
   position: sticky;
   top: 0;
-  z-index: 10;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-
-  padding: 14px 0;
-  margin-bottom: 52px;
-
   background: #ffffff;
   border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  margin-bottom: 52px;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
 }
 
 .top-nav a {
@@ -111,10 +84,7 @@ body {
   text-decoration: underline;
 }
 
-/* =========================================================
-   ANNOUNCEMENTS
-   ========================================================= */
-
+/* ANNOUNCEMENTS */
 .announcements-section {
   margin-bottom: 60px;
 }
@@ -127,13 +97,9 @@ body {
 
 .announcement-ticker p {
   margin: 0;
-  font-size: 0.95rem;
 }
 
-/* =========================================================
-   MAIN CONTENT
-   ========================================================= */
-
+/* MAIN CONTENT */
 .main-content section {
   margin-bottom: 68px;
 }
@@ -146,9 +112,8 @@ body {
   color: var(--primary);
 }
 
-.main-content h3 {
-  margin-top: 30px;
-  margin-bottom: 8px;
+.block {
+  margin-bottom: 18px;
 }
 
 .main-content p {
@@ -156,26 +121,7 @@ body {
   max-width: 90ch;
 }
 
-.main-content ul {
-  padding-left: 24px;
-}
-
-.main-content li {
-  margin-bottom: 6px;
-}
-
-/* =========================================================
-   JS GENERATED BLOCKS
-   ========================================================= */
-
-.block {
-  margin-bottom: 18px;
-}
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
+/* FOOTER */
 .site-footer {
   margin-top: 90px;
   padding-top: 24px;
@@ -185,10 +131,7 @@ body {
   color: var(--muted);
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .profile-header {
     grid-template-columns: 1fr;
@@ -199,10 +142,7 @@ body {
   }
 }
 
-/* =========================================================
-   PRINT
-   ========================================================= */
-
+/* PRINT */
 @media print {
   .top-nav,
   .announcements-section {
