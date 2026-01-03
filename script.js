@@ -14,7 +14,7 @@ fetch("index.json")
   .then(data => {
     renderAbout(data.about);
      renderSummary(data.summary);
-    renderAnnouncements(data.publications);
+    renderAnnouncements(data.announcements);
     renderExperience(data.experience);
     renderEducation(data.education);
      renderPublications(data.publications);
