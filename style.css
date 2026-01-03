@@ -109,6 +109,34 @@ body {
 .sidebar > .sidebar-block a:hover {
   text-decoration: underline;
 }
+/* ================= FONT AWESOME ICON FIX ================= */
+
+/* Ensure icons are visible */
+.sidebar-block i {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-style: normal;
+  font-weight: 400;
+
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--accent);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Brand icons need this */
+.sidebar-block i.fa-brands {
+  font-family: "Font Awesome 6 Brands" !important;
+}
+
+/* Solid icons (PDF, Scholar cap) */
+.sidebar-block i.fa-solid {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900;
+}
+
 
 /* =====================================================
    MAIN CONTENT WRAPPER
