@@ -127,24 +127,61 @@ function renderEducation(arr = []) {
 }
 
 /* =========================================================
-   PUBLICATIONS
+   PUBLICATIONS – ACADEMIC STANDARD
    ========================================================= */
 function renderPublications(pubs) {
   const c = $("publications");
   if (!c || !pubs) return;
 
-  ["journals", "conference_proceedings"].forEach(type => {
-    (pubs[type] || []).forEach(p => {
+  const sections = {
+    published: "Journal Articles (Published)",
+    under_review: "Manuscripts Under Review",
+    preprint: "Preprints / Archived Manuscripts",
+    conference: "Conference Proceedings"
+  };
+
+  function renderSection(title, items) {
+    if (!items.length) return;
+
+    const h = document.createElement("h3");
+    h.textContent = title;
+    c.appendChild(h);
+
+    items.forEach(p => {
       const d = document.createElement("div");
       d.className = "pub-item";
       d.innerHTML = `
         <strong>${p.title}</strong><br>
-        ${p.authors.join(", ")}<br>
+        ${p.authors?.join(", ") || ""}<br>
         <em>${p.venue} (${p.year})</em>
       `;
       c.appendChild(d);
     });
-  });
+  }
+
+  /* ---- Journals: grouped by status ---- */
+  const journals = pubs.journals || [];
+
+  renderSection(
+    sections.published,
+    journals.filter(p => p.status === "published")
+  );
+
+  renderSection(
+    sections.under_review,
+    journals.filter(p => p.status === "under_review")
+  );
+
+  renderSection(
+    sections.preprint,
+    journals.filter(p => p.status === "preprint")
+  );
+
+  /* ---- Conferences ---- */
+  renderSection(
+    sections.conference,
+    pubs.conference_proceedings || []
+  );
 }
 
 
