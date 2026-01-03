@@ -302,31 +302,36 @@ function renderActivities(arr = []) {
 }
 
 /* =========================================================
-   SKILLS (ITEM-WISE, FIXED 2 COLUMNS)
+   SKILLS (CATEGORISED, ACADEMIC)
    ========================================================= */
 function renderSkills(skills = {}) {
   const c = $("technical_skills");
   if (!c || typeof skills !== "object") return;
 
-  const ul = document.createElement("ul");
-  ul.className = "skills-grid";
-
   Object.entries(skills).forEach(([category, items]) => {
-    // Optional: category label spanning both columns
-    const cat = document.createElement("li");
-    cat.className = "skill-category";
-    cat.textContent = category;
-    ul.appendChild(cat);
+    const block = document.createElement("div");
+    block.className = "item";
+
+    // Category heading
+    const h = document.createElement("strong");
+    h.textContent = category;
+    block.appendChild(h);
+
+    // Skill list (THIS is the grid container)
+    const ul = document.createElement("ul");
+    ul.className = "skills-grid";   // ⭐ key line
 
     items.forEach(skill => {
       const li = document.createElement("li");
       li.textContent = skill;
       ul.appendChild(li);
     });
-  });
 
-  c.appendChild(ul);
+    block.appendChild(ul);
+    c.appendChild(block);
+  });
 }
+
 
 
 /* =========================================================
