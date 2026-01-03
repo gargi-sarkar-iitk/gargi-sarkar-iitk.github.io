@@ -15,9 +15,9 @@ fetch("index.json")
     renderAbout(data.about);
      renderSummary(data.summary);
     renderAnnouncements(data.publications);
-    renderPublications(data.publications);
     renderExperience(data.experience);
     renderEducation(data.education);
+     renderPublications(data.publications);
     renderResearch(data.research);
     renderProjects(data.projects);
      renderAcademicService(data.academic_service);
