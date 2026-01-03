@@ -13,6 +13,7 @@ fetch("index.json")
   })
   .then(data => {
     renderAbout(data.about);
+     renderSummary(data.summary);
     renderAnnouncements(data.publications);
     renderPublications(data.publications);
     renderExperience(data.experience);
@@ -49,6 +50,17 @@ function renderAbout(a) {
     <strong>${a.affiliation}</strong>.
   `;
 }
+function renderSummary(summary) {
+  if (!summary || !Array.isArray(summary.points)) return;
+
+  const container = $("about-summary");
+  if (!container) return;
+
+  container.innerHTML = summary.points
+    .map(point => `<p class="summary-point">${point}</p>`)
+    .join("");
+}
+
 
 
 /* =========================================================
