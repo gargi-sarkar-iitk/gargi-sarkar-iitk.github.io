@@ -183,19 +183,22 @@ section h2 {
   margin-bottom: 26px;
 }
 
-/* ================= ABOUT SUMMARY ================= */
+/* ================= ABOUT SUMMARY (HERO-COMPATIBLE) ================= */
 
 #about-summary {
-  margin-top: 1.2rem;
-  max-width: 720px;
+  margin-top: 1rem;
 }
 
 #about-summary p {
-  font-size: 0.95rem;
-  line-height: 1.75;
-  color: #333;
-  text-align: justify;
-  margin-bottom: 0.8rem;
+  margin: 0.6rem auto;
+  max-width: 820px;
+
+  font-size: 1rem;              /* match hero rhythm */
+  line-height: 1.6;             /* same as body */
+  color: var(--text);           /* same palette */
+  text-align: center;           /* IMPORTANT */
+
+  opacity: 0.95;
 }
 
 
