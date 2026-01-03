@@ -390,3 +390,12 @@ section h2 {
     transition: none !important;
   }
 }
+/* ===== FORCE FONT AWESOME VISIBILITY ===== */
+i[class^="fa-"],
+i[class*=" fa-"] {
+  font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+  font-style: normal;
+  font-weight: 900;
+  display: inline-block !important;
+}
+
