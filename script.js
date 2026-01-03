@@ -125,34 +125,34 @@ function renderSummary(summary) {
 
 
 /* =========================================================
-   ANNOUNCEMENTS – ROTATING (ONE AT A TIME)
+   ANNOUNCEMENTS – ROTATOR (ONE AT A TIME)
    ========================================================= */
 function renderAnnouncements(announcements) {
   const c = $("announcements");
   if (!c || !announcements || !announcements.length) return;
 
-  // Preserve header
+  /* keep the section header */
   const header = c.querySelector("h2");
   c.innerHTML = "";
   if (header) c.appendChild(header);
 
-  // Sort latest first
+  /* sort latest first */
   const items = announcements
     .slice()
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  // Create container
-  const wrapper = document.createElement("div");
-  wrapper.className = "announce-rotator";
-  c.appendChild(wrapper);
+  /* rotator wrapper */
+  const rotator = document.createElement("div");
+  rotator.className = "announce-rotator";
+  c.appendChild(rotator);
 
-  // Create announcement nodes
-  const nodes = items.map((a, idx) => {
-    const d = document.createElement("div");
-    d.className = "announce-item";
-    if (idx !== 0) d.classList.add("hidden");
+  /* create announcement nodes */
+  const nodes = items.map((a, i) => {
+    const el = document.createElement("div");
+    el.className = "announce-item";
+    if (i !== 0) el.classList.add("hidden");
 
-    d.innerHTML = `
+    el.innerHTML = `
       <div class="announce-dot">
         <span class="announce-icon">📢</span>
       </div>
@@ -163,18 +163,31 @@ function renderAnnouncements(announcements) {
       </div>
     `;
 
-    wrapper.appendChild(d);
-    return d;
+    rotator.appendChild(el);
+    return el;
   });
 
-  // Rotation logic
+  /* rotation logic */
   let current = 0;
   setInterval(() => {
     nodes[current].classList.add("hidden");
     current = (current + 1) % nodes.length;
     nodes[current].classList.remove("hidden");
-  }, 4500); // change every 4.5s
+  }, 4500); // every 4.5s
 }
+/* =========================================================
+   ANNOUNCEMENT DATE FORMATTER
+   ========================================================= */
+function formatAnnouncementDate(dateStr) {
+  if (!dateStr) return "";
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  });
+}
+
 
 
 /* =========================================================
