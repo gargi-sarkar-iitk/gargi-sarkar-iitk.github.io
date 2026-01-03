@@ -125,11 +125,14 @@ function renderSummary(summary) {
 
 
 /* =========================================================
-   ANNOUNCEMENTS (MANUAL / CURATED)
+   ANNOUNCEMENTS – SINGLE BOX WITH FLOATING ITEMS
    ========================================================= */
 function renderAnnouncements(announcements) {
   const c = $("announcements");
   if (!c || !announcements || !announcements.length) return;
+
+  // Clear previous content (important if re-rendered)
+  c.innerHTML = "";
 
   announcements
     .slice()
@@ -137,17 +140,23 @@ function renderAnnouncements(announcements) {
     .slice(0, 5)
     .forEach(a => {
       const d = document.createElement("div");
-      d.className = "announce";
+      d.className = "announce-item";
 
       d.innerHTML = `
-        <h3>${a.title}</h3>
-        <small>${formatAnnouncementDate(a.date)}</small>
-        <p>${a.description}</p>
+        <div class="announce-dot">
+          <span class="announce-icon">📢</span>
+        </div>
+        <div class="announce-content announce-card">
+          <small class="announce-date">${formatAnnouncementDate(a.date)}</small>
+          <h4>${a.title}</h4>
+          <p>${a.description}</p>
+        </div>
       `;
 
       c.appendChild(d);
     });
 }
+
 function formatAnnouncementDate(dateStr) {
   const d = new Date(dateStr);
   return d.toLocaleDateString("en-GB", {
