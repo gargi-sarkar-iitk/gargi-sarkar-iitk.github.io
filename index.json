@@ -100,47 +100,68 @@
       "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
       "venue": "Computers & Security"
     },
+
     {
       "year": 2025,
       "status": "preprint",
-      "authors": ["A. Sachdeva", "R. Saravanan", "Gargi Sarkar", "K. Vemuri", "Sandeep K. Shukla"],
+      "authors": [
+        "A. Sachdeva",
+        "R. Saravanan",
+        "Gargi Sarkar",
+        "K. Vemuri",
+        "Sandeep K. Shukla"
+      ],
       "title": "BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models",
-      "venue": "arXiv"
+      "venue": "arXiv",
+      "identifier": {
+        "type": "arxiv",
+        "value": "2512.06555"
+      }
     },
     {
       "year": 2025,
       "status": "preprint",
       "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
       "title": "Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime",
-      "venue": "arXiv"
+      "venue": "arXiv",
+      "identifier": {
+        "type": "arxiv",
+        "value": "2510.12814"
+      }
     },
+
     {
       "year": 2024,
       "status": "published",
       "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
       "title": "Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime",
-      "venue": "Journal of Human Trafficking"
+      "venue": "Journal of Human Trafficking",
+      "identifier": {
+        "type": "doi",
+        "value": "10.1080/23322705.2024.2353015"
+      }
     },
     {
       "year": 2024,
       "status": "published",
       "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
       "title": "Reconceptualizing online offenses: A framework for distinguishing cybercrime, cyberattacks, and cyberterrorism in the Indian legal context",
-      "venue": "Journal of Economic Criminology"
-    },
-    {
-      "year": 2024,
-      "status": "published",
-      "authors": ["A. Aljaradat", "Gargi Sarkar", "Sandeep K. Shukla"],
-      "title": "Modelling the Impact of Cybersecurity on Digital Payment Adoption: A Game-Theoretic Approach",
-      "venue": "Journal of Economic Criminology"
+      "venue": "Journal of Economic Criminology",
+      "identifier": {
+        "type": "doi",
+        "value": "10.1016/j.jeconc.2024.100063"
+      }
     },
     {
       "year": 2023,
       "status": "published",
       "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
       "title": "Behavioral analysis of cybercrime: Paving the way for effective policing strategies",
-      "venue": "Journal of Economic Criminology"
+      "venue": "Journal of Economic Criminology",
+      "identifier": {
+        "type": "doi",
+        "value": "10.1016/j.jeconc.2023.100034"
+      }
     }
   ],
 
@@ -150,7 +171,11 @@
       "authors": ["Gargi Sarkar", "Hardeep Singh", "Subodh Kumar", "Sandeep K. Shukla"],
       "title": "Tactics, techniques and procedures of cybercrime: A methodology and tool for cybercrime investigation process",
       "venue": "Proceedings of the 18th International Conference on Availability, Reliability and Security",
-      "pages": "1–10"
+      "pages": "1–10",
+      "identifier": {
+        "type": "doi",
+        "value": "10.1145/3600160.3605013"
+      }
     }
   ]
 }
