@@ -1,6 +1,7 @@
 {
   "navigation": [
     "about",
+    "summary",
     "experience",
     "education",
     "publications",
@@ -15,22 +16,22 @@
     "references"
   ],
 
-"about": {
-  "name": "Gargi Sarkar",
-  "title": "Post-PhD Research Scientist",
-  "affiliation": [
-    "International Institute of Information Technology Hyderabad",
-    "Indian Institute of Technology Kanpur"
-  ],
-  "email": "gsarkar@cse.iitk.ac.in",
-  "photo": {
-    "src": "images/picture.jpeg",
-    "alt": "Gargi Sarkar"
+  "about": {
+    "name": "Gargi Sarkar",
+    "title": "Post-PhD Research Scientist",
+    "affiliation": [
+      "International Institute of Information Technology Hyderabad",
+      "Indian Institute of Technology Kanpur"
+    ],
+    "email": "gsarkar@cse.iitk.ac.in",
+    "photo": {
+      "src": "images/picture.jpeg",
+      "alt": "Gargi Sarkar"
+    }
   },
-    },
 
-  {
-    "summary": [
+  "summary": {
+    "points": [
       "As a researcher at the intersection of computer security and criminology, I investigate cybercrimes targeting everyday individuals.",
       "My work aims to develop efficient and systematic policing procedures to combat these crimes.",
       "I have been actively involved in mitigating and synthesizing solutions for cyber-enabled human trafficking and forced criminality affecting victims of trafficking.",
@@ -55,31 +56,31 @@
       "institution": "Indian Institute of Technology Kanpur",
       "degree": "Ph.D. in Computer Science and Engineering",
       "period": "2021 - 2025",
-      "location": "Kanpur, India",
+      "location": "Kanpur, India"
     },
     {
       "institution": "Presidency University",
       "degree": "Master of Science (M.Sc.) in Pure Mathematics",
       "period": "2018 - 2020",
-      "location": "Kolkata, India",
+      "location": "Kolkata, India"
     },
     {
       "institution": "University of North Bengal",
       "degree": "Bachelor of Science (B.Sc.) in Mathematics",
       "period": "2015 - 2018",
-      "location": "Siliguri, India",
+      "location": "Siliguri, India"
     },
     {
       "institution": "West Bengal Council of Higher Secondary Education",
       "degree": "Higher Secondary (H.S.)",
-      "year": "2015",
-      "location": "Jalpaiguri, India",
+      "year": 2015,
+      "location": "Jalpaiguri, India"
     },
     {
       "institution": "West Bengal Board of Secondary Education",
       "degree": "Secondary Education",
-      "year": "2013",
-      "location": "Jalpaiguri, India",
+      "year": 2013,
+      "location": "Jalpaiguri, India"
     }
   ],
 
@@ -92,14 +93,13 @@
         "title": "BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models",
         "venue": "arXiv"
       },
-         {
+      {
         "year": 2025,
         "status": "preprint",
         "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
         "title": "Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime",
         "venue": "arXiv"
       },
-
       {
         "year": 2024,
         "status": "published",
@@ -129,21 +129,21 @@
         "venue": "Journal of Economic Criminology"
       },
       {
-        "year": "Under Review",
+        "year": 2025,
         "status": "under_review",
         "authors": ["Gargi Sarkar", "P.V.S. Charan", "Sandeep K. Shukla"],
         "title": "Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks",
         "venue": "Humanities & Social Sciences Communications (Nature Portfolio)"
       },
       {
-        "year": "Under Review",
+        "year": 2025,
         "status": "under_review",
         "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
         "title": "Policing Transnational Cybercrime: A Critical Assessment of the Anticipated Impact of the United Nations Convention against Cybercrime in India and Worldwide",
         "venue": "International Journal of Police Science and Management"
       },
       {
-        "year": "Under Review",
+        "year": 2025,
         "status": "under_review",
         "authors": ["R. Negi", "Gargi Sarkar", "Sandeep K. Shukla"],
         "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
@@ -264,94 +264,45 @@
       "Safer Communities"
     ]
   },
-      
- "teaching": [
-  {
-    "role": "Project Mentor",
-    "institution": "International Institute of Information Technology Hyderabad",
-    "courses": [
-      {
-        "code": "CG4.402",
-        "title": "Introduction to Neuroeconomics",
-        "duration": "August 2025 – Present",
-        "description": "Mentoring students on projects related to behavioral economics in cyber frauds, guiding research design, methodology, and analysis."
-      }
-    ]
-  },
 
-  {
-    "role": "Teaching Assistant",
-    "institution": "Indian Institute of Technology Kanpur",
-    "courses": [
-      {
-        "code": "CS203",
-        "title": "Mathematics for Computer Science III (Introduction to Probability)",
-        "duration": "March 2025 – May 2025"
-      },
-      {
-        "code": "CS202",
-        "title": "Mathematics for Computer Science II (Mathematical Logic)",
-        "duration": "January 2025 – March 2025"
-      },
-      {
-        "code": "CS201",
-        "title": "Mathematics for Computer Science I (Discrete Mathematics)",
-        "duration": "August 2024 – November 2024"
-      },
-      {
-        "code": "CS633",
-        "title": "Parallel Computing",
-        "duration": "January 2024 – May 2024"
-      },
-      {
-        "code": "CS771",
-        "title": "Introduction to Machine Learning",
-        "duration": "August 2023 – November 2023"
-      },
-      {
-        "code": "CS641",
-        "title": "Modern Cryptology",
-        "duration": "January 2023 – May 2023"
-      },
-      {
-        "code": "CS628",
-        "title": "Computer Systems Security",
-        "duration": "August 2022 – November 2022"
-      },
-      {
-        "code": "CS345",
-        "title": "Algorithms II",
-        "duration": "August 2021 – November 2021; January 2022 – May 2022"
-      },
-      {
-        "code": "CS961",
-        "title": "Introduction to Cryptography (e-Masters)",
-        "duration": "January 2023 – March 2023; March 2023 – Present"
-      },
-      {
-        "code": "CS972",
-        "title": "Introduction to Linear Algebra (e-Masters)",
-        "duration": "April 2023 – June 2023; January 2024 – March 2024"
-      },
-      {
-        "code": "ESC101",
-        "title": "Fundamentals of Computing",
-        "duration": "May 2022 – July 2022",
-        "role_override": "Tutor"
-      }
-    ]
-  },
-
-  {
-    "role": "Teaching Assistant",
-    "institution": "National Programme on Technology Enhanced Learning (NPTEL)",
-    "courses": [
-      {
-        "title": "Modern Algebra"
-      }
-    ]
-  }
-]
+  "teaching": [
+    {
+      "role": "Project Mentor",
+      "institution": "International Institute of Information Technology Hyderabad",
+      "courses": [
+        {
+          "code": "CG4.402",
+          "title": "Introduction to Neuroeconomics",
+          "duration": "August 2025 – Present",
+          "description": "Mentoring students on projects related to behavioral economics in cyber frauds."
+        }
+      ]
+    },
+    {
+      "role": "Teaching Assistant",
+      "institution": "Indian Institute of Technology Kanpur",
+      "courses": [
+        { "code": "CS203", "title": "Mathematics for Computer Science III", "duration": "March 2025 – May 2025" },
+        { "code": "CS202", "title": "Mathematics for Computer Science II", "duration": "January 2025 – March 2025" },
+        { "code": "CS201", "title": "Mathematics for Computer Science I", "duration": "August 2024 – November 2024" },
+        { "code": "CS633", "title": "Parallel Computing", "duration": "January 2024 – May 2024" },
+        { "code": "CS771", "title": "Introduction to Machine Learning", "duration": "August 2023 – November 2023" },
+        { "code": "CS641", "title": "Modern Cryptology", "duration": "January 2023 – May 2023" },
+        { "code": "CS628", "title": "Computer Systems Security", "duration": "August 2022 – November 2022" },
+        { "code": "CS345", "title": "Algorithms II", "duration": "August 2021 – May 2022" },
+        { "code": "CS961", "title": "Introduction to Cryptography (e-Masters)", "duration": "January 2023 – Present" },
+        { "code": "CS972", "title": "Introduction to Linear Algebra (e-Masters)", "duration": "April 2023 – March 2024" },
+        { "code": "ESC101", "title": "Fundamentals of Computing", "duration": "May 2022 – July 2022", "role_override": "Tutor" }
+      ]
+    },
+    {
+      "role": "Teaching Assistant",
+      "institution": "NPTEL",
+      "courses": [
+        { "title": "Modern Algebra" }
+      ]
+    }
+  ],
 
   "achievements": [
     "C3iHub Research Fellowship Awardee (2022–2025)",
@@ -362,20 +313,20 @@
   ],
 
   "talks_and_presentations": [
-    "Invited talk at International Conference on Availability, Reliability and Security (ARES), 2023, Italy",
+    "Invited talk at ARES 2023, Italy",
     "Invited talk at c0c0n XVI International Cyber Security Conference",
-    "Delivered lecture in Advanced Certification Program in Cyber Security and Cyber Defense (TalentSprint)"
+    "Lecture in Advanced Certification Program in Cyber Security and Cyber Defense (TalentSprint)"
   ],
 
   "activities": [
     "Founder and Lead, Cybercrime Victim Support Initiative at IIT Kanpur",
     "Organizer, HACK IITK 2024",
-    "Presented Cybercrime Navigator at DST Technology Innovation in Cyber-Physical Systems (TIPS) Workshop"
+    "Presented Cybercrime Navigator at DST TIPS Workshop"
   ],
 
   "technical_skills": [
     "MATLAB",
-    "C programming",
+    "C",
     "Python",
     "HTML",
     "CSS",
