@@ -229,8 +229,11 @@ function renderTeaching(arr = []) {
 
     // Header: Role + Institution
     block.innerHTML = `
-      <strong>${t.role}</strong>, ${t.institution}
-    `;
+  <div class="teaching-header">
+    <strong>${t.role}</strong>, ${t.institution}
+  </div>
+`;
+
 
     // Courses list
     if (Array.isArray(t.courses) && t.courses.length) {
