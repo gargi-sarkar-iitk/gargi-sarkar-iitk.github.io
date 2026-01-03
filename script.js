@@ -125,48 +125,58 @@ function renderSummary(summary) {
 
 
 /* =========================================================
-   ANNOUNCEMENTS – FLOATING TIMELINE (FINAL)
+   ANNOUNCEMENTS – ROTATING (ONE AT A TIME)
    ========================================================= */
 function renderAnnouncements(announcements) {
   const c = $("announcements");
   if (!c || !announcements || !announcements.length) return;
 
-  // Preserve section header
+  // Preserve header
   const header = c.querySelector("h2");
   c.innerHTML = "";
   if (header) c.appendChild(header);
 
-  announcements
+  // Sort latest first
+  const items = announcements
     .slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date))
-    .slice(0, 5)
-    .forEach(a => {
-      const d = document.createElement("div");
-      d.className = "announce-item";
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-      d.innerHTML = `
-        <div class="announce-dot">
-          <span class="announce-icon">📢</span>
-        </div>
-        <div class="announce-content announce-card">
-          <small class="announce-date">${formatAnnouncementDate(a.date)}</small>
-          <h4>${a.title}</h4>
-          <p>${a.description}</p>
-        </div>
-      `;
+  // Create container
+  const wrapper = document.createElement("div");
+  wrapper.className = "announce-rotator";
+  c.appendChild(wrapper);
 
-      c.appendChild(d);
-    });
-}
+  // Create announcement nodes
+  const nodes = items.map((a, idx) => {
+    const d = document.createElement("div");
+    d.className = "announce-item";
+    if (idx !== 0) d.classList.add("hidden");
 
-function formatAnnouncementDate(dateStr) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short",
-    year: "numeric"
+    d.innerHTML = `
+      <div class="announce-dot">
+        <span class="announce-icon">📢</span>
+      </div>
+      <div class="announce-content announce-card">
+        <small class="announce-date">${formatAnnouncementDate(a.date)}</small>
+        <h4>${a.title}</h4>
+        <p>${a.description}</p>
+      </div>
+    `;
+
+    wrapper.appendChild(d);
+    return d;
   });
+
+  // Rotation logic
+  let current = 0;
+  setInterval(() => {
+    nodes[current].classList.add("hidden");
+    current = (current + 1) % nodes.length;
+    nodes[current].classList.remove("hidden");
+  }, 4500); // change every 4.5s
 }
+
+
 /* =========================================================
    EXPERIENCE
    ========================================================= */
