@@ -314,20 +314,20 @@ section h2 {
 }
 
 /* =====================================================
-   TEACHING – ACADEMIC TIMELINE (DOWN → UP)
+   TEACHING – ACADEMIC TIMELINE (NODE-TO-NODE, DOWN → UP)
    ===================================================== */
 
-/* --- Tunable academic constants --- */
+/* --- Academic constants --- */
 :root {
-  --timeline-x: 12px;      /* x-position of timeline spine */
-  --node-size: 10px;       /* default node diameter */
-  --node-size-lg: 14px;    /* current / most recent role */
+  --timeline-x: 12px;     /* x-axis of timeline */
+  --node-size: 10px;
+  --node-size-lg: 14px;
 }
 
-/* Teaching section container */
+/* Teaching section */
 #teaching {
   position: relative;
-  padding-left: 40px;      /* space reserved for timeline */
+  padding-left: 40px;     /* space for timeline */
 }
 
 /* Section heading spacing */
@@ -335,23 +335,12 @@ section h2 {
   margin-bottom: 18px;
 }
 
-/* Timeline vertical spine (starts below heading) */
+/* Arrow (ENDS BEFORE HEADING – flow upwards) */
 #teaching::before {
   content: "";
   position: absolute;
-  left: var(--timeline-x);
-  top: 56px;               /* STARTS BELOW HEADING */
-  bottom: 0;
-  width: 2px;
-  background: var(--muted);
-}
-
-/* Upward arrow (flow indicator: past → present) */
-#teaching::after {
-  content: "";
-  position: absolute;
   left: calc(var(--timeline-x) - 6px);
-  top: 48px;               /* ENDS BEFORE HEADING */
+  top: 48px;
   width: 0;
   height: 0;
   border-left: 6px solid transparent;
@@ -359,18 +348,18 @@ section h2 {
   border-bottom: 8px solid var(--muted);
 }
 
-/* Individual teaching entry */
+/* Teaching entry */
 .teaching-item {
   position: relative;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   padding-left: 8px;
 }
 
-/* Timeline node (perfectly centered on spine) */
+/* Node */
 .teaching-item::before {
   content: "";
   position: absolute;
-  left: calc(var(--timeline-x) * -1 - var(--node-size) / 2 + 1px);
+  left: calc(-1 * var(--timeline-x) - var(--node-size) / 2 + 1px);
   top: 6px;
   width: var(--node-size);
   height: var(--node-size);
@@ -379,16 +368,32 @@ section h2 {
   z-index: 2;
 }
 
+/* Connector line BELOW each node (to next node) */
+.teaching-item::after {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--timeline-x));
+  top: calc(6px + var(--node-size));
+  width: 2px;
+  height: calc(100% - 6px);
+  background: var(--muted);
+}
+
+/* Remove line after LAST entry */
+.teaching-item:last-child::after {
+  display: none;
+}
+
 /* Highlight most recent role (top entry) */
 .teaching-item:first-child::before {
   width: var(--node-size-lg);
   height: var(--node-size-lg);
-  left: calc(var(--timeline-x) * -1 - var(--node-size-lg) / 2 + 1px);
+  left: calc(-1 * var(--timeline-x) - var(--node-size-lg) / 2 + 1px);
 }
 
-/* Teaching role + institution header */
+/* Teaching header */
 .teaching-header {
-  display: block;          /* block-level as requested */
+  display: block;
   font-weight: 500;
   margin-bottom: 6px;
   line-height: 1.35;
@@ -396,7 +401,7 @@ section h2 {
 
 /* Role emphasis */
 .teaching-header strong {
-  font-weight: 600;        /* stays inline */
+  font-weight: 600;
 }
 
 /* Course list */
@@ -405,7 +410,7 @@ section h2 {
   padding-left: 18px;
 }
 
-/* Course list items */
+/* Course items */
 .teaching-item li {
   font-size: 0.92rem;
   color: var(--text);
@@ -419,16 +424,15 @@ section h2 {
 
 /* Print-safe academic rendering */
 @media print {
-  #teaching::before,
-  #teaching::after {
-    background: #000;
+  #teaching::before {
+    border-bottom-color: #000;
   }
 
-  .teaching-item::before {
+  .teaching-item::before,
+  .teaching-item::after {
     background: #000;
   }
 }
-
 
 
 /* =====================================================
