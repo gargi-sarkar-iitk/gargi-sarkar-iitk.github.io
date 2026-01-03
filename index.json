@@ -316,9 +316,7 @@
     "Organizer, HACK IITK 2024",
     "Presented Cybercrime Navigator at DST TIPS Workshop"
   ],
-
-"technical_skills":[ 
-  {
+"technical_skills": {
   "Programming & Tools": [
     "Python",
     "C",
@@ -326,9 +324,7 @@
     "HTML/CSS",
     "LaTeX",
     "Markdown"
-  ]
-  },
-  {
+  ],
   "Cybersecurity & Digital Forensics": [
     "Cybercrime Investigation",
     "Digital Evidence Analysis",
@@ -336,17 +332,14 @@
     "Dark Web Analysis (Tor)",
     "Scam and Fraud Lifecycle Analysis",
     "CERT-In Compliance and Audit Understanding"
-  ]
-  },
-  {
+  ],
   "AI & Data Analysis": [
     "Large Language Models (Applied)",
     "Natural Language Processing for Fraud Analysis",
     "Explainable AI",
     "Behavioral and Tactical Modeling"
   ]
-}
-  ]
+},
 
   "references": [
     {
