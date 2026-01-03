@@ -322,10 +322,10 @@ section h2 {
    LOCAL CONSTANTS
    ========================= */
 :root {
-  --timeline-x: -2px;     /* distance from content edge */
+  --timeline-x: -3px;     /* distance from content edge */
   --node-sm: 8px;
   --node-lg: 12px;
-  --line-w: -1px;
+  --line-w: 8px;
 }
 
 /* =========================
@@ -393,7 +393,7 @@ section h2 {
    TOP ARROW (LINE TERMINUS)
    ========================= */
 .teaching-item:first-child::after {
-  height: calc(100% + 0px);
+  height: 1px;
 }
 
 #teaching::before {
