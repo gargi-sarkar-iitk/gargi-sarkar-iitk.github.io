@@ -278,18 +278,16 @@ section h2 {
 }
 
 
-
 /* =====================================================
    ANNOUNCEMENTS – SINGLE BOX WITH FLOATING ITEMS
    ===================================================== */
 
-/* outer announcements box */
 #announcements {
   position: relative;
   background: var(--bg-light);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 24px 20px 16px 36px;
+  padding: 26px 20px 18px 48px; /* ⬅ more left padding */
   margin-top: 18px;
 }
 
@@ -297,7 +295,7 @@ section h2 {
 #announcements::before {
   content: "";
   position: absolute;
-  left: 18px;
+  left: 22px; /* ⬅ move line slightly right */
   top: 20px;
   bottom: 20px;
   width: 2px;
@@ -308,15 +306,15 @@ section h2 {
 .announce-item {
   position: relative;
   display: flex;
-  gap: 18px;
-  margin-bottom: 18px;
+  gap: 22px;
+  margin-bottom: 22px;
 }
 
 /* dot with icon */
 .announce-dot {
   position: absolute;
-  left: 10px;
-  top: 18px;
+  left: 14px; /* ⬅ align dot with line */
+  top: 22px;
   width: 20px;
   height: 20px;
   background: var(--primary);
@@ -333,30 +331,34 @@ section h2 {
   color: #ffffff;
 }
 
-/* floating announcement card */
+/* =====================================================
+   FLOATING ANNOUNCEMENT CARDS
+   ===================================================== */
+
 .announce-card {
   background: #ffffff;
   border-radius: 10px;
   padding: 14px 16px;
-  margin-left: 18px;
+
+  /* ⬅ detach card from timeline */
+  margin-left: 22px;
+
   width: 100%;
 
   /* floating effect */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-/* text */
-.announce-card h4 {
-  margin: 4px 0 6px;
-  font-size: 0.95rem;
+/* real floating on hover */
+.announce-card:hover {
+  transform: translateY(-8px) scale(1.01); /* ⬅ stronger float */
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
 
-.announce-card p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--text);
-}
-
+/* date */
 .announce-date {
   font-size: 0.8rem;
   color: var(--muted);
