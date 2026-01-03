@@ -55,17 +55,29 @@
 ],
 
 
-  "experience": [
-    {
-      "institution": "International Institute of Information Technology (IIIT) Hyderabad",
-      "location": "Hyderabad, India",
-      "role": "Post-PhD Research Scientist",
-      "period": "August 2025 – Present",
-      "responsibilities": [
-        "Leading research in cybercrime investigation, digital evidence analysis, and emerging cybercrime analysis"
-      ]
-    }
-  ],
+"experience": [
+  {
+    "institution": "International Institute of Information Technology (IIIT) Hyderabad",
+    "location": "Hyderabad, India",
+    "role": "Post-PhD Research Scientist",
+    "period": "August 2025 – Present",
+    "responsibilities": [
+      "Leading research in cybercrime investigation, digital evidence analysis, and emerging cybercrime analysis",
+      "Collaborating with state law enforcement agencies on applied cybercrime research and investigative frameworks"
+    ]
+  },
+  {
+    "institution": "C3iHub, Indian Institute of Technology Kanpur",
+    "location": "Kanpur, India",
+    "role": "Doctoral Researcher",
+    "period": "August 2022 – July 2025",
+    "responsibilities": [
+      "Worked on applied research projects related to cybercrime investigation and policing, alongside ongoing PhD research at IIT Kanpur",
+      "Contributed to interdisciplinary research bridging computer science, criminology, and cyber law"
+    ],
+    "note": "This role was undertaken in parallel with the PhD program in the Department of Computer Science and Engineering, IIT Kanpur."
+  }
+],
 
   "education": [
     {
