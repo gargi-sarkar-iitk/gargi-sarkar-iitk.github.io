@@ -33,6 +33,64 @@ fetch("index.json")
   .catch(err => showFatalError(err.message));
 
 /* =========================================================
+   PUBLICATION HELPERS
+   ========================================================= */
+
+// DOI / arXiv access link
+function getAccessLink(p) {
+  if (!p.identifier) return "";
+  if (p.identifier.type === "doi") {
+    return `https://doi.org/${p.identifier.value}`;
+  }
+  if (p.identifier.type === "arxiv") {
+    return `https://arxiv.org/abs/${p.identifier.value}`;
+  }
+  return "";
+}
+
+// BibTeX generator
+function generateBibTeX(p) {
+  if (!p.identifier) return "";
+
+  const key =
+    p.authors[0].split(" ")[0].toLowerCase() +
+    p.year +
+    p.title.toLowerCase().replace(/[^a-z0-9]+/g, "").substring(0, 25);
+
+  const authors = p.authors.join(" and ");
+
+  if (p.identifier.type === "doi") {
+    return `@article{${key},
+  title   = {${p.title}},
+  author  = {${authors}},
+  journal = {${p.venue}},
+  year    = {${p.year}},
+  doi     = {${p.identifier.value}}
+}`;
+  }
+
+  if (p.identifier.type === "arxiv") {
+    return `@misc{${key},
+  title        = {${p.title}},
+  author       = {${authors}},
+  year         = {${p.year}},
+  eprint       = {${p.identifier.value}},
+  archivePrefix= {arXiv}
+}`;
+  }
+
+  return "";
+}
+
+// Toggle BibTeX visibility
+function toggleBibTeX(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = el.style.display === "none" ? "block" : "none";
+}
+
+
+/* =========================================================
    ABOUT
    ========================================================= */
 function renderAbout(a) {
@@ -127,11 +185,11 @@ function renderEducation(arr = []) {
 }
 
 /* =========================================================
-   PUBLICATIONS – ACADEMIC STANDARD
+   PUBLICATIONS – FINAL VERSION
    ========================================================= */
 function renderPublications(pubs) {
-  const c = $("publications");
-  if (!c || !pubs) return;
+  const publications = $("publications");
+  if (!publications || !pubs) return;
 
   const sections = {
     published: "Journal Articles (Published)",
@@ -145,21 +203,40 @@ function renderPublications(pubs) {
 
     const h = document.createElement("h3");
     h.textContent = title;
-    c.appendChild(h);
+    publications.appendChild(h);
 
-    items.forEach(p => {
+    items.forEach((p, idx) => {
       const d = document.createElement("div");
       d.className = "pub-item";
+
+      const accessLink = getAccessLink(p);
+      const bibtex = generateBibTeX(p);
+      const citeId = `bib-${title.replace(/\s+/g, "")}-${idx}`;
+
+      let links = "";
+      if (accessLink || bibtex) {
+        links = `<div class="pub-links">`;
+        if (accessLink) {
+          links += `<a href="${accessLink}" target="_blank" rel="noopener">Access</a>`;
+        }
+        if (bibtex) {
+          links += `<a onclick="toggleBibTeX('${citeId}')">Cite</a>`;
+        }
+        links += `</div>`;
+      }
+
       d.innerHTML = `
         <strong>${p.title}</strong><br>
-        ${p.authors?.join(", ") || ""}<br>
+        ${p.authors.join(", ")}<br>
         <em>${p.venue} (${p.year})</em>
+        ${links}
+        ${bibtex ? `<pre id="${citeId}" class="bibtex" style="display:none;">${bibtex}</pre>` : ""}
       `;
-      c.appendChild(d);
+
+      publications.appendChild(d);
     });
   }
 
-  /* ---- Journals: grouped by status ---- */
   const journals = pubs.journals || [];
 
   renderSection(
@@ -177,7 +254,6 @@ function renderPublications(pubs) {
     journals.filter(p => p.status === "preprint")
   );
 
-  /* ---- Conferences ---- */
   renderSection(
     sections.conference,
     pubs.conference_proceedings || []
