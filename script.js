@@ -301,20 +301,26 @@ function renderActivities(arr = []) {
   });
 }
 
+
 /* =========================================================
-   SKILLS
+   SKILLS (ACADEMIC STYLE)
    ========================================================= */
 function renderSkills(arr = []) {
   const c = $("technical_skills");
   if (!c) return;
 
-  arr.forEach(s => {
-    const span = document.createElement("span");
-    span.className = "skill";
-    span.textContent = s;
-    c.appendChild(span);
+  const ul = document.createElement("ul");
+  ul.className = "skills-grid";
+
+  arr.forEach(skill => {
+    const li = document.createElement("li");
+    li.textContent = skill;
+    ul.appendChild(li);
   });
+
+  c.appendChild(ul);
 }
+
 
 /* =========================================================
    REFERENCES
