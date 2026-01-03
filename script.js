@@ -224,12 +224,37 @@ function renderTeaching(arr = []) {
   if (!c) return;
 
   arr.forEach(t => {
-    const d = document.createElement("div");
-    d.className = "item";
-    d.textContent = "• " + t;
-    c.appendChild(d);
+    const block = document.createElement("div");
+    block.className = "item";
+
+    // Header: Role + Institution
+    block.innerHTML = `
+      <strong>${t.role}</strong>, ${t.institution}
+    `;
+
+    // Courses list
+    if (Array.isArray(t.courses) && t.courses.length) {
+      const ul = document.createElement("ul");
+
+      t.courses.forEach(course => {
+        const li = document.createElement("li");
+
+        li.innerHTML = `
+          ${course.code ? `<strong>${course.code}</strong>: ` : ""}
+          ${course.title}
+          ${course.duration ? ` <em>(${course.duration})</em>` : ""}
+        `;
+
+        ul.appendChild(li);
+      });
+
+      block.appendChild(ul);
+    }
+
+    c.appendChild(block);
   });
 }
+
 
 /* =========================================================
    ACHIEVEMENTS
