@@ -195,19 +195,39 @@ function formatAnnouncementDate(dateStr) {
    ========================================================= */
 function renderExperience(arr = []) {
   const c = $("experience");
-  if (!c) return;
+  if (!c || !arr.length) return;
+
+  c.innerHTML = "";
 
   arr.forEach(e => {
     const d = document.createElement("div");
     d.className = "item";
+
+    const responsibilitiesHTML = (e.responsibilities || [])
+      .map(r => `<li>${r}</li>`)
+      .join("");
+
     d.innerHTML = `
       <strong>${e.role}</strong>, ${e.institution}<br>
-      <em>${e.period}</em><br>
-      ${(e.responsibilities || []).join("<br>")}
+      <em>${e.period}</em>
+
+      ${
+        responsibilitiesHTML
+          ? `<ul class="experience-points">${responsibilitiesHTML}</ul>`
+          : ""
+      }
+
+      ${
+        e.note
+          ? `<div class="experience-note">${e.note}</div>`
+          : ""
+      }
     `;
+
     c.appendChild(d);
   });
 }
+
 
 /* =========================================================
    EDUCATION
