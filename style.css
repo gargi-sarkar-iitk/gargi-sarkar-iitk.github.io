@@ -314,19 +314,20 @@ section h2 {
 }
 
 /* =====================================================
-   TEACHING – ACADEMIC TIMELINE (NODE-CONNECTED, DOWN → UP)
-   Clean, restrained, publication-style
+   TEACHING – ACADEMIC TIMELINE
+   Direction: DOWN → UP (Arrow at top)
+   HSS-aligned, restrained, print-safe
    ===================================================== */
 
 /* =========================
-   DESIGN CONSTANTS
+   LOCAL CONSTANTS
    ========================= */
 :root {
-  --timeline-x: 14px;     /* horizontal axis position */
-  --node-sm: 8px;         /* regular node size */
-  --node-lg: 12px;        /* highlighted (recent) node */
-  --line-w: 2px;          /* connector thickness */
-  --node-offset: 6px;     /* vertical alignment baseline */
+  --timeline-x: 14px;
+  --node-sm: 7px;
+  --node-lg: 11px;
+  --line-w: 2px;
+  --node-offset: 6px;
 }
 
 /* =========================
@@ -334,91 +335,95 @@ section h2 {
    ========================= */
 #teaching {
   position: relative;
-  padding-left: 44px;     /* space for timeline spine */
+  padding-left: 44px;
 }
 
 #teaching h2 {
-  margin-bottom: 20px;
+  margin-bottom: 26px; /* match other sections */
 }
 
 /* =========================
-   INDIVIDUAL ENTRY
+   ENTRY
    ========================= */
 .teaching-item {
   position: relative;
-  margin-bottom: 24px;
+  margin-bottom: 26px;
   padding-left: 6px;
 }
 
 /* =========================
-   NODE (centered on timeline)
+   NODE
    ========================= */
 .teaching-item::before {
   content: "";
   position: absolute;
   left: calc(-1 * var(--timeline-x));
   top: var(--node-offset);
+
   width: var(--node-sm);
   height: var(--node-sm);
-  background-color: var(--text);
+
+  background-color: var(--accent); /* academic emphasis */
   border-radius: 50%;
   transform: translateX(50%);
   z-index: 2;
 }
 
-/* Emphasize most recent role */
+/* Most recent role */
 .teaching-item:first-child::before {
   width: var(--node-lg);
   height: var(--node-lg);
 }
 
 /* =========================
-   CONNECTOR LINE
-   (originates from node center)
+   CONNECTING LINE
    ========================= */
 .teaching-item::after {
   content: "";
   position: absolute;
   left: calc(-1 * var(--timeline-x));
   top: calc(var(--node-offset) + var(--node-sm) / 2);
+
   width: var(--line-w);
-  height: calc(100% + 24px);
+  height: calc(100% + 26px);
+
   background-color: var(--muted);
 }
 
-/* No line after last entry */
+/* No connector after final (oldest) item */
 .teaching-item:last-child::after {
   display: none;
 }
 
-/* Slightly shorter line for top arrow termination */
+/* Shorten top segment to meet arrow cleanly */
 .teaching-item:first-child::after {
-  height: calc(100% + 8px);
+  height: calc(100% + 10px);
 }
 
 /* =========================
-   ARROW TERMINATOR (UPWARD)
+   ARROW (UPWARD TERMINUS)
    ========================= */
 .teaching-item:first-child > .teaching-header::before {
   content: "";
   position: absolute;
   left: calc(-1 * var(--timeline-x) + 1px);
-  top: -10px;
+  top: -12px;
+
   width: 0;
   height: 0;
+
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-bottom: 7px solid var(--muted);
+  border-bottom: 8px solid var(--muted);
 }
 
 /* =========================
-   HEADER (ROLE / PERIOD)
+   HEADER
    ========================= */
 .teaching-header {
   position: relative;
-  display: block;
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.4;
   margin-bottom: 6px;
 }
 
@@ -427,7 +432,7 @@ section h2 {
 }
 
 /* =========================
-   COURSE / ACTIVITY LIST
+   COURSE / ROLE LIST
    ========================= */
 .teaching-item ul {
   margin: 4px 0 0;
@@ -435,8 +440,8 @@ section h2 {
 }
 
 .teaching-item li {
-  font-size: 0.92rem;
-  line-height: 1.4;
+  font-size: 0.93rem;
+  line-height: 1.45;
   color: var(--text);
   margin-bottom: 4px;
 }
@@ -446,7 +451,7 @@ section h2 {
 }
 
 /* =========================
-   PRINT COMPATIBILITY
+   PRINT
    ========================= */
 @media print {
   .teaching-item::before,
