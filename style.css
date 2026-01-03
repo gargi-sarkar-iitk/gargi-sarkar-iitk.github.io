@@ -319,48 +319,101 @@ section h2 {
 
 #teaching {
   position: relative;
-  padding-left: 36px;
+  padding-left: 36px;        /* space for timeline */
 }
 
-/* vertical spine */
+/* Section heading spacing */
+#teaching h2 {
+  margin-bottom: 18px;
+}
+
+/* Timeline vertical spine */
 #teaching::before {
   content: "";
   position: absolute;
   left: 10px;
-  top: 0;
+  top: 56px;                /* STARTS BELOW HEADING */
   bottom: 0;
   width: 2px;
   background: var(--muted);
 }
 
-/* arrow at the TOP (pointing up) */
+/* Upward arrow (flow indicator) */
 #teaching::after {
   content: "";
   position: absolute;
   left: 4px;
-  top: -8px;
+  top: 48px;                /* ENDS BEFORE HEADING */
   width: 0;
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-bottom: 8px solid var(--muted);
 }
+
+/* Individual teaching entry */
 .teaching-item {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   padding-left: 8px;
 }
 
-/* node */
+/* Timeline node (dot) */
 .teaching-item::before {
   content: "";
   position: absolute;
-  left: -30px;
-  top: 1px;
+  left: -26px;              /* aligned on spine */
+  top: 6px;
   width: 10px;
   height: 10px;
   background: var(--text);
   border-radius: 50%;
+  z-index: 2;
+}
+
+/* Highlight most recent role (top item) */
+.teaching-item:first-child::before {
+  width: 14px;
+  height: 14px;
+  left: -28px;
+  background: var(--text);
+}
+
+/* Teaching role title */
+.teaching-item strong {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Course list */
+.teaching-item ul {
+  margin: 4px 0 0 0;
+  padding-left: 18px;
+}
+
+/* Course list items */
+.teaching-item li {
+  font-size: 0.92rem;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+/* Course code emphasis */
+.teaching-item li strong {
+  font-weight: 600;
+}
+
+/* Subtle academic refinement */
+@media print {
+  #teaching::before,
+  #teaching::after {
+    background: #000;
+  }
+
+  .teaching-item::before {
+    background: #000;
+  }
 }
 
 
