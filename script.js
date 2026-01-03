@@ -225,7 +225,7 @@ function renderTeaching(arr = []) {
 
   arr.forEach(t => {
     const block = document.createElement("div");
-    block.className = "item";
+   block.className = "item teaching-item";
 
     // Header: Role + Institution
     block.innerHTML = `
