@@ -329,20 +329,7 @@ section h2 {
   margin-bottom: 28px;
 }
 
-/* Node */
-.teaching-item::before {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: 6px;
 
-  width: 10px;
-  height: 10px;
-
-  background: var(--accent);
-  border-radius: 50%;
-  z-index: 2;
-}
 
 /* Emphasize most recent role */
 .teaching-item:first-child::before {
@@ -351,36 +338,6 @@ section h2 {
   top: 4px;
 }
 
-/* Vertical line (starts inside node) */
-.teaching-item::after {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: 16px;                 /* inside node */
-  width: 2px;
-  height: calc(100% + 12px);
-  background: var(--border);
-}
-
-/* No line after last item */
-.teaching-item:last-child::after {
-  display: none;
-}
-
-/* Timeline arrow (top terminator) */
-#teaching::before {
-  content: "";
-  position: absolute;
-  left: -1px;
-  top: 0;
-
-  width: 0;
-  height: 0;
-
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 10px solid var(--border);
-}
 
 /* Teaching header */
 .teaching-header {
