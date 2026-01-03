@@ -32,6 +32,28 @@
     ]
   },
 
+  "announcements": [
+  {
+    "date": "2025-12-15",
+    "title": "PhD Thesis Successfully Defended",
+    "description": "Successfully defended my PhD thesis titled “Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India’s Policing Perspective.”",
+    "type": "milestone"
+  },
+  {
+    "date": "2025-10-08",
+    "title": "Cyber Slavery Paper Released on arXiv",
+    "description": "The paper “Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime” is now available as an arXiv preprint.",
+    "type": "preprint"
+  },
+  {
+    "date": "2025-12-06",
+    "title": "BEACON Paper Released on arXiv",
+    "description": "The paper “BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models” is now available on arXiv.",
+    "type": "preprint"
+  }
+],
+
+
   "experience": [
     {
       "institution": "International Institute of Information Technology (IIIT) Hyderabad",
