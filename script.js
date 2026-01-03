@@ -20,6 +20,7 @@ fetch("index.json")
     renderEducation(data.education);
     renderResearch(data.research);
     renderProjects(data.projects);
+     renderAcademicService(data.academic_service);
     renderTeaching(data.teaching);
     renderAchievements(data.achievements);
     renderTalks(data.talks_and_presentations);
@@ -38,7 +39,6 @@ function renderAbout(a) {
   if (!a) return;
 
   $("name").textContent = a.name;
-  $("title").textContent = a.title;
   $("photo").src = a.photo?.src || "";
 
   $("affiliation-line").innerHTML = `
@@ -138,7 +138,7 @@ function renderEducation(arr = []) {
     d.innerHTML = `
       <strong>${e.degree}</strong>, ${e.institution}<br>
       <em>${e.period || e.year}</em><br>
-      ${e.details}
+     ${e.location ? `<span>${e.location}</span>` : ""}
     `;
     c.appendChild(d);
   });
@@ -179,6 +179,38 @@ function renderProjects(arr = []) {
     c.appendChild(d);
   });
 }
+
+function renderAcademicService(obj) {
+  const c = $("academic_service");
+  if (!c || !obj) return;
+
+  if (obj.sub_reviewer?.length) {
+    const h = document.createElement("h3");
+    h.textContent = "Sub-Reviewer";
+    c.appendChild(h);
+
+    obj.sub_reviewer.forEach(x => {
+      const d = document.createElement("div");
+      d.className = "item";
+      d.textContent = x;
+      c.appendChild(d);
+    });
+  }
+
+  if (obj.reviewer?.length) {
+    const h = document.createElement("h3");
+    h.textContent = "Reviewer";
+    c.appendChild(h);
+
+    obj.reviewer.forEach(x => {
+      const d = document.createElement("div");
+      d.className = "item";
+      d.textContent = x;
+      c.appendChild(d);
+    });
+  }
+}
+
 
 /* =========================================================
    TEACHING
