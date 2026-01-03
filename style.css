@@ -385,6 +385,64 @@ section h2 {
 .announce-item {
   transition: opacity 0.8s ease;
 }
+/* =====================================================
+   EXPERIENCE – ACADEMIC / PROFESSIONAL
+   ===================================================== */
+
+#experience {
+  margin-top: 24px;
+}
+
+/* each experience block */
+#experience .item {
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+/* role + institution */
+#experience .item strong {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* period */
+#experience .item em {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* bullet points */
+.experience-points {
+  margin: 10px 0 6px 18px;
+  padding: 0;
+}
+
+.experience-points li {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+/* parallel PhD / note */
+.experience-note {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* subtle hover (optional but nice) */
+#experience .item:hover {
+  border-color: var(--accent);
+  background: #fdfefe;
+}
 
 
 
