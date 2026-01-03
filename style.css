@@ -363,6 +363,29 @@ section h2 {
   font-size: 0.8rem;
   color: var(--muted);
 }
+/* =====================================================
+   ANNOUNCEMENT ROTATOR
+   ===================================================== */
+
+.announce-rotator {
+  position: relative;
+  min-height: 120px; /* prevents layout jump */
+}
+
+/* hide inactive announcement */
+.announce-item.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* smooth fade */
+.announce-item {
+  transition: opacity 0.8s ease;
+}
+
 
 
 /* =====================================================
