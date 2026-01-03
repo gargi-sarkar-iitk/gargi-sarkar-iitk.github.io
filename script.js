@@ -302,25 +302,28 @@ function renderActivities(arr = []) {
 }
 
 
-/* =========================================================
-   SKILLS (ACADEMIC STYLE)
-   ========================================================= */
-function renderSkills(arr = []) {
+function renderSkills(skills = {}) {
   const c = $("technical_skills");
-  if (!c) return;
+  if (!c || typeof skills !== "object") return;
 
-  const ul = document.createElement("ul");
-  ul.className = "skills-grid";
+  Object.entries(skills).forEach(([category, items]) => {
+    const block = document.createElement("div");
+    block.className = "item";
 
-  arr.forEach(skill => {
-    const li = document.createElement("li");
-    li.textContent = skill;
-    ul.appendChild(li);
+    block.innerHTML = `<strong>${category}</strong>`;
+
+    const ul = document.createElement("ul");
+
+    items.forEach(skill => {
+      const li = document.createElement("li");
+      li.textContent = skill;
+      ul.appendChild(li);
+    });
+
+    block.appendChild(ul);
+    c.appendChild(block);
   });
-
-  c.appendChild(ul);
 }
-
 
 /* =========================================================
    REFERENCES
