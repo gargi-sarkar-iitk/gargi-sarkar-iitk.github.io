@@ -320,7 +320,7 @@ section h2 {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));   /* FIXED 2 COLUMNS */
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px 24px;
 
   margin: 0;
