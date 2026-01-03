@@ -125,14 +125,16 @@ function renderSummary(summary) {
 
 
 /* =========================================================
-   ANNOUNCEMENTS – SINGLE BOX WITH FLOATING ITEMS
+   ANNOUNCEMENTS – FLOATING TIMELINE (FINAL)
    ========================================================= */
 function renderAnnouncements(announcements) {
   const c = $("announcements");
   if (!c || !announcements || !announcements.length) return;
 
-  // Clear previous content (important if re-rendered)
+  // Preserve section header
+  const header = c.querySelector("h2");
   c.innerHTML = "";
+  if (header) c.appendChild(header);
 
   announcements
     .slice()
