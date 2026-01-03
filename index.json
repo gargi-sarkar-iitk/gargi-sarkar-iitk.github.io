@@ -23,9 +23,10 @@
       "Indian Institute of Technology Kanpur"
     ],
     "email": "gsarkar@cse.iitk.ac.in",
-    "photo": {Picture.jpeg
-      "src": "",
-      "alt": "Gargi Sarkar"
+    "photo": {
+    "src": "images/picture.jpeg",
+    "alt": "Gargi Sarkar"
+  },
     },
     "summary": [
       "As a researcher at the intersection of computer security and criminology, I investigate cybercrimes targeting everyday individuals.",
