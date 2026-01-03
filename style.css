@@ -380,11 +380,18 @@ section h2 {
 }
 
 /* Teaching role title */
-.teaching-item strong {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 4px;
+/* Teaching header */
+.teaching-header {
+  display: block;          /* you wanted block */
+  font-weight: 500;
+  margin-bottom: 6px;
 }
+
+/* Role emphasis */
+.teaching-header strong {
+  font-weight: 600;        /* inline by default */
+}
+
 
 /* Course list */
 .teaching-item ul {
