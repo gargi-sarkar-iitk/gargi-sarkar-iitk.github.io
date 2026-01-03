@@ -196,7 +196,7 @@ section h2 {
   font-size: 1rem;              /* match hero rhythm */
   line-height: 1.6;             /* same as body */
   color: var(--text);           /* same palette */
-  text-align: center;           /* IMPORTANT */
+  text-align: justify;           /* IMPORTANT */
 
   opacity: 0.95;
 }
