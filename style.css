@@ -315,119 +315,82 @@ section h2 {
 
 /* =====================================================
    TEACHING – ACADEMIC TIMELINE
-   HSS-aligned, DOWN → UP, centered arrow
+   Professional, CV-aligned, minimal
    ===================================================== */
 
-/* =========================
-   LOCAL CONSTANTS
-   ========================= */
-:root {
-  --timeline-x: -3px;     /* distance from content edge */
-  --node-sm: 8px;
-  --node-lg: 12px;
-  --line-w: 8px;
-}
-
-/* =========================
-   SECTION (NO SHIFT)
-   ========================= */
 #teaching {
   position: relative;
 }
 
-/* =========================
-   ENTRY
-   ========================= */
+/* Individual entry */
 .teaching-item {
   position: relative;
-  margin-bottom: 26px;
-  padding-left: 44px; /* timeline space ONLY */
+  padding-left: 44px;      /* reserved timeline column */
+  margin-bottom: 28px;
 }
 
-/* =========================
-   NODE (CENTERED)
-   ========================= */
+/* Node */
 .teaching-item::before {
   content: "";
   position: absolute;
-  left: var(--timeline-x);
+  left: 14px;
   top: 6px;
 
-  width: var(--node-sm);
-  height: var(--node-sm);
+  width: 10px;
+  height: 10px;
 
   background: var(--accent);
   border-radius: 50%;
-  transform: translateX(-50%);
   z-index: 2;
 }
 
-/* Most recent */
+/* Emphasize most recent role */
 .teaching-item:first-child::before {
-  width: var(--node-lg);
-  height: var(--node-lg);
+  width: 13px;
+  height: 13px;
+  top: 4px;
 }
 
-/* =========================
-   VERTICAL LINE
-   ========================= */
+/* Vertical line (starts inside node) */
 .teaching-item::after {
   content: "";
   position: absolute;
-  left: var(--timeline-x);
-  top: calc(6px + var(--node-sm) / 2);
-
-  width: var(--line-w);
-  height: calc(100% + 26px);
-
-  background: var(--muted);
-  transform: translateX(-50%);
+  left: 18px;
+  top: 16px;                 /* inside node */
+  width: 2px;
+  height: calc(100% + 12px);
+  background: var(--border);
 }
 
-/* Remove line after last item */
+/* No line after last item */
 .teaching-item:last-child::after {
   display: none;
 }
 
-/* =========================
-   TOP ARROW (LINE TERMINUS)
-   ========================= */
-.teaching-item:first-child::after {
-  height: 1px;
-}
-
+/* Timeline arrow (top terminator) */
 #teaching::before {
   content: "";
   position: absolute;
-  left: var(--timeline-x);
-  top: 6px;
+  left: 18px;
+  top: 0;
 
   width: 0;
   height: 0;
 
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 9px solid var(--muted);
-
-  transform: translateX(-50%);
+  border-bottom: 10px solid var(--border);
 }
 
-/* =========================
-   HEADER
-   ========================= */
+/* Teaching header */
 .teaching-header {
-  font-weight: 500;
-  line-height: 1.4;
-  margin-bottom: 6px;
-}
-
-.teaching-header strong {
   font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.45;
+  color: var(--text);
 }
 
-/* =========================
-   LIST
-   ========================= */
+/* Teaching details */
 .teaching-item ul {
   margin: 6px 0 0;
   padding-left: 18px;
@@ -435,14 +398,12 @@ section h2 {
 
 .teaching-item li {
   font-size: 0.93rem;
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--text);
   margin-bottom: 4px;
 }
 
-/* =========================
-   PRINT
-   ========================= */
+/* Print-safe */
 @media print {
   .teaching-item::before,
   .teaching-item::after {
