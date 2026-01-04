@@ -418,6 +418,10 @@ section h2 {
 .pub-item {
   margin-bottom: 22px;
 }
+.pub-item, hover {
+  border-color: var(--accent);
+  background: #fdfefe;
+}
 
 .pub-links {
   margin-top: 6px;
