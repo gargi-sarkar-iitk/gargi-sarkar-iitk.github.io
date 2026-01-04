@@ -511,9 +511,26 @@ border-color: var(--accent);
 .pub-item {
   margin-bottom: 22px;
 }
-.pub-item: hover {
+/* Publications hover — SAME as Experience */
+.pub-item {
+  transition: border-color 0.25s ease,
+              background 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+.pub-item:hover {
   border-color: var(--accent);
   background: #fdfefe;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+.pub-item {
+  cursor: default;
+}
+
+.pub-links a:hover {
+  text-decoration: underline;
 }
 
 .pub-links {
