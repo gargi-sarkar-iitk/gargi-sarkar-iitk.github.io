@@ -597,6 +597,22 @@ border-color: var(--accent);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
+/* =====================================================
+   ACADEMIC SERVICE – Hover (same as Experience)
+   ===================================================== */
+#academic_service .item {
+  transition: border-color 0.25s ease,
+              background 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+#academic_service .item:hover {
+  border-color: var(--accent);
+  background: #fdfefe;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
 
 /* =====================================================
    TEACHING
@@ -635,6 +651,23 @@ border-color: var(--accent);
   color: var(--text);
   margin-bottom: 4px;
 }
+/* =====================================================
+   TEACHING – Hover (timeline-safe, academic)
+   ===================================================== */
+#teaching .teaching-item {
+  transition: border-color 0.25s ease,
+              background 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+#teaching .teaching-item:hover {
+  border-color: var(--accent);
+  background: #fdfefe;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
 
 @media print {
   .teaching-item::before,
@@ -672,6 +705,24 @@ border-color: var(--accent);
   left: 0;
   color: var(--muted);
 }
+/* =====================================================
+   SKILLS – Hover (subtle, academic)
+   ===================================================== */
+.skills-grid li {
+  transition: color 0.2s ease,
+              transform 0.2s ease;
+}
+
+.skills-grid li:hover {
+  color: var(--primary);
+  transform: translateX(4px);
+}
+
+/* Optional: bullet emphasis on hover */
+.skills-grid li:hover::before {
+  color: var(--accent);
+}
+
 
 /* =====================================================
    SCROLL REVEAL
