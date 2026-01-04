@@ -433,34 +433,63 @@ border-color: var(--accent);
 }
 
 /* =====================================================
-   EDUCATION – ALIGN DEGREE, DATE, LOCATION (FIX)
+   EDUCATION — HIGH-CLASS ACADEMIC DESIGN
+   (Experience-consistent, faculty-grade)
    ===================================================== */
 
 #education .item {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  padding: 16px 18px;
+  margin-bottom: 20px;
+
   display: grid;
   grid-template-columns: 1fr auto;
-  row-gap: 4px;
-  column-gap: 16px;
+  row-gap: 6px;
+  column-gap: 20px;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
 }
 
-/* Degree (left) */
+/* Degree — primary visual anchor */
 #education .item strong {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.35;
   grid-column: 1 / 2;
 }
 
-/* Date / Period (right, same row as degree) */
+/* Date / duration — restrained, right-aligned */
 #education .item em {
+  font-size: 0.85rem;
+  font-style: normal;
+  color: var(--muted);
+
   grid-column: 2 / 3;
   text-align: right;
   white-space: nowrap;
+  align-self: center;
 }
 
-/* Institution + location (full width, next line) */
-#education .item span,
-#education .item br + span {
+/* Institution + location — subtle authority */
+#education .item span {
   grid-column: 1 / -1;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--muted);
+  line-height: 1.45;
+}
+
+/* Hover — EXACT SAME LANGUAGE AS EXPERIENCE */
+#education .item:hover {
+  border-color: var(--accent);
+  background-color: #fdfefe;
+  transform: translateY(-2px);
 }
 
 
