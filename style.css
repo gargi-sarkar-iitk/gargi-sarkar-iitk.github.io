@@ -456,25 +456,24 @@ border-color: var(--accent);
 
 /* LEFT: Degree + Institution */
 #education .item strong {
-  flex: 1;                    /* ⭐ prevents collapse */
-  min-width: 0;               /* ⭐ critical fix */
+  flex: 1;
+  min-width: 0;              /* 🔑 critical */
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--primary);
   line-height: 1.45;
-  white-space: normal;
 }
 
 /* RIGHT: Date */
 #education .item em {
-  flex-shrink: 0;             /* ⭐ prevents squeeze */
+  flex-shrink: 0;
   font-size: 0.85rem;
   font-style: normal;
   color: var(--muted);
   white-space: nowrap;
 }
 
-/* Hover — same as Experience */
+/* Hover — SAME as Experience */
 #education .item:hover {
   border-color: var(--accent);
   background-color: #fdfefe;
