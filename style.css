@@ -721,18 +721,27 @@ border-color: var(--accent);
   color: var(--accent);
 }
 
-/* ================= ACHIEVEMENTS ================= */
-#achievements .item {
-  background: transparent !important;
-  border: none !important;
-  padding: 4px 0 !important;
+/* ========== ACHIEVEMENTS (fresh) ========== */
+#achievements > .item {
+  background: none;
+  border: none;
+  padding: 6px 0;
+  margin: 0 0 6px 0;
+
+  color: var(--text);
+  cursor: default;
+
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
-#achievements .item:hover {
+#achievements > .item:hover {
   color: var(--primary);
   transform: translateX(6px);
 }
+
+
+
+
 /* ================= TALKS & PRESENTATIONS ================= */
 #talks_and_presentations .item {
   background: transparent !important;
