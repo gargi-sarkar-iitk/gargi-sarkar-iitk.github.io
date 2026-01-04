@@ -233,7 +233,14 @@ function renderExperience(arr = []) {
 
 function renderEducation(arr = []) {
   const c = document.getElementById("education");
-  if (!c || !arr.length) return;
+  if (!c) return;
+
+  // ✅ Preserve header
+  const header = c.querySelector("h2");
+  c.innerHTML = "";
+  if (header) c.appendChild(header);
+
+  if (!arr.length) return;
 
   arr.forEach(e => {
     const d = document.createElement("div");
@@ -251,6 +258,7 @@ function renderEducation(arr = []) {
     c.appendChild(d);
   });
 }
+
 
 
 /* =========================================================
