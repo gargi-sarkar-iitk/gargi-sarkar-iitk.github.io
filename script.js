@@ -231,24 +231,27 @@ function renderExperience(arr = []) {
 }
 
 
-/* =========================================================
-   EDUCATION
-   ========================================================= */
 function renderEducation(arr = []) {
-  const c = $("education");
-  if (!c) return;
+  const c = document.getElementById("education");
+  if (!c || !arr.length) return;
 
   arr.forEach(e => {
     const d = document.createElement("div");
     d.className = "item";
+
+    const degree = e.degree.replace(/\s+/g, " ").trim();
+    const institution = e.institution.replace(/\s+/g, " ").trim();
+    const period = (e.period || e.year || "").trim();
+
     d.innerHTML = `
-      <strong>${e.degree}</strong>, ${e.institution}<br>
-      <em>${e.period || e.year}</em><br>
-     ${e.location ? `<span>${e.location}</span>` : ""}
+      <strong>${degree}, ${institution}</strong>
+      <em>${period}</em>
     `;
+
     c.appendChild(d);
   });
 }
+
 
 /* =========================================================
    PUBLICATIONS – WORKING VERSION
