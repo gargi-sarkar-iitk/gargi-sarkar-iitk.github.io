@@ -721,22 +721,33 @@ border-color: var(--accent);
   color: var(--accent);
 }
 
-/* ========== ACHIEVEMENTS (fresh) ========== */
-#achievements > .item {
-  background: none;
-  border: none;
-  padding: 6px 0;
-  margin: 0 0 6px 0;
+/* =====================================================
+   ACHIEVEMENTS – FINAL (MATCHES EXPERIENCE EXACTLY)
+   ===================================================== */
 
+#achievements .item {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  padding: 14px 16px;
+  margin-bottom: 18px;
+
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: var(--text);
-  cursor: default;
 
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
 }
 
-#achievements > .item:hover {
-  color: var(--primary);
-  transform: translateX(6px);
+/* SAME hover behaviour as Experience */
+#achievements .item:hover {
+  border-color: var(--accent);
+  background: #fdfefe;
+  transform: translateY(-2px);
 }
 
 
