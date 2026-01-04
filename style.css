@@ -433,74 +433,63 @@ border-color: var(--accent);
 }
 
 /* =====================================================
-   EDUCATION — FACULTY-GRADE, STABLE, ONE-LINE
-   ===================================================== */
-
-/* =====================================================
-   EDUCATION — ELITE ACADEMIC STYLE
+   EDUCATION — FORMAL ACADEMIC CV STYLE
    ===================================================== */
 
 #education .item {
   background: #ffffff;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 8px;
 
-  padding: 16px 18px;
+  padding: 18px 20px;
   margin-bottom: 18px;
 
-  /* layout */
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 
-  transition:
-    border-color 0.25s ease,
-    background-color 0.25s ease,
-    box-shadow 0.25s ease,
-    transform 0.25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ───────── TOP ROW: Degree + Institution | Date ───────── */
+/* ───────── ROW 1: DEGREE + DATE ───────── */
 #education .item strong {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 16px;
 
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;              /* DEGREE MUST BE BOLD */
   color: var(--primary);
-  line-height: 1.4;
 }
 
-/* Degree + Institution text (left) */
-#education .item strong::after {
-  content: "";
-  flex: 1;
-}
-
-/* Date (right) */
-#education .item em {
+/* Date (right aligned) */
+#education .item strong em {
   font-size: 0.85rem;
   font-style: normal;
   font-weight: 500;
   color: var(--muted);
   white-space: nowrap;
-  margin-left: auto;
 }
 
-/* Remove accidental line breaks */
-#education .item strong,
-#education .item em {
-  white-space: nowrap;
+/* ───────── ROW 2: INSTITUTION ───────── */
+#education .item span {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #374151;
 }
 
-/* Hover — EXACTLY matches Experience */
+/* Optional description / thesis / GPA line */
+#education .item p {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Hover — subtle & academic */
 #education .item:hover {
   border-color: var(--accent);
-  background-color: #fdfefe;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
 }
 
 
