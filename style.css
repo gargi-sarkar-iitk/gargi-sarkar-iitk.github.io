@@ -723,9 +723,9 @@ border-color: var(--accent);
 
 /* ================= ACHIEVEMENTS ================= */
 #achievements .item {
-  background: transparent;
-  border: none;
-  padding-left: 0;
+  background: transparent !important;
+  border: none !important;
+  padding: 4px 0 !important;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -733,12 +733,11 @@ border-color: var(--accent);
   color: var(--primary);
   transform: translateX(6px);
 }
-
 /* ================= TALKS & PRESENTATIONS ================= */
 #talks_and_presentations .item {
-  background: transparent;
-  border: none;
-  padding-left: 0;
+  background: transparent !important;
+  border: none !important;
+  padding: 4px 0 !important;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
@@ -746,12 +745,11 @@ border-color: var(--accent);
   color: var(--primary);
   transform: translateX(6px);
 }
-
 /* ================= ACTIVITIES ================= */
 #activities .item {
-  background: transparent;
-  border: none;
-  padding-left: 0;
+  background: transparent !important;
+  border: none !important;
+  padding: 4px 0 !important;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
