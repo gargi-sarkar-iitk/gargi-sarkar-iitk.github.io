@@ -36,11 +36,11 @@ body {
    ===================================================== */
 
 .sidebar {
-  width: 260px;
+  width: 270px;
   min-height: 100vh;
   padding-top: 14px;
-  padding-left: 28px;
-  padding-right: 28px;
+  padding-left: 24px;
+  padding-right: 20px;
 
   position: sticky;
   top: 0;
