@@ -28,12 +28,13 @@ body {
   background: #ffffff;
   line-height: 1.6;
 
+  /* layout */
   display: flex;
   align-items: flex-start;
 }
 
 /* =====================================================
-   LEFT SIDEBAR
+   LEFT SIDEBAR (UX-REFINED)
    ===================================================== */
 .sidebar {
   width: 260px;
@@ -46,10 +47,12 @@ body {
   font-family: "Segoe UI", sans-serif;
 }
 
+/* Each logical block */
 .sidebar-block {
   margin-bottom: 22px;
 }
 
+/* Block headings */
 .sidebar h3 {
   font-size: 1.05rem;
   margin-bottom: 8px;
@@ -58,6 +61,7 @@ body {
   padding-bottom: 4px;
 }
 
+/* Lists (Research interests) */
 .sidebar ul {
   padding-left: 18px;
   margin: 6px 0 0;
@@ -68,6 +72,7 @@ body {
   font-size: 0.95rem;
 }
 
+/* Paragraph blocks (Address + Email) */
 .sidebar p {
   margin: 6px 0 0;
   font-size: 0.9rem;
@@ -75,28 +80,58 @@ body {
   color: var(--text);
 }
 
-.sidebar a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 6px;
-  font-size: 0.9rem;
+/* Links inside paragraph (emails) */
+.sidebar p a {
+  display: inline;
+  margin: 0;
+  font-weight: 600;
   color: var(--accent);
   text-decoration: none;
 }
 
-.sidebar a:hover {
+.sidebar p a:hover {
   text-decoration: underline;
 }
 
-.sidebar i {
-  width: 18px;
+/* Standalone links (Profiles section) */
+.sidebar > .sidebar-block a {
+  display: block;
+  margin-top: 4px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sidebar > .sidebar-block a:hover {
+  text-decoration: underline;
+}
+
+/* ================= FONT AWESOME (CORRECT) ================= */
+.sidebar-block i.fa-solid {
+  font-weight: 900;
+}
+
+/* ================= FONT AWESOME ICONS (SAFE) ================= */
+.sidebar-block a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+.sidebar-block i {
   font-size: 1rem;
+  width: 18px;
   text-align: center;
+  color: var(--accent);
 }
 
 /* =====================================================
-   MAIN CONTENT
+   MAIN CONTENT WRAPPER
    ===================================================== */
 .main-content {
   flex: 1;
@@ -149,6 +184,7 @@ nav a:hover {
   height: 180px;
   object-fit: contain;
   object-position: center top;
+  background: #ffffff;
   border-radius: 50%;
   border: 4px solid var(--primary);
   margin-bottom: 10px;
@@ -164,6 +200,12 @@ nav a:hover {
   margin-top: 6px;
   font-size: 1.05rem;
   color: var(--muted);
+}
+
+.contact a {
+  font-size: 0.95rem;
+  color: var(--accent);
+  text-decoration: none;
 }
 
 /* =====================================================
@@ -184,26 +226,38 @@ section h2 {
   margin-bottom: 26px;
 }
 
-/* =====================================================
-   BASE CARD (REUSABLE EVERYWHERE)
-   ===================================================== */
-.card {
-  background: #ffffff;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 16px 18px;
-  margin-bottom: 18px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.2s ease;
+/* ================= ABOUT SUMMARY ================= */
+#about-summary {
+  margin-top: 1rem;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
-  border-color: var(--accent);
+#about-summary p {
+  margin: 0.6rem auto;
+  max-width: 820px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  text-align: justify;
+  opacity: 0.95;
+}
+
+#phd-line,
+#current-line {
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+#phd-line strong,
+#current-line strong {
+  color: var(--text);
+  font-weight: 600;
 }
 
 /* =====================================================
-   ANNOUNCEMENTS
+   ANNOUNCEMENTS – SINGLE BOX
    ===================================================== */
 #announcements {
   position: relative;
@@ -211,6 +265,7 @@ section h2 {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 26px 20px 18px 48px;
+  margin-top: 18px;
 }
 
 #announcements::before {
@@ -225,8 +280,9 @@ section h2 {
 
 .announce-item {
   position: relative;
+  display: flex;
+  gap: 22px;
   margin-bottom: 22px;
-  transition: opacity 0.8s ease;
 }
 
 .announce-dot {
@@ -240,10 +296,24 @@ section h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 2;
+}
+
+.announce-icon {
+  font-size: 11px;
+  color: #ffffff;
 }
 
 .announce-card {
   margin-left: 22px;
+  width: 100%;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.announce-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
 }
 
 .announce-date {
@@ -258,13 +328,14 @@ section h2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 8px 24px;
-  list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .skills-grid li {
   font-size: 0.95rem;
+  color: var(--text);
   padding-left: 14px;
   position: relative;
 }
@@ -277,20 +348,6 @@ section h2 {
 }
 
 /* =====================================================
-   SCROLL REVEAL
-   ===================================================== */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =====================================================
    RESPONSIVE
    ===================================================== */
 @media (max-width: 900px) {
@@ -300,6 +357,7 @@ section h2 {
 
   .sidebar {
     width: 100%;
+    position: relative;
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
@@ -317,33 +375,4 @@ section h2 {
     animation: none !important;
     transition: none !important;
   }
-}
-/* =====================================================
-   HOMOGENEOUS SUBTLE HOVER FOR ALL BOXES
-   (same effect as Experience section)
-   ===================================================== */
-
-/* Experience (already good, kept for consistency) */
-#experience .item:hover {
-  border-color: var(--accent);
-  background: #fdfefe;
-}
-
-/* Publications */
-.pub-item:hover {
-  border-color: var(--accent);
-  background: #fdfefe;
-}
-
-/* Announcement cards */
-.announce-card:hover {
-  border-color: var(--accent);
-  background: #fdfefe;
-}
-
-/* Any generic boxed item */
-.item:hover,
-.ref:hover {
-  border-color: var(--accent);
-  background: #fdfefe;
 }
