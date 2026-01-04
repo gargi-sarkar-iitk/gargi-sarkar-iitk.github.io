@@ -34,18 +34,25 @@ body {
 /* =====================================================
    LEFT SIDEBAR (UX-REFINED)
    ===================================================== */
+
 .sidebar {
   width: 260px;
   min-height: 100vh;
   padding-top: 14px;
-padding-left: 24px;   /* match nav horizontal padding */
+  padding-left: 28px;
   padding-right: 28px;
+
   position: sticky;
   top: 0;
+
   background: #f4f6f9;
+
+  border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
- font-family: inherit;
+
+  font-family: inherit;
 }
+
 
 /* Each logical block */
 .sidebar-block {
