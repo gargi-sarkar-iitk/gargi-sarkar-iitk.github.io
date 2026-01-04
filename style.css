@@ -27,8 +27,6 @@ body {
   color: var(--text);
   background: #ffffff;
   line-height: 1.6;
-
-  /* layout */
   display: flex;
   align-items: flex-start;
 }
@@ -257,7 +255,7 @@ section h2 {
 }
 
 /* =====================================================
-   ANNOUNCEMENTS – SINGLE BOX
+   ANNOUNCEMENTS
    ===================================================== */
 #announcements {
   position: relative;
@@ -305,6 +303,9 @@ section h2 {
 }
 
 .announce-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
   margin-left: 22px;
   width: 100%;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
@@ -319,6 +320,185 @@ section h2 {
 .announce-date {
   font-size: 0.8rem;
   color: var(--muted);
+}
+
+/* =====================================================
+   ANNOUNCEMENT ROTATOR
+   ===================================================== */
+.announce-rotator {
+  position: relative;
+  min-height: 120px;
+}
+
+.announce-item.hidden {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.announce-item {
+  transition: opacity 0.8s ease;
+}
+
+/* =====================================================
+   EXPERIENCE
+   ===================================================== */
+#experience {
+  margin-top: 24px;
+}
+
+#experience .item {
+  padding: 14px 16px;
+  margin-bottom: 18px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+#experience .item strong {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+#experience .item em {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.experience-points {
+  margin: 10px 0 6px 18px;
+  padding: 0;
+}
+
+.experience-points li {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.experience-note {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+#experience .item:hover {
+  border-color: var(--accent);
+  background: #fdfefe;
+}
+
+/* =====================================================
+   CONTENT CARDS
+   ===================================================== */
+.pub-item,
+.item,
+.ref {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+
+.pub-item strong,
+.item strong {
+  font-size: 1.05rem;
+}
+
+/* =====================================================
+   PUBLICATIONS
+   ===================================================== */
+.pub-item {
+  margin-bottom: 22px;
+}
+
+.pub-links {
+  margin-top: 6px;
+}
+
+.pub-links a {
+  display: inline-block;
+  margin-right: 14px;
+  font-size: 0.9rem;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.pub-links a:hover {
+  text-decoration: underline;
+}
+
+.bibtex {
+  margin-top: 10px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.bibtex[hidden] {
+  display: none;
+}
+
+/* =====================================================
+   TEACHING
+   ===================================================== */
+#teaching {
+  position: relative;
+}
+
+.teaching-item {
+  position: relative;
+  padding-left: 44px;
+  margin-bottom: 28px;
+}
+
+.teaching-item:first-child::before {
+  width: 13px;
+  height: 13px;
+  top: 4px;
+}
+
+.teaching-header {
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.teaching-item ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+.teaching-item li {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+@media print {
+  .teaching-item::before,
+  .teaching-item::after {
+    background: #000;
+  }
+
+  #teaching::before {
+    border-bottom-color: #000;
+  }
 }
 
 /* =====================================================
@@ -345,6 +525,20 @@ section h2 {
   position: absolute;
   left: 0;
   color: var(--muted);
+}
+
+/* =====================================================
+   SCROLL REVEAL
+   ===================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =====================================================
