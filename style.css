@@ -727,6 +727,7 @@ border-color: var(--accent);
    ACHIEVEMENTS – FINAL (MATCHES EXPERIENCE EXACTLY)
    ===================================================== */
 
+
 #achievements .item {
   background: #ffffff;
   border: 1px solid var(--border);
@@ -751,6 +752,13 @@ border-color: var(--accent);
   background: #fdfefe;
   transform: translateY(-2px);
 }
+
+/* Optional emphasis for fellowship / exams */
+#achievements .item strong {
+  font-weight: 600;
+  color: var(--primary);
+}
+
 
 
 /* =====================================================
