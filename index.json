@@ -374,12 +374,13 @@
   ],
 
 "achievements": [
-  "C3iHub Research Fellowship Awardee for Research in Cybersecurity (2022–2025), awarded for advanced research contributions in cybercrime investigation and digital security.",
-  "Darkathon 2022 Finalist – Selected by the Narcotics Control Bureau, Government of India, for proposing innovative solutions addressing anonymity and illicit trade in dark web narcotics markets.",
-  "Qualified GATE 2021 in Mathematics – National-level competitive examination assessing advanced mathematical aptitude for postgraduate education and public sector technical roles.",
-  "Qualified JAM 2018 in Mathematics – Highly competitive national examination for admission to M.Sc. programs in IITs, NITs, and other centrally funded institutions.",
-  "Qualified JEE Mains 2015 – National-level entrance examination for undergraduate engineering programs in IITs, NITs, and other centrally funded technical institutions."
-],
+  "<strong>C3iHub Research Fellowship Awardee</strong> for Research in Cybersecurity (2022–2025), awarded for advanced research contributions in cybercrime investigation and digital security.",
+  "<strong>Darkathon 2022 Finalist</strong> – Selected by the Narcotics Control Bureau, Government of India, for proposing innovative solutions addressing anonymity and illicit trade in dark web narcotics markets.",
+  "<strong>Qualified GATE 2021 in Mathematics</strong> – National-level competitive examination assessing advanced mathematical aptitude for postgraduate education and public sector technical roles.",
+  "<strong>Qualified JAM 2018 in Mathematics</strong> – Highly competitive national examination for admission to M.Sc. programs in IITs, NITs, and other centrally funded institutions.",
+  "<strong>Qualified JEE Mains 2015</strong> – National-level entrance examination for undergraduate engineering programs in IITs, NITs, and other centrally funded technical institutions."
+,]
+
 
 
   "talks_and_presentations": [
