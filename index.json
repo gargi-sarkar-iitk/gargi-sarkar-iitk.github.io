@@ -124,13 +124,6 @@
     {
       "year": 2025,
       "status": "under_review",
-      "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
-      "title": "Policing Transnational Cybercrime: A Critical Assessment of the Anticipated Impact of the United Nations Convention against Cybercrime in India and Worldwide",
-      "venue": "International Journal of Police Science and Management"
-    },
-    {
-      "year": 2025,
-      "status": "under_review",
       "authors": ["Rohit Negi", "Gargi Sarkar", "Sandeep K. Shukla"],
       "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
       "venue": "Computers & Security"
@@ -164,6 +157,17 @@
         "value": "2510.12814"
       }
     },
+      {
+  "year": 2024,
+  "status": "preprint",
+  "authors": ["Gargi Sarkar", "Sandeep Kumar Shukla"],
+  "title": "Policing Transnational Cybercrime: A Critical Assessment of the Anticipated Impact of the United Nations Convention against Cybercrime in India and Worldwide",
+  "venue": "SSRN",
+  "identifier": {
+    "type": "ssrn",
+    "value": "5899223"
+  }
+},
 
     {
       "year": 2024,
