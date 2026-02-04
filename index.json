@@ -34,6 +34,19 @@
   },
 
   "announcements": [
+    {
+  "date": "2026-02-01",
+  "title": "Research Paper Published in Computers & Security",
+  "description": "Our paper “AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors” has been published in the journal *Computers & Security*.",
+  "type": "publication"
+},
+    {
+  "date": "2026-01-27",
+  "title": "Job Scam Behavioral Signals Paper Released on arXiv",
+  "description": "The paper “Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study” is now available as an arXiv preprint.",
+  "type": "preprint"
+},
+
   {
     "date": "2025-12-15",
     "title": "PhD Thesis Successfully Defended",
@@ -122,12 +135,17 @@
       "venue": "Humanities & Social Sciences Communications (Nature Portfolio)"
     },
     {
-      "year": 2025,
-      "status": "under_review",
-      "authors": ["Rohit Negi", "Gargi Sarkar", "Sandeep K. Shukla"],
-      "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
-      "venue": "Computers & Security"
-    },
+  "year": 2026,
+  "status": "published",
+  "authors": ["Rohit Negi", "Gargi Sarkar", "Sandeep K. Shukla"],
+  "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
+  "venue": "Computers & Security",
+  "identifier": {
+    "type": "doi",
+    "value": "10.1016/j.cose.2026.104849"
+  }
+},
+
 
     {
       "year": 2025,
@@ -146,6 +164,20 @@
         "value": "2512.06555"
       }
     },
+
+    {
+  "year": 2026,
+  "status": "preprint",
+  "authors": ["Goni Anagha", "Vishakha Dasi Agrawal", "Gargi Sarkar", "Kavita Vemuri", "Sandeep K. Shukla"],
+  "title": "Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study",
+  "venue": "arXiv",
+  "identifier": {
+    "type": "arxiv",
+    "value": "2601.19342"
+  },
+  "url": "https://arxiv.org/abs/2601.19342"
+},
+
     {
       "year": 2025,
       "status": "preprint",
