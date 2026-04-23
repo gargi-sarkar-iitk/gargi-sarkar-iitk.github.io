@@ -1,56 +1,13 @@
 /* =====================================================
-   RANK BADGES — integrated with existing design system
+   ROOT VARIABLES
    ===================================================== */
-
-.rank-badge {
-  display: inline-block;
-  font-family: Georgia, "Times New Roman", serif; /* matches body font */
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 2px 8px;
-  border-radius: 6px;              /* matches .pub-item border-radius */
-  vertical-align: middle;
-  margin-left: 8px;
-  cursor: default;
-  white-space: nowrap;
-  line-height: 1.7;
-  text-transform: uppercase;
-  position: relative;
-  top: -1px;                       /* optical alignment with title text */
-}
-
-/* Q1 — deep green, distinct from primary/accent */
-.rank-q1 {
-  background: #1a6b3c;
-  color: #fff;
-  border: 1px solid #155a32;
-}
-
-/* CORE A — uses --primary (#0b3c5d) directly */
-.rank-core-a {
-  background: var(--primary);     /* #0b3c5d — same as your headings */
-  color: #fff;
-  border: 1px solid #092e48;
-}
-
-/* CORE B — uses --accent (#0266c8) directly */
-.rank-core-b {
-  background: var(--accent);      /* #0266c8 — same as your links */
-  color: #fff;
-  border: 1px solid #0257aa;
-}
-
-/* Under Review / Preprint — outline only, uses --muted */
-.rank-under-review {
-  background: transparent;
-  color: var(--muted);            /* #6b7280 */
-  border: 1px solid var(--muted);
-}
-
-/* Tooltip cursor hint */
-.rank-badge[title] {
-  cursor: help;
+:root {
+  --primary: #0b3c5d;
+  --accent: #0266c8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --bg-light: #f8fafc;
 }
 
 /* =====================================================
@@ -75,64 +32,53 @@ body {
 }
 
 /* =====================================================
-   LEFT SIDEBAR (UX-REFINED)
+   LEFT SIDEBAR
    ===================================================== */
-
 .sidebar {
   width: 270px;
   min-height: 100vh;
   padding-top: 14px;
   padding-left: 24px;
   padding-right: 20px;
-
   position: sticky;
   top: 0;
-
   background: #f4f6f9;
-
   border-left: 1px solid var(--border);
   border-right: 1px solid var(--border);
-
   font-family: inherit;
 }
 
-
-/* FIX: email links must NOT behave like profile links */
 .contact-emails a {
   display: inline !important;
   margin: 0 !important;
   padding: 0 !important;
   line-height: 1.25;
 }
+
 .contact-emails {
   margin: 0px 0 0;
   padding: 0;
 }
 
-
-
-/* Each logical block */
 sidebar-block {
   margin-bottom: 18px;
 }
-/* Optional: tighten first block spacing */
 
 .sidebar-block:first-child {
   margin-top: 0;
 }
-/* Block headings */
+
 .sidebar h3 {
   font-size: 1.05rem;
-margin-bottom: 6px;
+  margin-bottom: 6px;
   color: var(--primary);
   border-bottom: 2px solid var(--primary);
   padding-bottom: 4px;
 }
 
-/* Lists (Research interests) */
 .sidebar ul {
   padding-left: 18px;
-   margin-top: 4px;
+  margin-top: 4px;
 }
 
 .sidebar li {
@@ -140,15 +86,13 @@ margin-bottom: 6px;
   font-size: 0.95rem;
 }
 
-/* Paragraph blocks (Address + Email) */
 .sidebar p {
-   margin-top: 4px;
+  margin-top: 4px;
   line-height: 1.35;
   font-size: 0.9rem;
   color: var(--text);
 }
 
-/* Links inside paragraph (emails) */
 .sidebar p a {
   display: inline;
   margin: 0;
@@ -161,7 +105,6 @@ margin-bottom: 6px;
   text-decoration: underline;
 }
 
-/* Standalone links (Profiles section) */
 .sidebar > .sidebar-block a {
   display: block;
   margin-top: 6px;
@@ -174,12 +117,10 @@ margin-bottom: 6px;
   text-decoration: underline;
 }
 
-/* ================= FONT AWESOME (CORRECT) ================= */
 .sidebar-block i.fa-solid {
   font-weight: 900;
 }
 
-/* ================= FONT AWESOME ICONS (SAFE) ================= */
 .sidebar-block a {
   display: flex;
   align-items: center;
@@ -204,9 +145,8 @@ margin-bottom: 6px;
 .main-content {
   flex: 1;
   min-width: 0;
-   padding-top: 20px;
+  padding-top: 20px;
 }
-
 
 /* =====================================================
    HEADER / NAV
@@ -286,7 +226,7 @@ section {
   margin: 70px auto;
   padding: 0 24px;
   scroll-margin-top: 120px;
-   position: relative;
+  position: relative;
   z-index: 1;
 }
 
@@ -299,7 +239,9 @@ section h2 {
   margin-bottom: 26px;
 }
 
-/* ================= ABOUT SUMMARY ================= */
+/* =====================================================
+   ABOUT SUMMARY
+   ===================================================== */
 #about-summary {
   margin-top: 1rem;
 }
@@ -391,8 +333,8 @@ section h2 {
 .announce-card:hover {
   transform: translateY(-8px) scale(1.01);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
-   border: 1px solid transparent;
-border-color: var(--accent);
+  border: 1px solid transparent;
+  border-color: var(--accent);
   background: #fdfefe;
 }
 
@@ -401,9 +343,6 @@ border-color: var(--accent);
   color: var(--muted);
 }
 
-/* =====================================================
-   ANNOUNCEMENT ROTATOR
-   ===================================================== */
 .announce-rotator {
   position: relative;
   min-height: 120px;
@@ -417,18 +356,14 @@ border-color: var(--accent);
   left: 0;
 }
 
-
 /* =====================================================
    EXPERIENCE
    ===================================================== */
-
-
 #experience h2 {
   display: inline-block;
   visibility: visible;
   opacity: 1;
 }
-
 
 #experience .item {
   padding: 14px 16px;
@@ -436,6 +371,17 @@ border-color: var(--accent);
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 10px;
+  transition: border-color 0.25s ease,
+              background 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
+}
+
+#experience .item:hover {
+  border-color: var(--accent);
+  background: #fdfefe;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
 
 #experience .item strong {
@@ -470,30 +416,26 @@ border-color: var(--accent);
   font-style: italic;
 }
 
-#experience .item:hover {
-  border-color: var(--accent);
-  background: #fdfefe;
-}
 /* =====================================================
-   EDUCATION — FORMAL ACADEMIC CV STYLE
+   EDUCATION
    ===================================================== */
-
 #education .education-item {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 8px;
-
   padding: 18px 20px;
   margin-bottom: 18px;
-
   display: flex;
   flex-direction: column;
   gap: 6px;
-
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* ───────── DEGREE + DATE ROW ───────── */
+#education .education-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
 #education .edu-header {
   display: flex;
   justify-content: space-between;
@@ -501,15 +443,13 @@ border-color: var(--accent);
   gap: 16px;
 }
 
-/* Degree — MUST be dominant */
 #education .edu-degree {
   font-size: 1.05rem;
-  font-weight: 700;              /* FIXED: bold degree */
+  font-weight: 700;
   color: var(--primary);
   line-height: 1.4;
 }
 
-/* Date / Period — subtle, right aligned */
 #education .edu-period {
   font-size: 0.85rem;
   font-weight: 500;
@@ -517,23 +457,14 @@ border-color: var(--accent);
   white-space: nowrap;
 }
 
-/* Institution — distinct but secondary */
 #education .edu-institution {
   font-size: 0.95rem;
   font-style: italic;
   color: #374151;
 }
 
-/* Hover — academic subtlety (not flashy) */
-#education .education-item:hover {
-  border-color: var(--accent);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
-}
-
-
-
 /* =====================================================
-   CONTENT CARDS
+   CONTENT CARDS (shared base)
    ===================================================== */
 .pub-item,
 .item,
@@ -555,13 +486,11 @@ border-color: var(--accent);
    ===================================================== */
 .pub-item {
   margin-bottom: 22px;
-}
-/* Publications hover — SAME as Experience */
-.pub-item {
   transition: border-color 0.25s ease,
               background 0.25s ease,
               box-shadow 0.25s ease,
               transform 0.25s ease;
+  cursor: default;
 }
 
 .pub-item:hover {
@@ -569,13 +498,6 @@ border-color: var(--accent);
   background: #fdfefe;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
-}
-.pub-item {
-  cursor: default;
-}
-
-.pub-links a:hover {
-  text-decoration: underline;
 }
 
 .pub-links {
@@ -610,8 +532,63 @@ border-color: var(--accent);
 .bibtex[hidden] {
   display: none;
 }
+
 /* =====================================================
-   RESEARCH – Hover (same as Experience / Education)
+   RANK BADGES — uses your CSS variables throughout
+   ===================================================== */
+.rank-badge {
+  display: inline-block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 6px;
+  vertical-align: middle;
+  margin-left: 8px;
+  white-space: nowrap;
+  line-height: 1.7;
+  position: relative;
+  top: -1px;
+  cursor: default;
+}
+
+/* Q1 — deep green, distinct from primary/accent */
+.rank-q1 {
+  background: #1a6b3c;
+  color: #fff;
+  border: 1px solid #155a32;
+}
+
+/* CORE A — your --primary navy */
+.rank-core-a {
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid #092e48;
+}
+
+/* CORE B — your --accent blue */
+.rank-core-b {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid #0257aa;
+}
+
+/* Under Review / Preprint — outline only, non-distracting */
+.rank-under-review {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--muted);
+}
+
+/* Tooltip cursor hint */
+.rank-badge[title] {
+  cursor: help;
+}
+
+/* =====================================================
+   RESEARCH
    ===================================================== */
 #research .item {
   transition: border-color 0.25s ease,
@@ -626,8 +603,9 @@ border-color: var(--accent);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
+
 /* =====================================================
-   PROJECTS – Hover (same as Experience / Research)
+   PROJECTS
    ===================================================== */
 #projects .item {
   transition: border-color 0.25s ease,
@@ -642,8 +620,9 @@ border-color: var(--accent);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
   transform: translateY(-2px);
 }
+
 /* =====================================================
-   ACADEMIC SERVICE – Hover (same as Experience)
+   ACADEMIC SERVICE
    ===================================================== */
 #academic_service .item {
   transition: border-color 0.25s ease,
@@ -670,12 +649,23 @@ border-color: var(--accent);
   position: relative;
   padding-left: 44px;
   margin-bottom: 28px;
+  transition: border-color 0.25s ease,
+              background 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.25s ease;
 }
 
 .teaching-item:first-child::before {
   width: 13px;
   height: 13px;
   top: 4px;
+}
+
+.teaching-item:hover {
+  border-color: var(--accent);
+  background: #fdfefe;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }
 
 .teaching-header {
@@ -696,23 +686,6 @@ border-color: var(--accent);
   color: var(--text);
   margin-bottom: 4px;
 }
-/* =====================================================
-   TEACHING – Hover (timeline-safe, academic)
-   ===================================================== */
-#teaching .teaching-item {
-  transition: border-color 0.25s ease,
-              background 0.25s ease,
-              box-shadow 0.25s ease,
-              transform 0.25s ease;
-}
-
-#teaching .teaching-item:hover {
-  border-color: var(--accent);
-  background: #fdfefe;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
-}
-
 
 @media print {
   .teaching-item::before,
@@ -742,6 +715,7 @@ border-color: var(--accent);
   color: var(--text);
   padding-left: 14px;
   position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .skills-grid li::before {
@@ -750,78 +724,56 @@ border-color: var(--accent);
   left: 0;
   color: var(--muted);
 }
-/* =====================================================
-   TECHNICAL SKILLS – Hover
-   ===================================================== */
-.skills-grid li {
-  transition: color 0.2s ease,
-              transform 0.2s ease;
-}
 
 .skills-grid li:hover {
   color: var(--primary);
   transform: translateX(4px);
 }
+
 .skills-grid li:hover::before {
   color: var(--accent);
 }
 
 /* =====================================================
-   ACHIEVEMENTS – FINAL (MATCHES EXPERIENCE EXACTLY)
+   ACHIEVEMENTS
    ===================================================== */
-
-
 #achievements .item {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 10px;
-
   padding: 14px 16px;
   margin-bottom: 18px;
-
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--text);
-
-  transition:
-    border-color 0.25s ease,
-    background-color 0.25s ease,
-    transform 0.25s ease;
+  transition: border-color 0.25s ease,
+              background-color 0.25s ease,
+              transform 0.25s ease;
 }
 
-/* SAME hover behaviour as Experience */
 #achievements .item:hover {
   border-color: var(--accent);
   background: #fdfefe;
   transform: translateY(-2px);
 }
 
-
-
-
 /* =====================================================
-   TALKS & PRESENTATIONS – CARD STYLE (LIKE EXPERIENCE)
+   TALKS & PRESENTATIONS
    ===================================================== */
-
 #talks_and_presentations .item {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 10px;
-
   padding: 14px 16px;
   margin-bottom: 18px;
-
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--text);
-
-  transition:
-    border-color 0.25s ease,
-    background-color 0.25s ease,
-    transform 0.25s ease;
+  transition: border-color 0.25s ease,
+              background-color 0.25s ease,
+              transform 0.25s ease;
 }
 
-/* SAME hover behaviour as Experience */
 #talks_and_presentations .item:hover {
   border-color: var(--accent);
   background-color: #fdfefe;
@@ -829,34 +781,40 @@ border-color: var(--accent);
 }
 
 /* =====================================================
-   ACTIVITIES – CARD STYLE (LIKE EXPERIENCE)
+   ACTIVITIES
    ===================================================== */
-
 #activities .item {
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: 10px;
-
   padding: 14px 16px;
   margin-bottom: 18px;
-
   font-size: 0.95rem;
   line-height: 1.5;
   color: var(--text);
-
-  transition:
-    border-color 0.25s ease,
-    background-color 0.25s ease,
-    transform 0.25s ease;
+  transition: border-color 0.25s ease,
+              background-color 0.25s ease,
+              transform 0.25s ease;
 }
 
-/* SAME hover behaviour as Experience */
 #activities .item:hover {
   border-color: var(--accent);
   background-color: #fdfefe;
   transform: translateY(-2px);
 }
 
+/* =====================================================
+   REFERENCES
+   ===================================================== */
+.ref {
+  transition: border-color 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.ref:hover {
+  border-color: var(--accent);
+  background-color: #fdfefe;
+}
 
 /* =====================================================
    SCROLL REVEAL
@@ -870,18 +828,6 @@ border-color: var(--accent);
 .visible {
   opacity: 1;
   transform: translateY(0);
-}
-/* =====================================================
-   REFERENCES – Hover (Subtle, Academic)
-   ===================================================== */
-.ref {
-  transition: border-color 0.2s ease,
-              background-color 0.2s ease;
-}
-
-.ref:hover {
-  border-color: var(--accent);
-  background-color: #fdfefe;
 }
 
 /* =====================================================
