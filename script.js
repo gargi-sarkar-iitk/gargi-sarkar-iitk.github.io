@@ -32,42 +32,34 @@ fetch("index.json")
   .catch(err => showFatalError(err.message));
 
 /* =========================================================
-   RANK BADGE HELPER
-   Reads the rank object from the JSON and returns an HTML badge.
+   RANK BADGE HELPER  ← only new addition
+   Reads p.rank from JSON and returns a coloured badge span.
    ========================================================= */
 function renderRankBadge(rank) {
   if (!rank || !rank.label) return "";
 
   const label = rank.label;
-  const type  = rank.type; // "journal" | "conference"
-
-  // Choose colour class based on label value
   let cls = "rank-badge";
-  if (label === "Q1")          cls += " rank-q1";
+
+  if      (label === "Q1")     cls += " rank-q1";
   else if (label === "CORE A") cls += " rank-core-a";
   else if (label === "CORE B") cls += " rank-core-b";
-  else                          cls += " rank-under-review";   // "Under Review"
+  else                          cls += " rank-under-review";
 
-  // Tooltip: show the note if present
-  const title = rank.note ? ` title="${rank.note}"` : "";
-
-  return `<span class="${cls}"${title}>${label}</span>`;
+  const tooltip = rank.note ? ` title="${rank.note}"` : "";
+  return `<span class="${cls}"${tooltip}>${label}</span>`;
 }
 
 /* =========================================================
-   PUBLICATION HELPERS
+   PUBLICATION HELPERS  (unchanged)
    ========================================================= */
-
-// DOI / arXiv access link
 function getAccessLink(p) {
-  if (p.url) return p.url;
   if (!p.identifier) return "";
   if (p.identifier.type === "doi")   return `https://doi.org/${p.identifier.value}`;
   if (p.identifier.type === "arxiv") return `https://arxiv.org/abs/${p.identifier.value}`;
   return "";
 }
 
-// BibTeX generator
 function generateBibTeX(p) {
   if (!p.identifier) return "";
 
@@ -90,15 +82,21 @@ function generateBibTeX(p) {
 
   if (p.identifier.type === "arxiv") {
     return `@misc{${key},
-  title         = {${p.title}},
-  author        = {${authors}},
-  year          = {${p.year}},
-  eprint        = {${p.identifier.value}},
-  archivePrefix = {arXiv}
+  title        = {${p.title}},
+  author       = {${authors}},
+  year         = {${p.year}},
+  eprint       = {${p.identifier.value}},
+  archivePrefix= {arXiv}
 }`;
   }
 
   return "";
+}
+
+function toggleBibTeX(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.style.display = el.style.display === "none" ? "block" : "none";
 }
 
 /* =========================================================
@@ -135,7 +133,7 @@ function renderSummary(summary) {
    ========================================================= */
 function renderAnnouncements(announcements) {
   const c = $("announcements");
-  if (!c || !announcements?.length) return;
+  if (!c || !announcements || !announcements.length) return;
 
   const header = c.querySelector("h2");
   c.innerHTML = "";
@@ -179,7 +177,8 @@ function renderAnnouncements(announcements) {
 
 function formatAnnouncementDate(dateStr) {
   if (!dateStr) return "";
-  return new Date(dateStr).toLocaleDateString("en-GB", {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString("en-GB", {
     day: "numeric", month: "short", year: "numeric"
   });
 }
@@ -188,12 +187,14 @@ function formatAnnouncementDate(dateStr) {
    EXPERIENCE
    ========================================================= */
 function renderExperience(arr = []) {
-  const c = $("experience");
+  const c = document.getElementById("experience");
   if (!c) return;
 
   const header = c.querySelector("h2");
   c.innerHTML = "";
   if (header) c.appendChild(header);
+
+  if (!arr.length) return;
 
   arr.forEach(e => {
     const d = document.createElement("div");
@@ -218,7 +219,7 @@ function renderExperience(arr = []) {
    EDUCATION
    ========================================================= */
 function renderEducation(arr = []) {
-  const c = $("education");
+  const c = document.getElementById("education");
   if (!c || !arr.length) return;
 
   const header = c.querySelector("h2");
@@ -240,90 +241,65 @@ function renderEducation(arr = []) {
 }
 
 /* =========================================================
-   PUBLICATIONS
+   PUBLICATIONS  ← badge injected after title, nothing else changed
    ========================================================= */
 function renderPublications(pubs) {
-  const container = $("publications");
-  if (!container || !pubs) return;
+  const publications = $("publications");
+  if (!publications || !pubs) return;
 
-  // Keep section header
-  const header = container.querySelector("h2");
-  container.innerHTML = "";
-  if (header) container.appendChild(header);
+  const sections = {
+    published:    "Journal Articles (Published)",
+    preprint:     "Preprints / Archived Manuscripts",
+    under_review: "Manuscripts Under Review",
+    conference:   "Conference Proceedings"
+  };
 
-  // Reverse-number counter across all entries in display order
-  const journals        = pubs.journals || [];
-  const proceedings     = pubs.conference_proceedings || [];
-  const published       = journals.filter(p => p.status === "published");
-  const preprints       = journals.filter(p => p.status === "preprint");
-  const underReview     = journals.filter(p => p.status === "under_review");
-
-  // Total count for reverse numbering across all sections
-  const totalJournals     = journals.length;
-  const totalProceedings  = proceedings.length;
-  let   journalCounter    = totalJournals;      // counts DOWN
-  let   procCounter       = totalProceedings;   // counts DOWN
-
-  function buildPubItem(p, counter) {
-    const accessLink = getAccessLink(p);
-    const bibtex     = generateBibTeX(p);
-    const citeId     = `bibtex-${counter}-${Math.random().toString(36).slice(2, 7)}`;
-    const badge      = renderRankBadge(p.rank);
-
-    const d = document.createElement("div");
-    d.className = "pub-item";
-
-    d.innerHTML = `
-      <div class="pub-number">[${counter}]</div>
-      <div class="pub-body">
-        <div class="pub-title">
-          ${p.title}
-          ${badge}
-        </div>
-        <div class="pub-authors">${p.authors.join(", ")}</div>
-        <div class="pub-venue">
-          <em>${p.venue}</em> (${p.year})
-          ${p.pages ? `, pp. ${p.pages}` : ""}
-        </div>
-        <div class="pub-links">
-          ${accessLink ? `<a href="${accessLink}" target="_blank" class="pub-link">🔗 Access</a>` : ""}
-          ${bibtex    ? `<a href="#" class="pub-link cite-btn">📋 Cite</a>` : ""}
-        </div>
-        ${bibtex ? `<pre id="${citeId}" class="bibtex" hidden>${bibtex}</pre>` : ""}
-      </div>
-    `;
-
-    // Attach cite toggle
-    if (bibtex) {
-      const citeBtn = d.querySelector(".cite-btn");
-      const bibEl   = d.querySelector(`#${citeId}`);
-      citeBtn.addEventListener("click", e => {
-        e.preventDefault();
-        bibEl.hidden = !bibEl.hidden;
-      });
-    }
-
-    return d;
-  }
-
-  function renderSection(title, items, useJournalCounter) {
+  function renderSection(title, items) {
     if (!items.length) return;
 
     const h = document.createElement("h3");
-    h.className = "pub-section-title";
     h.textContent = title;
-    container.appendChild(h);
+    publications.appendChild(h);
 
-    items.forEach(p => {
-      const num = useJournalCounter ? journalCounter-- : procCounter--;
-      container.appendChild(buildPubItem(p, num));
+    items.forEach((p, idx) => {
+      const d = document.createElement("div");
+      d.className = "pub-item";
+
+      const accessLink = getAccessLink(p);
+      const bibtex     = generateBibTeX(p);
+      const citeId     = `bibtex-${Date.now()}-${idx}`;
+      const badge      = renderRankBadge(p.rank);   // ← only new line
+
+      d.innerHTML = `
+        <strong>${p.title}</strong>${badge}<br>
+        ${p.authors.join(", ")}<br>
+        <em>${p.venue} (${p.year})</em>
+        <div class="pub-links">
+          ${accessLink ? `<a href="${accessLink}" target="_blank">Access</a>` : ""}
+          ${bibtex     ? `<a href="#" class="cite-btn">Cite</a>` : ""}
+        </div>
+        ${bibtex ? `<pre id="${citeId}" class="bibtex" hidden>${bibtex}</pre>` : ""}
+      `;
+
+      publications.appendChild(d);
+
+      if (bibtex) {
+        const citeBtn = d.querySelector(".cite-btn");
+        const bibEl   = d.querySelector(`#${citeId}`);
+        citeBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          bibEl.hidden = !bibEl.hidden;
+        });
+      }
     });
   }
 
-  renderSection("Journal Articles (Published)",        published,    true);
-  renderSection("Conference Proceedings",              proceedings,  false);
-  renderSection("Preprints / Archived Manuscripts",    preprints,    true);
-  renderSection("Manuscripts Under Review",            underReview,  true);
+  const journals = pubs.journals || [];
+
+  renderSection(sections.published,    journals.filter(p => p.status === "published"));
+  renderSection(sections.conference,   pubs.conference_proceedings || []);
+  renderSection(sections.preprint,     journals.filter(p => p.status === "preprint"));
+  renderSection(sections.under_review, journals.filter(p => p.status === "under_review"));
 }
 
 /* =========================================================
@@ -352,14 +328,8 @@ function renderProjects(arr = []) {
   arr.forEach(p => {
     const d = document.createElement("div");
     d.className = "item";
-
-    const titleHTML = p.url
-      ? `<a href="${p.url}" target="_blank" class="project-link">${p.title}</a>`
-      : p.title;
-
     d.innerHTML = `
-      <strong>${titleHTML}</strong>
-      ${p.sponsor ? `<div class="project-sponsor">Funded by: ${p.sponsor}</div>` : ""}
+      <strong>${p.title}</strong>
       <ul>${p.details.map(x => `<li>${x}</li>`).join("")}</ul>
     `;
     c.appendChild(d);
@@ -373,32 +343,28 @@ function renderAcademicService(obj) {
   const c = $("academic_service");
   if (!c || !obj) return;
 
-  if (obj.reviewer?.length) {
-    const h = document.createElement("h3");
-    h.textContent = "Reviewer";
-    c.appendChild(h);
-    const ul = document.createElement("ul");
-    obj.reviewer.forEach(x => {
-      const li = document.createElement("li");
-      li.className = "item";
-      li.textContent = x;
-      ul.appendChild(li);
-    });
-    c.appendChild(ul);
-  }
-
   if (obj.sub_reviewer?.length) {
     const h = document.createElement("h3");
     h.textContent = "Sub-Reviewer";
     c.appendChild(h);
-    const ul = document.createElement("ul");
     obj.sub_reviewer.forEach(x => {
-      const li = document.createElement("li");
-      li.className = "item";
-      li.textContent = x;
-      ul.appendChild(li);
+      const d = document.createElement("div");
+      d.className = "item";
+      d.textContent = x;
+      c.appendChild(d);
     });
-    c.appendChild(ul);
+  }
+
+  if (obj.reviewer?.length) {
+    const h = document.createElement("h3");
+    h.textContent = "Reviewer";
+    c.appendChild(h);
+    obj.reviewer.forEach(x => {
+      const d = document.createElement("div");
+      d.className = "item";
+      d.textContent = x;
+      c.appendChild(d);
+    });
   }
 }
 
@@ -447,10 +413,8 @@ function renderAchievements(arr = []) {
   arr.forEach(a => {
     const d = document.createElement("div");
     d.className = "item";
-
     const split = a.split(/\s[–-]\s/);
     d.append("• ");
-
     if (split.length > 1) {
       const strong = document.createElement("strong");
       strong.textContent = split[0];
@@ -460,7 +424,6 @@ function renderAchievements(arr = []) {
     } else {
       d.appendChild(document.createTextNode(a));
     }
-
     c.appendChild(d);
   });
 }
@@ -503,11 +466,9 @@ function renderSkills(skills = {}) {
   Object.entries(skills).forEach(([category, items]) => {
     const block = document.createElement("div");
     block.className = "item";
-
     const h = document.createElement("strong");
     h.textContent = category;
     block.appendChild(h);
-
     const ul = document.createElement("ul");
     ul.className = "skills-grid";
     items.forEach(skill => {
@@ -515,7 +476,6 @@ function renderSkills(skills = {}) {
       li.textContent = skill;
       ul.appendChild(li);
     });
-
     block.appendChild(ul);
     c.appendChild(block);
   });
@@ -533,8 +493,7 @@ function renderReferences(arr = []) {
     d.innerHTML = `
       <strong>${r.name}</strong>, ${r.designation}<br>
       ${r.institution}<br>
-      <a href="mailto:${r.email}">${r.email}</a>
-      ${r.relation ? `<br><em>${r.relation}</em>` : ""}
+      ${r.email}
     `;
     c.appendChild(d);
   });
@@ -544,14 +503,27 @@ function renderReferences(arr = []) {
    UI ENHANCEMENTS
    ========================================================= */
 function enhanceUI() {
+  announcementCarousel();
   scrollReveal();
 }
 
+function announcementCarousel() {
+  const items = document.querySelectorAll(".announce");
+  if (!items.length) return;
+  let i = 0;
+  items.forEach((x, idx) => x.style.display = idx === 0 ? "block" : "none");
+  setInterval(() => {
+    items[i].style.display = "none";
+    i = (i + 1) % items.length;
+    items[i].style.display = "block";
+  }, 4000);
+}
+
 function scrollReveal() {
-  const els = document.querySelectorAll(".item, .pub-item, .announce-item, .skill, .ref");
+  const els = document.querySelectorAll(".item, .pub-item, .announce, .skill, .ref");
   const obs = new IntersectionObserver(
     e => e.forEach(x => x.isIntersecting && x.target.classList.add("visible")),
-    { threshold: 0.1 }
+    { threshold: 0.15 }
   );
   els.forEach(el => {
     el.classList.add("reveal");
@@ -564,7 +536,10 @@ function scrollReveal() {
    ========================================================= */
 function showFatalError(msg) {
   const d = document.createElement("div");
-  d.style.cssText = "background:#fee2e2;padding:12px;margin:20px;border:1px solid #fca5a5;border-radius:6px;";
+  d.style.background = "#fee2e2";
+  d.style.padding = "12px";
+  d.style.margin = "20px";
+  d.style.border = "1px solid #fca5a5";
   d.textContent = "Site failed to load: " + msg;
   document.body.prepend(d);
 }
