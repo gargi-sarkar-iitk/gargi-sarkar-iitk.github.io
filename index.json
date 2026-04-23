@@ -35,62 +35,60 @@
 
   "announcements": [
     {
-  "date": "2026-02-01",
-  "title": "Research Paper Published in Computers & Security",
-  "description": "Our paper “AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors” has been published in the journal *Computers & Security*.",
-  "type": "publication"
-},
+      "date": "2026-02-01",
+      "title": "Research Paper Published in Computers & Security",
+      "description": "Our paper 'AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors' has been published in the journal *Computers & Security*.",
+      "type": "publication"
+    },
     {
-  "date": "2026-01-27",
-  "title": "Job Scam Behavioral Signals Paper Released on arXiv",
-  "description": "The paper “Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study” is now available as an arXiv preprint.",
-  "type": "preprint"
-},
+      "date": "2026-01-27",
+      "title": "Job Scam Behavioral Signals Paper Released on arXiv",
+      "description": "The paper 'Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study' is now available as an arXiv preprint.",
+      "type": "preprint"
+    },
+    {
+      "date": "2025-12-15",
+      "title": "PhD Thesis Successfully Defended",
+      "description": "Successfully defended my PhD thesis titled 'Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective.'",
+      "type": "milestone"
+    },
+    {
+      "date": "2025-10-08",
+      "title": "Cyber Slavery Paper Released on arXiv",
+      "description": "The paper 'Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime' is now available as an arXiv preprint.",
+      "type": "preprint"
+    },
+    {
+      "date": "2025-12-06",
+      "title": "BEACON Paper Released on arXiv",
+      "description": "The paper 'BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models' is now available on arXiv.",
+      "type": "preprint"
+    }
+  ],
 
-  {
-    "date": "2025-12-15",
-    "title": "PhD Thesis Successfully Defended",
-    "description": "Successfully defended my PhD thesis titled “Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India’s Policing Perspective.”",
-    "type": "milestone"
-  },
-  {
-    "date": "2025-10-08",
-    "title": "Cyber Slavery Paper Released on arXiv",
-    "description": "The paper “Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime” is now available as an arXiv preprint.",
-    "type": "preprint"
-  },
-  {
-    "date": "2025-12-06",
-    "title": "BEACON Paper Released on arXiv",
-    "description": "The paper “BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models” is now available on arXiv.",
-    "type": "preprint"
-  }
-],
-
-
-"experience": [
-  {
-    "institution": "International Institute of Information Technology (IIIT) Hyderabad",
-    "location": "Hyderabad, India",
-    "role": "Post-PhD Research Scientist",
-    "period": "August 2025 – Present",
-    "responsibilities": [
-      "Leading research in cybercrime investigation, digital evidence analysis, and emerging cybercrime analysis",
-      "Collaborating with state law enforcement agencies on applied cybercrime research and investigative frameworks"
-    ]
-  },
-  {
-    "institution": "C3iHub, Indian Institute of Technology Kanpur",
-    "location": "Kanpur, India",
-    "role": "Doctoral Researcher",
-    "period": "August 2022 – July 2025",
-    "responsibilities": [
-      "Worked on applied research projects related to cybercrime investigation and policing, alongside ongoing PhD research at IIT Kanpur",
-      "Contributed to interdisciplinary research bridging computer science, criminology, and cyber law"
-    ],
-    "note": "This research role was undertaken in parallel with the PhD program in the Department of Computer Science and Engineering, IIT Kanpur."
-  }
-],
+  "experience": [
+    {
+      "institution": "International Institute of Information Technology (IIIT) Hyderabad",
+      "location": "Hyderabad, India",
+      "role": "Post-PhD Research Scientist",
+      "period": "August 2025 – Present",
+      "responsibilities": [
+        "Leading research in cybercrime investigation, digital evidence analysis, and emerging cybercrime analysis",
+        "Collaborating with state law enforcement agencies on applied cybercrime research and investigative frameworks"
+      ]
+    },
+    {
+      "institution": "C3iHub, Indian Institute of Technology Kanpur",
+      "location": "Kanpur, India",
+      "role": "Doctoral Researcher",
+      "period": "August 2022 – July 2025",
+      "responsibilities": [
+        "Worked on applied research projects related to cybercrime investigation and policing, alongside ongoing PhD research at IIT Kanpur",
+        "Contributed to interdisciplinary research bridging computer science, criminology, and cyber law"
+      ],
+      "note": "This research role was undertaken in parallel with the PhD program in the Department of Computer Science and Engineering, IIT Kanpur."
+    }
+  ],
 
   "education": [
     {
@@ -125,153 +123,231 @@
     }
   ],
 
- "publications": {
-  "journals": [
-    {
-      "year": 2025,
-      "status": "under_review",
-      "authors": ["Gargi Sarkar", "P.V.S. Charan", "Sandeep K. Shukla"],
-      "title": "Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks",
-      "venue": "Humanities & Social Sciences Communications (Nature Portfolio)"
-    },
-    {
-  "year": 2026,
-  "status": "published",
-  "authors": ["Rohit Negi", "Gargi Sarkar", "Sandeep K. Shukla"],
-  "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
-  "venue": "Computers & Security",
-  "identifier": {
-    "type": "doi",
-    "value": "10.1016/j.cose.2026.104849"
-  }
-},
-
-
-    {
-      "year": 2025,
-      "status": "preprint",
-      "authors": [
-        "Arush Sachdeva",
-        "Rajendraprasad Saravanan",
-        "Gargi Sarkar",
-        "Kavita Vemuri",
-        "Sandeep K. Shukla"
-      ],
-      "title": "BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models",
-      "venue": "arXiv",
-      "identifier": {
-        "type": "arxiv",
-        "value": "2512.06555"
-      }
-    },
-
-    {
-  "year": 2026,
-  "status": "preprint",
-  "authors": ["Goni Anagha", "Vishakha Dasi Agrawal", "Gargi Sarkar", "Kavita Vemuri", "Sandeep K. Shukla"],
-  "title": "Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study",
-  "venue": "arXiv",
-  "identifier": {
-    "type": "arxiv",
-    "value": "2601.19342"
-  },
-  "url": "https://arxiv.org/abs/2601.19342"
-},
-
-    {
-      "year": 2025,
-      "status": "preprint",
-      "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
-      "title": "Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime",
-      "venue": "arXiv",
-      "identifier": {
-        "type": "arxiv",
-        "value": "2510.12814"
-      }
-    },
+  "publications": {
+    "journals": [
       {
-  "year": 2024,
-  "status": "preprint",
-  "authors": ["Gargi Sarkar", "Sandeep Kumar Shukla"],
-  "title": "Policing Transnational Cybercrime: A Critical Assessment of the Anticipated Impact of the United Nations Convention against Cybercrime in India and Worldwide",
-  "venue": "SSRN",
-  "identifier": {
-    "type": "doi",
-    "value": "10.2139/ssrn.5899223"
-  }
-},
+        "year": 2026,
+        "status": "preprint",
+        "rank": {
+          "type": "journal",
+          "label": "Under Review",
+          "scimago": null,
+          "note": "arXiv preprint – not yet ranked"
+        },
+        "authors": ["Goni Anagha", "Vishakha Dasi Agrawal", "Gargi Sarkar", "Kavita Vemuri", "Sandeep K. Shukla"],
+        "title": "Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study",
+        "venue": "arXiv",
+        "identifier": {
+          "type": "arxiv",
+          "value": "2601.19342"
+        },
+        "url": "https://arxiv.org/abs/2601.19342"
+      },
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Computers & Security is a top-tier Q1 cybersecurity journal"
+        },
+        "authors": ["Rohit Negi", "Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
+        "venue": "Computers & Security",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.cose.2026.104849"
+        }
+      },
+      {
+        "year": 2025,
+        "status": "under_review",
+        "rank": {
+          "type": "journal",
+          "label": "Under Review",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Humanities & Social Sciences Communications (Nature Portfolio) is Q1"
+        },
+        "authors": ["Gargi Sarkar", "P.V.S. Charan", "Sandeep K. Shukla"],
+        "title": "Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks",
+        "venue": "Humanities & Social Sciences Communications (Nature Portfolio)"
+      },
+      {
+        "year": 2025,
+        "status": "preprint",
+        "rank": {
+          "type": "journal",
+          "label": "Under Review",
+          "scimago": null,
+          "note": "arXiv preprint – not yet ranked"
+        },
+        "authors": [
+          "Arush Sachdeva",
+          "Rajendraprasad Saravanan",
+          "Gargi Sarkar",
+          "Kavita Vemuri",
+          "Sandeep K. Shukla"
+        ],
+        "title": "BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models",
+        "venue": "arXiv",
+        "identifier": {
+          "type": "arxiv",
+          "value": "2512.06555"
+        }
+      },
+      {
+        "year": 2025,
+        "status": "preprint",
+        "rank": {
+          "type": "journal",
+          "label": "Under Review",
+          "scimago": null,
+          "note": "arXiv preprint – not yet ranked"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime",
+        "venue": "arXiv",
+        "identifier": {
+          "type": "arxiv",
+          "value": "2510.12814"
+        }
+      },
+      {
+        "year": 2024,
+        "status": "preprint",
+        "rank": {
+          "type": "journal",
+          "label": "Under Review",
+          "scimago": null,
+          "note": "SSRN preprint – not yet ranked"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep Kumar Shukla"],
+        "title": "Policing Transnational Cybercrime: A Critical Assessment of the Anticipated Impact of the United Nations Convention against Cybercrime in India and Worldwide",
+        "venue": "SSRN",
+        "identifier": {
+          "type": "doi",
+          "value": "10.2139/ssrn.5899223"
+        }
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Human Trafficking is Q1"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime",
+        "venue": "Journal of Human Trafficking",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1080/23322705.2024.2353015"
+        }
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Economic Criminology is Q1"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Reconceptualizing online offenses: A framework for distinguishing cybercrime, cyberattacks, and cyberterrorism in the Indian legal context",
+        "venue": "Journal of Economic Criminology",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.jeconc.2024.100063"
+        }
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Economic Criminology is Q1"
+        },
+        "authors": ["Aya Aljaradat", "Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Modelling cybersecurity impacts on digital payment adoption: a game theoretic approach",
+        "venue": "Journal of Economic Criminology",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1080/23322705.2024.2353015"
+        }
+      },
+      {
+        "year": 2023,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Economic Criminology is Q1"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Behavioral analysis of cybercrime: Paving the way for effective policing strategies",
+        "venue": "Journal of Economic Criminology",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.jeconc.2023.100034"
+        }
+      }
+    ],
 
-    {
-      "year": 2024,
-      "status": "published",
-      "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
-      "title": "Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime",
-      "venue": "Journal of Human Trafficking",
-      "identifier": {
-        "type": "doi",
-        "value": "10.1080/23322705.2024.2353015"
+    "conference_proceedings": [
+      {
+        "year": 2026,
+        "rank": {
+          "type": "conference",
+          "label": "CORE A",
+          "core_rank": "A",
+          "source": "CORE Conference Portal",
+          "note": "AsiaCCS is CORE A ranked; SPAIC is co-located with AsiaCCS 2026"
+        },
+        "authors": ["Gargi Sarkar", "Arush Sachdeva", "Sandeep K. Shukla"],
+        "title": "From trust to lock-in: Human-centered AI for understanding investment fraud narratives in Indian digital communities",
+        "venue": "Proceedings of SPAIC '26 (co-located with ACM AsiaCCS 2026)",
+        "publisher": "ACM"
+      },
+      {
+        "year": 2023,
+        "rank": {
+          "type": "conference",
+          "label": "CORE B",
+          "core_rank": "B",
+          "source": "CORE Conference Portal",
+          "note": "ARES (International Conference on Availability, Reliability and Security) is CORE B ranked"
+        },
+        "authors": ["Gargi Sarkar", "Hardeep Singh", "Subodh Kumar", "Sandeep K. Shukla"],
+        "title": "Tactics, techniques and procedures of cybercrime: A methodology and tool for cybercrime investigation process",
+        "venue": "Proceedings of the 18th International Conference on Availability, Reliability and Security (ARES '23)",
+        "pages": "1–10",
+        "publisher": "ACM",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1145/3600160.3605013"
+        }
       }
-    },
-    {
-      "year": 2024,
-      "status": "published",
-      "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
-      "title": "Reconceptualizing online offenses: A framework for distinguishing cybercrime, cyberattacks, and cyberterrorism in the Indian legal context",
-      "venue": "Journal of Economic Criminology",
-      "identifier": {
-        "type": "doi",
-        "value": "10.1016/j.jeconc.2024.100063"
-      }
-    },
-        {
-  "year": 2024,
-  "status": "published",
-  "authors": [
-    "Aya Aljaradat",
-    "Gargi Sarkar",
-    "Sandeep K. Shukla"
-  ],
-  "title": "Modelling cybersecurity impacts on digital payment adoption: a game theoretic approach",
-  "venue": "Journal of Economic Criminology",
-  "identifier": {
-    "type": "doi",
-    "value": "10.1080/23322705.2024.2353015"
-  }
-},
-    {
-      "year": 2023,
-      "status": "published",
-      "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
-      "title": "Behavioral analysis of cybercrime: Paving the way for effective policing strategies",
-      "venue": "Journal of Economic Criminology",
-      "identifier": {
-        "type": "doi",
-        "value": "10.1016/j.jeconc.2023.100034"
-      }
-    }
-  ],
-
-  "conference_proceedings": [
-    {
-      "year": 2023,
-      "authors": ["Gargi Sarkar", "Hardeep Singh", "Subodh Kumar", "Sandeep K. Shukla"],
-      "title": "Tactics, techniques and procedures of cybercrime: A methodology and tool for cybercrime investigation process",
-      "venue": "Proceedings of the 18th International Conference on Availability, Reliability and Security",
-      "pages": "1–10",
-      "identifier": {
-        "type": "doi",
-        "value": "10.1145/3600160.3605013"
-      }
-    }
-  ]
-},
-
+    ]
+  },
 
   "research": [
     {
       "title": "Doctoral Research (Ph.D.) | Indian Institute of Technology Kanpur",
       "details": [
-        "Thesis: Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India’s Policing Perspective",
+        "Thesis: Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective",
         "Supervisor: Prof. Sandeep Kumar Shukla",
         "Research integrates investigative tooling, human-centric cybercrime analysis, organized cybercriminal networks, cyber slavery, and international cybercrime law from an Indian policing perspective."
       ]
@@ -317,6 +393,17 @@
   ],
 
   "projects": [
+    {
+      "title": "Cybercrime Navigator",
+      "sponsor": "Microsoft Research India (CSR Fund) & C3iHub, IIT Kanpur",
+      "url": "https://github.com/gargi-sarkar-iitk/Cybercrime-Navigator",
+      "details": [
+        "Led development of an open-source web-based TTP framework for cybercrime investigation.",
+        "Divided the cybercrime lifecycle into 14 tactical stages with techniques, sub-techniques, and digital artifacts.",
+        "Designed an interactive navigator with automated modus operandi identification.",
+        "Demonstrated at the 3rd National DST TIPS Workshop; formed the basis of the ARES 2023 CORE B publication."
+      ]
+    },
     {
       "title": "Cyber Commando Operational Manual",
       "sponsor": "Ministry of Home Affairs, India",
@@ -412,17 +499,13 @@
     }
   ],
 
-"achievements": [
-  "C3iHub Research Fellowship Awardee – for Research in Cybersecurity (2022–2025), awarded for advanced research contributions in cybercrime investigation and digital security.",
-  "Darkathon 2022 Finalist – Selected by the Narcotics Control Bureau, Government of India, for proposing innovative solutions addressing anonymity and illicit trade in dark web narcotics markets.",
-  "Qualified GATE 2021 in Mathematics – National-level competitive examination assessing advanced mathematical aptitude for postgraduate education and public sector technical roles.",
-  "Qualified JAM 2018 in Mathematics – Highly competitive national examination for admission to M.Sc. programs in IITs, NITs, and other centrally funded institutions.",
-  "Qualified JEE Mains 2015 – National-level entrance examination for undergraduate engineering programs in IITs, NITs, and other centrally funded technical institutions."
-],
-
-
-
-
+  "achievements": [
+    "C3iHub Research Fellowship Awardee – for Research in Cybersecurity (2022–2025), awarded for advanced research contributions in cybercrime investigation and digital security.",
+    "Darkathon 2022 Finalist – Selected by the Narcotics Control Bureau, Government of India, for proposing innovative solutions addressing anonymity and illicit trade in dark web narcotics markets.",
+    "Qualified GATE 2021 in Mathematics – National-level competitive examination assessing advanced mathematical aptitude for postgraduate education and public sector technical roles.",
+    "Qualified JAM 2018 in Mathematics – Highly competitive national examination for admission to M.Sc. programs in IITs, NITs, and other centrally funded institutions.",
+    "Qualified JEE Mains 2015 – National-level entrance examination for undergraduate engineering programs in IITs, NITs, and other centrally funded technical institutions."
+  ],
 
   "talks_and_presentations": [
     "Invited talk at ARES 2023, Italy",
@@ -435,30 +518,26 @@
     "Organizer, HACK IITK 2024",
     "Presented Cybercrime Navigator at DST TIPS Workshop"
   ],
-"technical_skills": {
-  "Programming & Tools": [
-    "Python",
-    "C",
-    "MATLAB",
-    "HTML/CSS",
-    "LaTeX",
-    "Markdown"
-  ],
-  "Cybersecurity & Digital Forensics": [
-    "Cybercrime Investigation",
-    "Digital Evidence Analysis",
-    "OSINT Techniques",
-    "Dark Web Analysis (Tor)",
-    "Scam and Fraud Lifecycle Analysis",
-    "CERT-In Compliance and Audit Understanding"
-  ],
-  "AI & Data Analysis": [
-    "Large Language Models (Applied)",
-    "Natural Language Processing for Fraud Analysis",
-    "Explainable AI",
-    "Behavioral and Tactical Modeling"
-  ]
-},
+
+  "technical_skills": {
+    "Programming & Tools": [
+      "Python", "C", "MATLAB", "HTML/CSS", "LaTeX", "Markdown"
+    ],
+    "Cybersecurity & Digital Forensics": [
+      "Cybercrime Investigation",
+      "Digital Evidence Analysis",
+      "OSINT Techniques",
+      "Dark Web Analysis (Tor)",
+      "Scam and Fraud Lifecycle Analysis",
+      "CERT-In Compliance and Audit Understanding"
+    ],
+    "AI & Data Analysis": [
+      "Large Language Models (Applied)",
+      "Natural Language Processing for Fraud Analysis",
+      "Explainable AI",
+      "Behavioral and Tactical Modeling"
+    ]
+  },
 
   "references": [
     {
