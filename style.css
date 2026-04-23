@@ -1,164 +1,56 @@
-/* =========================================================
-   RANK BADGES  — add these to your existing stylesheet
-   ========================================================= */
+/* =====================================================
+   RANK BADGES — integrated with existing design system
+   ===================================================== */
 
 .rank-badge {
   display: inline-block;
-  font-size: 0.65rem;
+  font-family: Georgia, "Times New Roman", serif; /* matches body font */
+  font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
-  padding: 2px 7px;
-  border-radius: 4px;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 6px;              /* matches .pub-item border-radius */
   vertical-align: middle;
-  margin-left: 6px;
+  margin-left: 8px;
   cursor: default;
   white-space: nowrap;
-  line-height: 1.6;
+  line-height: 1.7;
+  text-transform: uppercase;
+  position: relative;
+  top: -1px;                       /* optical alignment with title text */
 }
 
-/* Q1 — green */
+/* Q1 — deep green, distinct from primary/accent */
 .rank-q1 {
   background: #1a6b3c;
   color: #fff;
+  border: 1px solid #155a32;
 }
 
-/* CORE A — navy */
+/* CORE A — uses --primary (#0b3c5d) directly */
 .rank-core-a {
-  background: #1a3a6b;
+  background: var(--primary);     /* #0b3c5d — same as your headings */
   color: #fff;
+  border: 1px solid #092e48;
 }
 
-/* CORE B — steel blue */
+/* CORE B — uses --accent (#0266c8) directly */
 .rank-core-b {
-  background: #2c5f8a;
+  background: var(--accent);      /* #0266c8 — same as your links */
   color: #fff;
+  border: 1px solid #0257aa;
 }
 
-/* Under Review / preprint — neutral gray */
+/* Under Review / Preprint — outline only, uses --muted */
 .rank-under-review {
-  background: #555555;
-  color: #fff;
+  background: transparent;
+  color: var(--muted);            /* #6b7280 */
+  border: 1px solid var(--muted);
 }
 
-/* =========================================================
-   PUBLICATION ITEM LAYOUT  (two-column: number + body)
-   ========================================================= */
-
-.pub-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  margin-bottom: 1.1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #e5e7eb;
-}
-
-.pub-item:last-child {
-  border-bottom: none;
-}
-
-.pub-number {
-  flex-shrink: 0;
-  min-width: 2rem;
-  font-size: 0.8rem;
-  color: #888;
-  padding-top: 2px;
-  font-variant-numeric: tabular-nums;
-}
-
-.pub-body {
-  flex: 1;
-}
-
-.pub-title {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #1a1a2e;
-  margin-bottom: 2px;
-  line-height: 1.45;
-}
-
-.pub-authors {
-  font-size: 0.85rem;
-  color: #444;
-  margin-bottom: 2px;
-}
-
-.pub-venue {
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 4px;
-}
-
-.pub-links {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: 4px;
-}
-
-.pub-link {
-  font-size: 0.78rem;
-  color: #1a5276;
-  text-decoration: none;
-  border: 1px solid #1a5276;
-  padding: 1px 8px;
-  border-radius: 3px;
-  transition: background 0.15s, color 0.15s;
-}
-
-.pub-link:hover {
-  background: #1a5276;
-  color: #fff;
-}
-
-.bibtex {
-  background: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px 12px;
-  font-size: 0.78rem;
-  overflow-x: auto;
-  margin-top: 6px;
-  white-space: pre;
-}
-
-.pub-section-title {
-  margin-top: 1.4rem;
-  margin-bottom: 0.75rem;
-  font-size: 1rem;
-  color: #002147;
-  border-bottom: 2px solid #002147;
-  padding-bottom: 4px;
-}
-
-/* =========================================================
-   PROJECT SPONSOR LINE
-   ========================================================= */
-.project-sponsor {
-  font-size: 0.82rem;
-  color: #1a6b3c;
-  font-style: italic;
-  margin: 2px 0 4px;
-}
-
-.project-link {
-  color: #1a3a6b;
-  text-decoration: none;
-}
-
-.project-link:hover {
-  text-decoration: underline;
-}/* =====================================================
-   ROOT VARIABLES
-   ===================================================== */
-:root {
-  --primary: #0b3c5d;
-  --accent: #0266c8;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --border: #e5e7eb;
-  --bg-light: #f8fafc;
+/* Tooltip cursor hint */
+.rank-badge[title] {
+  cursor: help;
 }
 
 /* =====================================================
