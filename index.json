@@ -34,38 +34,49 @@
   },
 
   "announcements": [
-    {
-      "date": "2026-02-01",
-      "title": "Research Paper Published in Computers & Security",
-      "description": "Our paper 'AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors' has been published in the journal *Computers & Security*.",
-      "type": "publication"
-    },
-    {
-      "date": "2026-01-27",
-      "title": "Job Scam Behavioral Signals Paper Released on arXiv",
-      "description": "The paper 'Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study' is now available as an arXiv preprint.",
-      "type": "preprint"
-    },
-    {
-      "date": "2025-12-15",
-      "title": "PhD Thesis Successfully Defended",
-      "description": "Successfully defended my PhD thesis titled 'Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective.'",
-      "type": "milestone"
-    },
-    {
-      "date": "2025-10-08",
-      "title": "Cyber Slavery Paper Released on arXiv",
-      "description": "The paper 'Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime' is now available as an arXiv preprint.",
-      "type": "preprint"
-    },
-    {
-      "date": "2025-12-06",
-      "title": "BEACON Paper Released on arXiv",
-      "description": "The paper 'BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models' is now available on arXiv.",
-      "type": "preprint"
-    }
-  ],
-
+  {
+    "date": "2026-05-21",
+    "title": "BEACON Paper Accepted at EAI ICDF2C 2026",
+    "description": "Our paper 'BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models' has been accepted at EAI ICDF2C 2026.",
+    "type": "acceptance"
+  },
+  {
+    "date": "2026-04-02",
+    "title": "Jamtara Cybercrime Paper Accepted in Nature Portfolio Journal",
+    "description": "Our paper 'Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks' has been accepted for publication in Humanities & Social Sciences Communications (Nature Portfolio).",
+    "type": "acceptance"
+  },
+  {
+    "date": "2026-04-02",
+    "title": "Investment Fraud Narratives Paper Accepted at SPAIC 2026",
+    "description": "Our paper 'From Trust to Lock-In: Human-Centered AI for Understanding Investment Fraud Narratives in Indian Digital Communities' has been accepted at the SPAIC 2026 Workshop co-located with AsiaCCS 2026.",
+    "type": "acceptance"
+  },
+  {
+    "date": "2026-02-01",
+    "title": "Research Paper Published in Computers & Security",
+    "description": "Our paper 'AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors' has been published in the journal *Computers & Security*.",
+    "type": "publication"
+  },
+  {
+    "date": "2026-01-27",
+    "title": "Job Scam Behavioral Signals Paper Released on arXiv",
+    "description": "The paper 'Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study' is now available as an arXiv preprint.",
+    "type": "preprint"
+  },
+  {
+    "date": "2025-12-15",
+    "title": "PhD Thesis Successfully Defended",
+    "description": "Successfully defended my PhD thesis titled 'Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective.'",
+    "type": "milestone"
+  },
+  {
+    "date": "2025-10-08",
+    "title": "Cyber Slavery Paper Released on arXiv",
+    "description": "The paper 'Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime' is now available as an arXiv preprint.",
+    "type": "preprint"
+  }
+],
   "experience": [
     {
       "institution": "International Institute of Information Technology (IIIT) Hyderabad",
@@ -144,6 +155,24 @@
         "url": "https://arxiv.org/abs/2601.19342"
       },
       {
+  "year": 2025,
+  "status": "published",
+  "rank": {
+    "type": "journal",
+    "label": "Q1",
+    "scimago": "Q1",
+    "source": "Scimago / Scopus",
+    "note": "Humanities & Social Sciences Communications (Nature Portfolio) is a Q1 journal"
+  },
+  "authors": ["Gargi Sarkar", "P.V.S. Charan", "Sandeep K. Shukla"],
+  "title": "Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks",
+  "venue": "Humanities & Social Sciences Communications (Nature Portfolio)",
+  "identifier": {
+    "type": "doi",
+    "value": "10.1057/s41599-026-07703-0"
+  }
+},
+      {
         "year": 2026,
         "status": "published",
         "rank": {
@@ -160,20 +189,6 @@
           "type": "doi",
           "value": "10.1016/j.cose.2026.104849"
         }
-      },
-      {
-        "year": 2025,
-        "status": "under_review",
-        "rank": {
-          "type": "journal",
-          "label": "Under Review",
-          "scimago": "Q1",
-          "source": "Scimago / Scopus",
-          "note": "Humanities & Social Sciences Communications (Nature Portfolio) is Q1"
-        },
-        "authors": ["Gargi Sarkar", "P.V.S. Charan", "Sandeep K. Shukla"],
-        "title": "Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks",
-        "venue": "Humanities & Social Sciences Communications (Nature Portfolio)"
       },
       {
         "year": 2025,
