@@ -345,9 +345,20 @@ function renderProjects(arr = []) {
   arr.forEach(p => {
     const d = document.createElement("div");
     d.className = "item";
+
+    let linksHTML = "";
+    if (Array.isArray(p.links) && p.links.length) {
+      linksHTML = `<div class="project-links">${p.links
+        .map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label} &rarr;</a>`)
+        .join("")}</div>`;
+    } else if (p.url) {
+      linksHTML = `<div class="project-links"><a href="${p.url}" target="_blank" rel="noopener">View on GitHub &rarr;</a></div>`;
+    }
+
     d.innerHTML = `
       <strong>${p.title}</strong>
       <ul>${p.details.map(x => `<li>${x}</li>`).join("")}</ul>
+      ${linksHTML}
     `;
     c.appendChild(d);
   });
