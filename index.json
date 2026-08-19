@@ -10,6 +10,7 @@
     "projects",
     "academic_service",
     "teaching",
+    "grants",
     "achievements",
     "talks_and_presentations",
     "activities",
@@ -41,13 +42,13 @@
     "type": "milestone"
   },
   {
-    "date": "2026-07-27",
+    "date": "2026-08-01",
     "title": "Strait of Hormuz Paper Published in Deviant Behavior",
     "description": "Our paper 'Strait of Hormuz: How the 2026 US–Israel–Iran Conflict Illuminated a Cascade of Global Cybercrime' (with Prof. Suleman Lazarus) has been published in Deviant Behavior.",
     "type": "publication"
   },
   {
-    "date": "2026-07-22",
+    "date": "2026-08-01",
     "title": "Malware as a Service Paper Published in Journal of Human Trafficking",
     "description": "Our paper 'Malware as a Service in Human Trafficking Operations at a Scam Compound: Cybercrime Infrastructure and Forced Labour as Structurally Interdependent' (with Prof. Suleman Lazarus) has been published in the Journal of Human Trafficking.",
     "type": "publication"
@@ -131,19 +132,24 @@
   "education": [
     {
       "institution": "Indian Institute of Technology Kanpur",
-      "degree": "Ph.D. in Computer Science and Engineering",
+      "degree": "Ph.D. in Computer Science and Engineering (Coursework CGPA: 9.5/10)",
       "period": "2021 - 2025",
-      "location": "Kanpur, India"
+      "location": "Kanpur, India",
+      "details": [
+        "Degree awarded: December 2025",
+        "Thesis: Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective",
+        "Supervisor: Prof. Sandeep Kumar Shukla (Director, IIIT Hyderabad, since Aug 2025)"
+      ]
     },
     {
       "institution": "Presidency University",
-      "degree": "Master of Science (M.Sc.) in Pure Mathematics",
+      "degree": "Master of Science (M.Sc.) in Pure Mathematics (First Class)",
       "period": "2018 - 2020",
       "location": "Kolkata, India"
     },
     {
       "institution": "University of North Bengal",
-      "degree": "Bachelor of Science (B.Sc.) in Mathematics",
+      "degree": "Bachelor of Science (B.Sc.) in Mathematics (First Class)",
       "period": "2015 - 2018",
       "location": "Siliguri, India"
     }
@@ -410,6 +416,12 @@
           "value": "10.1145/3600160.3605013"
         }
       }
+    ],
+
+    "impact": [
+      "260+ Google Scholar citations; h-index: 6; i10-index: 5.",
+      "Published 8 Q1 journal articles, 2 refereed conference papers (CORE A and CORE B), and 4 archival manuscripts.",
+      "Developed Cybercrime Navigator, a cybercrime investigation framework supported by Microsoft Research India and featured by the Department of Science and Technology (DST), Government of India."
     ]
   },
 
@@ -569,11 +581,35 @@
     }
   ],
 
+  "grants": [
+    {
+      "title": "C3iHub Doctoral Research Fellowship",
+      "sponsor": "IIT Kanpur (C3iHub)",
+      "period": "2022 – 2025",
+      "amount": "INR 25,80,000",
+      "description": "Awarded a competitive doctoral research fellowship to conduct research on cybercrime investigation and digital policing."
+    },
+    {
+      "title": "Cybercrime Navigator: Phase I",
+      "sponsor": "Microsoft India (CSR Grant)",
+      "period": "2022 – 2024",
+      "amount": "INR 50,00,000",
+      "description": "Scientific Lead for the development of AI-assisted cybercrime investigation technologies."
+    },
+    {
+      "title": "Cybercrime Navigator: Phase II",
+      "sponsor": "Dept. of Science & Technology (DST), Govt. of India",
+      "period": "2024 – Present",
+      "amount": "INR 1,00,00,000",
+      "description": "Scientific Lead for the next phase of AI-enabled cybercrime investigation technologies under a DST-funded national project."
+    }
+  ],
+
   "achievements": [
-    "C3iHub Research Fellowship Awardee – for Research in Cybersecurity (2022–2025), awarded for advanced research contributions in cybercrime investigation and digital security.",
-    "Darkathon 2022 Finalist – Selected by the Narcotics Control Bureau, Government of India, for proposing innovative solutions addressing anonymity and illicit trade in dark web narcotics markets.",
-    "Qualified GATE 2021 in Mathematics – National-level competitive examination assessing advanced mathematical aptitude for postgraduate education and public sector technical roles.",
-    "Qualified JAM 2018 in Mathematics – Highly competitive national examination for admission to M.Sc. programs in IITs, NITs, and other centrally funded institutions.",
+    "ISEC Best PhD Award (Shortlisted), 2026 – PhD thesis shortlisted by the International Society of Economic Criminology (ISEC) for outstanding doctoral research in economic criminology.",
+    "Darkathon – National Finalist, 2022 – Selected as a national finalist by the Narcotics Control Bureau, Government of India, for developing solutions targeting anonymity in dark-web narcotics markets.",
+    "GATE, Mathematics, 2021 – Qualified one of India's premier national competitive examinations for postgraduate engineering education and research recruitment.",
+    "JAM, Mathematics, 2018 – Qualified India's national entrance examination for admission to postgraduate science programmes at the Indian Institutes of Technology (IITs).",
     "Qualified JEE Mains 2015 – National-level entrance examination for undergraduate engineering programs in IITs, NITs, and other centrally funded technical institutions."
   ],
 
@@ -590,22 +626,41 @@
   ],
 
   "technical_skills": {
-    "Programming & Tools": [
-      "Python", "C", "MATLAB", "HTML/CSS", "LaTeX", "Markdown"
+    "Research Methods": [
+      "Empirical Security Research",
+      "Mixed-Methods Research",
+      "Human-Centered Security",
+      "Computational Criminology",
+      "Cybercrime Measurement",
+      "Behavioral Analysis",
+      "Interview-Based Research",
+      "Qualitative Analysis",
+      "Document Analysis",
+      "Policy Analysis"
     ],
-    "Cybersecurity & Digital Forensics": [
+    "Cybersecurity & Investigation": [
       "Cybercrime Investigation",
       "Digital Evidence Analysis",
-      "OSINT Techniques",
+      "OSINT",
+      "Fraud and Scam Ecosystem Analysis",
       "Dark Web Analysis (Tor)",
-      "Scam and Fraud Lifecycle Analysis",
+      "Cyber Threat Intelligence",
       "CERT-In Compliance and Audit Understanding"
     ],
     "AI & Data Analysis": [
       "Large Language Models (Applied)",
-      "Natural Language Processing for Fraud Analysis",
+      "Natural Language Processing",
       "Explainable AI",
+      "Unsupervised Learning",
       "Behavioral and Tactical Modeling"
+    ],
+    "Programming & Tools": [
+      "Python", "C", "MATLAB", "HTML/CSS", "LaTeX", "Markdown"
+    ],
+    "Languages": [
+      "English (Full Professional Proficiency)",
+      "Bengali (Native)",
+      "Hindi (Full Professional Proficiency)"
     ]
   },
 
