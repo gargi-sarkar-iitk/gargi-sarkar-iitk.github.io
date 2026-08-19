@@ -36,10 +36,12 @@ body {
    ===================================================== */
 .sidebar {
   width: 270px;
-  min-height: 100vh;
+  height: 100vh;
+  overflow-y: auto;
   padding-top: 14px;
   padding-left: 24px;
   padding-right: 20px;
+  padding-bottom: 24px;
   position: sticky;
   top: 0;
   background: #f4f6f9;
@@ -792,6 +794,9 @@ section h2 {
   .sidebar {
     order: 2;
     width: 100%;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
     position: relative;
     border-right: none;
     border-bottom: 1px solid var(--border);
