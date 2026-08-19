@@ -490,7 +490,7 @@
     {
       "title": "BEACON: Behavioral-Tactical Framework for Explainable Cybercrime Analysis with LLMs",
       "sponsor": "IIT Kanpur / IIIT Hyderabad collaboration",
-      "url": "https://arxiv.org/abs/2512.06555",
+      "url": "https://github.com/gargi-sarkar-iitk/BEACON_EAI-ICDF2C-2026",
       "details": [
         "Co-developed a unified dual behavioral-tactical cybercrime classifier using Mistral-7B fine-tuned with QLoRA.",
         "Produced camera-ready revisions for EAI ICDF2C 2026, including bootstrap confidence intervals computed from actual datasets and a full reproducibility README."
