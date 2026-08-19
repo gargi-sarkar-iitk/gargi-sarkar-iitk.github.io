@@ -445,7 +445,8 @@
       "title": "Cyber Slavery and the Human Trafficking–Cybercrime Nexus",
       "details": [
         "Developed a five-tier victimization framework for cyber-enabled forced criminality, built on ~29,466 cases from India's Indian Cyber Crime Coordination Centre (I4C); under revision for International Journal of Comparative and Applied Criminal Justice (ICJR).",
-        "Co-authored (with Prof. Suleman Lazarus, LSE/University of Surrey) a study on malware-as-a-service infrastructure within human trafficking scam compounds (Journal of Human Trafficking), and the Strait of Hormuz Geopolitical Cybercrime Cascade Framework (GCCF) tracing how geopolitical conflict propagates through global cybercrime ecosystems (Deviant Behavior).",
+        "Established the dual victim–perpetrator framing of trafficked individuals coerced into cybercrime in \"Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime\" (Journal of Human Trafficking, 2024), the foundational study underlying this research pillar.",
+        "Co-authored (with Prof. Suleman Lazarus, LSE/University of Surrey) two further studies published in leading international journals of criminology, law, and justice: a study on malware-as-a-service infrastructure within human trafficking scam compounds (Journal of Human Trafficking), and the Strait of Hormuz Geopolitical Cybercrime Cascade Framework (GCCF) tracing how geopolitical conflict propagates through global cybercrime ecosystems (Deviant Behavior).",
         "Additional foundational work: Cyber Slavery Infrastructures, a socio-technical study of forced criminality in transnational cybercrime (arXiv 2510.12814)."
       ]
     },
@@ -459,7 +460,7 @@
     {
       "title": "Cross-National Framing and Governance of Cybercrime",
       "details": [
-        "In development: a cross-country analysis of how cyber slavery is framed in global news media, using GDELT-derived corpora, in collaboration with Prof. Jingjie Li (University of Edinburgh).",
+        "In development: a cross-country analysis of how cyber slavery is framed in global news media, using GDELT-derived corpora, in collaboration with Prof. Jingjie Li (University of Edinburgh); targeting CHI 2027.",
         "Constructed actor-intent and target-impact models distinguishing cybercrime, cyberattacks, and cyberterrorism, and evaluated the Budapest Convention against the proposed UN Convention against Cybercrime for the Indian legal context."
       ]
     },
@@ -487,11 +488,28 @@
       ]
     },
     {
+      "title": "BEACON: Behavioral-Tactical Framework for Explainable Cybercrime Analysis with LLMs",
+      "sponsor": "IIT Kanpur / IIIT Hyderabad collaboration",
+      "url": "https://arxiv.org/abs/2512.06555",
+      "details": [
+        "Co-developed a unified dual behavioral-tactical cybercrime classifier using Mistral-7B fine-tuned with QLoRA.",
+        "Produced camera-ready revisions for EAI ICDF2C 2026, including bootstrap confidence intervals computed from actual datasets and a full reproducibility README."
+      ]
+    },
+    {
       "title": "Fraud Complaint Priority Index (FCPI)",
       "sponsor": "Under review, JISAS",
       "details": [
         "Developed a data-driven prioritization index for triaging fraud complaints at scale to support law enforcement resource allocation.",
         "Underwent full revision including correction of stale platform validation figures and formula-code alignment, with all outputs independently verified."
+      ]
+    },
+    {
+      "title": "Jamtara Cybercrime News Dataset",
+      "sponsor": "Collaboration with Prof. Suleman Lazarus (LSE/University of Surrey)",
+      "details": [
+        "Built a 101-record news dataset spanning 30 outlets and a 10-year period on Jamtara-linked cybercrime reporting.",
+        "Coding in progress against criminological theory frameworks for a forthcoming paper."
       ]
     },
     {
