@@ -427,14 +427,6 @@
 
   "research": [
     {
-      "title": "Doctoral Research (Ph.D.) | Indian Institute of Technology Kanpur",
-      "details": [
-        "Thesis: Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective",
-        "Supervisor: Prof. Sandeep Kumar Shukla",
-        "Research integrates investigative tooling, human-centric cybercrime analysis, organized cybercriminal networks, cyber slavery, and international cybercrime law from an Indian policing perspective."
-      ]
-    },
-    {
       "title": "Building Framework for Cybercrime Investigations | Funded by Microsoft Research India",
       "details": [
         "Led the development of Cybercrime Navigator.",
