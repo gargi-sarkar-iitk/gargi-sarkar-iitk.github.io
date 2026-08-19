@@ -22,6 +22,7 @@ fetch("index.json")
     renderProjects(data.projects);
     renderAcademicService(data.academic_service);
     renderTeaching(data.teaching);
+    renderGrants(data.grants);
     renderAchievements(data.achievements);
     renderTalks(data.talks_and_presentations);
     renderActivities(data.activities);
@@ -229,12 +230,16 @@ function renderEducation(arr = []) {
   arr.forEach(e => {
     const d = document.createElement("div");
     d.className = "item education-item";
+    const detailsHTML = (e.details || [])
+      .map(x => `<li>${x}</li>`)
+      .join("");
     d.innerHTML = `
       <div class="edu-header">
         <span class="edu-degree">${e.degree}</span>
         <span class="edu-period">${e.period || e.year || ""}</span>
       </div>
       <div class="edu-institution">${e.institution}</div>
+      ${detailsHTML ? `<ul class="edu-details">${detailsHTML}</ul>` : ""}
     `;
     c.appendChild(d);
   });
@@ -300,6 +305,18 @@ function renderPublications(pubs) {
   renderSection(sections.conference,   pubs.conference_proceedings || []);
   renderSection(sections.preprint,     journals.filter(p => p.status === "preprint"));
   renderSection(sections.under_review, journals.filter(p => p.status === "under_review"));
+
+  if (pubs.impact?.length) {
+    const h = document.createElement("h3");
+    h.textContent = "Selected Research Impact";
+    publications.appendChild(h);
+    pubs.impact.forEach(line => {
+      const d = document.createElement("div");
+      d.className = "item";
+      d.textContent = "• " + line;
+      publications.appendChild(d);
+    });
+  }
 }
 
 /* =========================================================
@@ -396,6 +413,28 @@ function renderTeaching(arr = []) {
     }
 
     c.appendChild(block);
+  });
+}
+
+/* =========================================================
+   GRANTS, FELLOWSHIPS & AWARDS
+   ========================================================= */
+function renderGrants(arr = []) {
+  const c = $("grants");
+  if (!c || !arr.length) return;
+
+  arr.forEach(g => {
+    const d = document.createElement("div");
+    d.className = "item grant-item";
+    d.innerHTML = `
+      <div class="grant-header">
+        <strong>${g.title}</strong>
+        <span class="grant-period">${g.period || ""}</span>
+      </div>
+      <div class="grant-sponsor">${g.sponsor}${g.amount ? ` &middot; ${g.amount}` : ""}</div>
+      ${g.description ? `<div class="grant-description">${g.description}</div>` : ""}
+    `;
+    c.appendChild(d);
   });
 }
 
