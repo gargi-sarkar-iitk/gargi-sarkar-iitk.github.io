@@ -388,6 +388,10 @@ function renderTeaching(arr = []) {
   const c = $("teaching");
   if (!c) return;
 
+  function courseLine(course) {
+    return `${course.code ? `${course.code}: ` : ""}${course.title}${course.duration ? ` (${course.duration})` : ""}`;
+  }
+
   arr.forEach(t => {
     const block = document.createElement("div");
     block.className = "item teaching-item";
@@ -398,7 +402,20 @@ function renderTeaching(arr = []) {
       </div>
     `;
 
-    if (Array.isArray(t.courses) && t.courses.length) {
+    if (Array.isArray(t.groups) && t.groups.length) {
+      const groupList = document.createElement("div");
+      groupList.className = "teaching-groups";
+      t.groups.forEach(g => {
+        const p = document.createElement("p");
+        p.className = "teaching-group-line";
+        const label = document.createElement("strong");
+        label.textContent = g.label + ": ";
+        p.appendChild(label);
+        p.appendChild(document.createTextNode(g.courses.map(courseLine).join("; ")));
+        groupList.appendChild(p);
+      });
+      block.appendChild(groupList);
+    } else if (Array.isArray(t.courses) && t.courses.length) {
       const ul = document.createElement("ul");
       t.courses.forEach(course => {
         const li = document.createElement("li");
