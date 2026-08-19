@@ -427,49 +427,46 @@
 
   "research": [
     {
-      "title": "Doctoral Research (Ph.D.) | Indian Institute of Technology Kanpur",
+      "title": "Human-Centered Cybercrime Investigation Infrastructure",
       "details": [
-        "Thesis: Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective",
-        "Supervisor: Prof. Sandeep Kumar Shukla",
-        "Research integrates investigative tooling, human-centric cybercrime analysis, organized cybercriminal networks, cyber slavery, and international cybercrime law from an Indian policing perspective."
+        "Doctoral research (Ph.D., IIT Kanpur; supervisor: Prof. Sandeep Kumar Shukla) grounded in over 100 structured interviews with cybercrime victims and, where accessible, perpetrators, plus a self-established victim helpline at IIT Kanpur.",
+        "Led development of Cybercrime Navigator, an open-source TTP-based investigation framework spanning 14 tactics, 177 techniques, and 303 sub-techniques (MAP 0.81, P@1 0.87), funded by Microsoft Research India (INR 50L) and India's Department of Science and Technology (INR 1Cr).",
+        "Built the TGCSB corpus of 100,000+ real-world victim complaint records across 20+ modus operandi, developed in collaboration with the Telangana State Cyber Security Bureau and Uttar Pradesh Police."
       ]
     },
     {
-      "title": "Building Framework for Cybercrime Investigations | Funded by Microsoft Research India",
+      "title": "Computational Analysis of Behavioral Manipulation in Cyber Fraud",
       "details": [
-        "Led the development of Cybercrime Navigator.",
-        "Developed a TTP-based framework dividing the cybercrime lifecycle into 14 stages.",
-        "Defined techniques, sub-techniques, and digital artifacts for each stage.",
-        "Designed and implemented an interactive investigative tool with automated modus operandi identification."
+        "Developed a hybrid lexicon–SBERT detection framework operationalizing eight behavioral manipulation principles (extending Cialdini's persuasion taxonomy with fraud-specific constructs) across 19,480 cyber fraud complaints.",
+        "Links manipulation intensity to financial loss, fraud archetype, platform, and geography, under major revision at ACM Transactions on Social Computing (TSC-2026-0069, \"When Manipulation Becomes Invisible\")."
       ]
     },
     {
-      "title": "Studied Indian Organized Cybercriminal Networks",
+      "title": "Cyber Slavery and the Human Trafficking–Cybercrime Nexus",
       "details": [
-        "Analyzed organizational structures, social engineering techniques, division of labor, and tiered operational hierarchies.",
-        "Highlighted transformation into family-run enterprises and cybercrime-as-a-service models."
+        "Developed a five-tier victimization framework for cyber-enabled forced criminality, built on ~29,466 cases from India's Indian Cyber Crime Coordination Centre (I4C); under revision for International Journal of Comparative and Applied Criminal Justice (ICJR).",
+        "Co-authored (with Prof. Suleman Lazarus, LSE/University of Surrey) a study on malware-as-a-service infrastructure within human trafficking scam compounds (Journal of Human Trafficking), and the Strait of Hormuz Geopolitical Cybercrime Cascade Framework (GCCF) tracing how geopolitical conflict propagates through global cybercrime ecosystems (Deviant Behavior).",
+        "Additional foundational work: Cyber Slavery Infrastructures, a socio-technical study of forced criminality in transnational cybercrime (arXiv 2510.12814)."
       ]
     },
     {
-      "title": "Cybercrime and Human Trafficking",
+      "title": "LLM-Based and Explainable Cybercrime Classification",
       "details": [
-        "Explored bidirectional relationship between cybercrime and human trafficking.",
-        "Developed a five-tier victimization model illustrating trafficking, confinement, and forced participation."
+        "Co-developed BEACON, a unified behavioral-tactical framework for explainable cybercrime classification using Mistral-7B fine-tuned with QLoRA (EAI ICDF2C 2026).",
+        "Led \"From Trust to Lock-In,\" a human-centered AI study mapping staged persuasion sequences in investment fraud across Indian digital communities, using a hybrid ML pipeline (XGBoost, LightGBM, DeBERTa, RoBERTa; Macro F1 > 0.94) with SHAP explainability, on 19,480 Telangana complaints (SPAIC '26, co-located with ACM AsiaCCS 2026, CORE A)."
       ]
     },
     {
-      "title": "Legal and Policy Analysis of Cybercrime",
+      "title": "Cross-National Framing and Governance of Cybercrime",
       "details": [
-        "Constructed actor-intent and target-impact models to differentiate cybercrime, cyberattacks, and cyberterrorism.",
-        "Evaluated the Budapest Convention and the proposed UN Convention against Cybercrime."
+        "In development: a cross-country analysis of how cyber slavery is framed in global news media, using GDELT-derived corpora, in collaboration with Prof. Jingjie Li (University of Edinburgh).",
+        "Constructed actor-intent and target-impact models distinguishing cybercrime, cyberattacks, and cyberterrorism, and evaluated the Budapest Convention against the proposed UN Convention against Cybercrime for the Indian legal context."
       ]
     },
     {
-      "title": "Dark Web Analysis and Monitoring | M.Sc. Thesis",
+      "title": "Foundational Research: Dark Web Analysis and Monitoring | M.Sc. Thesis",
       "details": [
-        "Conducted theoretical analysis of Dark Web crawling using Tor.",
-        "Developed onion URL connectivity graphs.",
-        "Assessed feasibility of tracing users."
+        "Conducted theoretical analysis of Dark Web crawling using Tor, developed onion URL connectivity graphs, and assessed the feasibility of user tracing."
       ]
     }
   ],
@@ -487,6 +484,21 @@
         "Divided the cybercrime lifecycle into 14 tactical stages with techniques, sub-techniques, and digital artifacts.",
         "Designed an interactive navigator with automated modus operandi identification.",
         "Demonstrated at the 3rd National DST TIPS Workshop; formed the basis of the ARES 2023 CORE B publication."
+      ]
+    },
+    {
+      "title": "Fraud Complaint Priority Index (FCPI)",
+      "sponsor": "Under review, JISAS",
+      "details": [
+        "Developed a data-driven prioritization index for triaging fraud complaints at scale to support law enforcement resource allocation.",
+        "Underwent full revision including correction of stale platform validation figures and formula-code alignment, with all outputs independently verified."
+      ]
+    },
+    {
+      "title": "Cross-National Framing of Cyber Slavery in News Media",
+      "sponsor": "Collaboration with Prof. Jingjie Li (University of Edinburgh) — in development, targeting CHI 2027",
+      "details": [
+        "Building a GDELT-derived news corpus to analyze how cyber slavery is framed across different countries' media coverage."
       ]
     },
     {
