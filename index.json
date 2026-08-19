@@ -427,6 +427,14 @@
 
   "research": [
     {
+      "title": "Doctoral Research (Ph.D.) | Indian Institute of Technology Kanpur",
+      "details": [
+        "Thesis: Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective",
+        "Supervisor: Prof. Sandeep Kumar Shukla",
+        "Research integrates investigative tooling, human-centric cybercrime analysis, organized cybercriminal networks, cyber slavery, and international cybercrime law from an Indian policing perspective."
+      ]
+    },
+    {
       "title": "Building Framework for Cybercrime Investigations | Funded by Microsoft Research India",
       "details": [
         "Led the development of Cybercrime Navigator.",
@@ -470,7 +478,10 @@
     {
       "title": "Cybercrime Navigator",
       "sponsor": "Microsoft Research India (CSR Fund) & C3iHub, IIT Kanpur",
-      "url": "https://github.com/gargi-sarkar-iitk/Cybercrime-Navigator",
+      "links": [
+        { "label": "Cybercrime-Navigator", "url": "https://github.com/gargi-sarkar-iitk/Cybercrime-Navigator" },
+        { "label": "crime-navigator-orchestrator", "url": "https://github.com/gargi-sarkar-iitk/crime-navigator-orchestrator" }
+      ],
       "details": [
         "Led development of an open-source web-based TTP framework for cybercrime investigation.",
         "Divided the cybercrime lifecycle into 14 tactical stages with techniques, sub-techniques, and digital artifacts.",
@@ -496,6 +507,7 @@
     },
     {
       "title": "Comparison of Network-based Intrusion Detection Systems",
+      "url": "https://github.com/gargi-sarkar-iitk/Comparison-of-Intrusion-Detection-Systems",
       "details": [
         "Compared Snort and Suricata IDS on IIT Kanpur C3i Centre network.",
         "Integrated machine learning to reduce false positives."
@@ -503,6 +515,7 @@
     },
     {
       "title": "Developing Risk-Assessment Interface",
+      "url": "https://github.com/gargi-sarkar-iitk/Risk-assessment-Interface",
       "details": [
         "Developed web application to query national vulnerability databases.",
         "Computed risk scores based on system threats."
@@ -510,6 +523,7 @@
     },
     {
       "title": "Breaking down Cryptosystems",
+      "url": "https://github.com/gargi-sarkar-iitk/Breaking-Cryptosystems",
       "details": [
         "Implemented attacks on DES, AES, RSA, and classical cryptosystems using Python and C."
       ]
