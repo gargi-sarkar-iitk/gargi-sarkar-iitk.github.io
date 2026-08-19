@@ -558,18 +558,38 @@
     {
       "role": "Teaching Assistant",
       "institution": "Indian Institute of Technology Kanpur",
-      "courses": [
-        { "code": "CS203", "title": "Mathematics for Computer Science III", "duration": "March 2025 – May 2025" },
-        { "code": "CS202", "title": "Mathematics for Computer Science II", "duration": "January 2025 – March 2025" },
-        { "code": "CS201", "title": "Mathematics for Computer Science I", "duration": "August 2024 – November 2024" },
-        { "code": "CS633", "title": "Parallel Computing", "duration": "January 2024 – May 2024" },
-        { "code": "CS771", "title": "Introduction to Machine Learning", "duration": "August 2023 – November 2023" },
-        { "code": "CS641", "title": "Modern Cryptology", "duration": "January 2023 – May 2023" },
-        { "code": "CS628", "title": "Computer Systems Security", "duration": "August 2022 – November 2022" },
-        { "code": "CS345", "title": "Algorithms II", "duration": "August 2021 – May 2022" },
-        { "code": "CS961", "title": "Introduction to Cryptography (e-Masters)", "duration": "January 2023 – Present" },
-        { "code": "CS972", "title": "Introduction to Linear Algebra (e-Masters)", "duration": "April 2023 – March 2024" },
-        { "code": "ESC101", "title": "Fundamentals of Computing", "duration": "May 2022 – July 2022", "role_override": "Tutor" }
+      "groups": [
+        {
+          "label": "Security & Cryptography",
+          "courses": [
+            { "code": "CS628", "title": "Computer Systems Security", "duration": "Aug–Nov 2022" },
+            { "code": "CS641", "title": "Modern Cryptology", "duration": "Jan–May 2023" },
+            { "code": "CS961", "title": "Introduction to Cryptography (e-Masters)", "duration": "Jan 2023–Present" }
+          ]
+        },
+        {
+          "label": "Machine Learning & Systems",
+          "courses": [
+            { "code": "CS771", "title": "Introduction to Machine Learning", "duration": "Aug–Nov 2023" },
+            { "code": "CS633", "title": "Parallel Computing", "duration": "Jan–May 2024" }
+          ]
+        },
+        {
+          "label": "Mathematics & Algorithms",
+          "courses": [
+            { "code": "CS345", "title": "Algorithms II", "duration": "Aug–Nov 2021; Jan–May 2022" },
+            { "code": "CS972", "title": "Introduction to Linear Algebra (e-Masters)", "duration": "Apr–Jun 2023; Jan–Mar 2024" },
+            { "code": "CS201", "title": "Discrete Mathematics", "duration": "Aug–Nov 2024" },
+            { "code": "CS202", "title": "Mathematical Logic", "duration": "Jan–Mar 2025" },
+            { "code": "CS203", "title": "Introduction to Probability", "duration": "Mar–May 2025" }
+          ]
+        },
+        {
+          "label": "Tutor",
+          "courses": [
+            { "code": "ESC101", "title": "Fundamentals of Computing", "duration": "May–Jul 2022" }
+          ]
+        }
       ]
     },
     {
