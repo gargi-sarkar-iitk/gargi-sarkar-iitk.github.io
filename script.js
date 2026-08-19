@@ -347,24 +347,20 @@ function renderAcademicService(obj) {
     const h = document.createElement("h3");
     h.textContent = "Sub-Reviewer";
     c.appendChild(h);
-    obj.sub_reviewer.forEach(x => {
-      const d = document.createElement("div");
-      d.className = "item";
-      d.textContent = x;
-      c.appendChild(d);
-    });
+    const p = document.createElement("p");
+    p.className = "service-line";
+    p.textContent = obj.sub_reviewer.join(" · ");
+    c.appendChild(p);
   }
 
   if (obj.reviewer?.length) {
     const h = document.createElement("h3");
     h.textContent = "Reviewer";
     c.appendChild(h);
-    obj.reviewer.forEach(x => {
-      const d = document.createElement("div");
-      d.className = "item";
-      d.textContent = x;
-      c.appendChild(d);
-    });
+    const p = document.createElement("p");
+    p.className = "service-line";
+    p.textContent = obj.reviewer.join(" · ");
+    c.appendChild(p);
   }
 }
 
