@@ -624,18 +624,11 @@ section h2 {
 /* =====================================================
    ACADEMIC SERVICE
    ===================================================== */
-#academic_service .item {
-  transition: border-color 0.25s ease,
-              background 0.25s ease,
-              box-shadow 0.25s ease,
-              transform 0.25s ease;
-}
-
-#academic_service .item:hover {
-  border-color: var(--accent);
-  background: #fdfefe;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
-  transform: translateY(-2px);
+.service-line {
+  margin: 0 0 14px;
+  padding: 0;
+  line-height: 1.7;
+  color: var(--text);
 }
 
 /* =====================================================
