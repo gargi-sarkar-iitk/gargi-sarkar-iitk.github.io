@@ -19,8 +19,8 @@
 
   "about": {
     "name": "Dr. Gargi Sarkar",
-    "affiliation": "International Institute of Information Technology (IIIT) Hyderabad",
-    "email": "gsarkar@cse.iitk.ac.in",
+    "affiliation": "University of Petroleum and Energy Studies (UPES), Dehradun",
+    "email": "gargi.sarkar@upes.ac.in",
     "photo": {
       "src": "images/picture.jpeg",
       "alt": "Gargi Sarkar"
@@ -34,6 +34,24 @@
   },
 
   "announcements": [
+  {
+    "date": "2026-08-17",
+    "title": "Joined UPES as Assistant Professor",
+    "description": "Joined the School of Computer Science (SoCS) at the University of Petroleum and Energy Studies (UPES), Dehradun, as Assistant Professor.",
+    "type": "milestone"
+  },
+  {
+    "date": "2026-08-01",
+    "title": "Strait of Hormuz Paper Published in Deviant Behavior",
+    "description": "Our paper 'Strait of Hormuz: How the 2026 US–Israel–Iran Conflict Illuminated a Cascade of Global Cybercrime' (with Prof. Suleman Lazarus) has been published in Deviant Behavior.",
+    "type": "publication"
+  },
+  {
+    "date": "2026-08-01",
+    "title": "Malware as a Service Paper Published in Journal of Human Trafficking",
+    "description": "Our paper 'Malware as a Service in Human Trafficking Operations at a Scam Compound: Cybercrime Infrastructure and Forced Labour as Structurally Interdependent' (with Prof. Suleman Lazarus) has been published in the Journal of Human Trafficking.",
+    "type": "publication"
+  },
   {
     "date": "2026-05-21",
     "title": "BEACON Paper Accepted at EAI ICDF2C 2026",
@@ -79,13 +97,22 @@
 ],
   "experience": [
     {
+      "institution": "University of Petroleum and Energy Studies (UPES)",
+      "location": "Dehradun, India",
+      "role": "Assistant Professor, School of Computer Science (SoCS)",
+      "period": "August 2026 – Present",
+      "responsibilities": [
+        "Teaching and research in cybercrime investigation, digital forensics, and AI/ML-based fraud detection within the School of Computer Science"
+      ]
+    },
+    {
       "institution": "International Institute of Information Technology (IIIT) Hyderabad",
       "location": "Hyderabad, India",
       "role": "Post-PhD Research Scientist",
-      "period": "August 2025 – Present",
+      "period": "August 2025 – April 2026",
       "responsibilities": [
-        "Leading research in cybercrime investigation, digital evidence analysis, and emerging cybercrime analysis",
-        "Collaborating with state law enforcement agencies on applied cybercrime research and investigative frameworks"
+        "Led research in cybercrime investigation, digital evidence analysis, and emerging cybercrime analysis",
+        "Collaborated with state law enforcement agencies on applied cybercrime research and investigative frameworks"
       ]
     },
     {
@@ -236,6 +263,42 @@
         }
       },
       {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Deviant Behavior is Q1"
+        },
+        "authors": ["Suleman Lazarus", "Gargi Sarkar"],
+        "title": "Strait of Hormuz: How the 2026 US–Israel–Iran Conflict Illuminated a Cascade of Global Cybercrime",
+        "venue": "Deviant Behavior",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1080/01639625.2026.2710402"
+        }
+      },
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Human Trafficking is Q1"
+        },
+        "authors": ["Suleman Lazarus", "Gargi Sarkar"],
+        "title": "Malware as a Service in Human Trafficking Operations at a Scam Compound: Cybercrime Infrastructure and Forced Labour as Structurally Interdependent",
+        "venue": "Journal of Human Trafficking",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1080/23322705.2026.2703953"
+        }
+      },
+      {
         "year": 2024,
         "status": "published",
         "rank": {
@@ -286,7 +349,7 @@
         "venue": "Journal of Economic Criminology",
         "identifier": {
           "type": "doi",
-          "value": "10.1080/23322705.2024.2353015"
+          "value": "10.1016/j.jeconc.2024.100089"
         }
       },
       {
