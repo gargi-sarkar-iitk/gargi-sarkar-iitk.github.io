@@ -623,6 +623,39 @@ section h2 {
    ===================================================== */
 /* card box + hover come from the shared .item rule */
 
+.projects-repo-link {
+  margin: -18px 0 26px;
+}
+
+.projects-repo-link a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.projects-repo-link a:hover {
+  text-decoration: underline;
+}
+
+.project-links {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.project-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+}
+
 /* =====================================================
    ACADEMIC SERVICE
    ===================================================== */
