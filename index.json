@@ -385,7 +385,11 @@
         "authors": ["Gargi Sarkar", "Arush Sachdeva", "Sandeep K. Shukla"],
         "title": "From trust to lock-in: Human-centered AI for understanding investment fraud narratives in Indian digital communities",
         "venue": "Proceedings of SPAIC '26 (co-located with ACM AsiaCCS 2026)",
-        "publisher": "ACM"
+        "publisher": "ACM",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1145/3803632.3807887"
+        }
       },
       {
         "year": 2023,
