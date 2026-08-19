@@ -838,7 +838,12 @@ section h2 {
     flex-direction: column;
   }
 
+  .main-content {
+    order: 1;
+  }
+
   .sidebar {
+    order: 2;
     width: 100%;
     position: relative;
     border-right: none;
