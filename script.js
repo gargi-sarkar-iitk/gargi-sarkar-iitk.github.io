@@ -114,7 +114,7 @@ function renderAbout(a) {
   `;
 
   $("current-line").innerHTML = `
-    🏛️ Currently a Research Scientist at<br>
+    🏛️ Currently an Assistant Professor at<br>
     <strong>${a.affiliation}</strong>
   `;
 }
