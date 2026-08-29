@@ -36,6 +36,18 @@
 
   "announcements": [
   {
+    "date": "2026-08-30",
+    "title": "UNCC Paper Published in Journal of Economic Criminology",
+    "description": "Our paper 'Assessing the Anticipated Impact of the United Nations Convention against Cybercrime in India and Beyond' (with Prof. Suleman Lazarus and Prof. Sandeep K. Shukla) is now online in the Journal of Economic Criminology.",
+    "type": "publication"
+  },
+  {
+    "date": "2026-08-23",
+    "title": "Five-Tier Cyber-Slavery Framework Paper Accepted at International Criminal Justice Review",
+    "description": "Our paper 'A Five-Tier Framework for Understanding Cyber-Slavery and Institutional Misclassification: Evidence from 29,466 Cases in Southeast Asia' (with Prof. Suleman Lazarus, Prof. Sandeep K. Shukla, and John Akerele) has been accepted at International Criminal Justice Review.",
+    "type": "acceptance"
+  },
+  {
     "date": "2026-08-17",
     "title": "Joined UPES as Assistant Professor",
     "description": "Joined the School of Computer Science (SoCS) at the University of Petroleum and Energy Studies (UPES), Dehradun, as Assistant Professor.",
@@ -253,23 +265,6 @@
         }
       },
       {
-        "year": 2024,
-        "status": "preprint",
-        "rank": {
-          "type": "journal",
-          "label": "Under Review",
-          "scimago": null,
-          "note": "SSRN preprint – not yet ranked"
-        },
-        "authors": ["Gargi Sarkar", "Sandeep Kumar Shukla"],
-        "title": "Policing Transnational Cybercrime: A Critical Assessment of the Anticipated Impact of the United Nations Convention against Cybercrime in India and Worldwide",
-        "venue": "SSRN",
-        "identifier": {
-          "type": "doi",
-          "value": "10.2139/ssrn.5899223"
-        }
-      },
-      {
         "year": 2026,
         "status": "published",
         "rank": {
@@ -376,6 +371,42 @@
           "type": "doi",
           "value": "10.1016/j.jeconc.2023.100034"
         }
+      },
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Economic Criminology is Q1"
+        },
+        "authors": ["Gargi Sarkar", "Suleman Lazarus", "Sandeep K. Shukla"],
+        "title": "Assessing the Anticipated Impact of the United Nations Convention against Cybercrime in India and Beyond",
+        "venue": "Journal of Economic Criminology",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.jeconc.2026.100246"
+        }
+      },
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q2",
+          "scimago": "Q2",
+          "source": "Scimago / Scopus",
+          "note": "International Criminal Justice Review is Q2"
+        },
+        "authors": ["Gargi Sarkar", "Suleman Lazarus", "Sandeep K. Shukla", "John Akerele"],
+        "title": "A Five-Tier Framework for Understanding Cyber-Slavery and Institutional Misclassification: Evidence from 29,466 Cases in Southeast Asia",
+        "venue": "International Criminal Justice Review",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1177/10575677261485546"
+        }
       }
     ],
 
@@ -420,8 +451,8 @@
     ],
 
     "impact": [
-      "260+ Google Scholar citations; h-index: 6; i10-index: 5.",
-      "Published 8 Q1 journal articles, 2 refereed conference papers (CORE A and CORE B), and 4 archival manuscripts.",
+      "270+ Google Scholar citations; h-index: 6; i10-index: 5.",
+      "Published 9 Q1 journal articles, 1 Q2 journal article, and 2 refereed conference papers (CORE A and CORE B), and 3 archival manuscripts.",
       "Developed Cybercrime Navigator, a cybercrime investigation framework supported by Microsoft Research India and featured by the Department of Science and Technology (DST), Government of India."
     ]
   },
@@ -445,7 +476,7 @@
     {
       "title": "Cyber Slavery and the Human Trafficking–Cybercrime Nexus",
       "details": [
-        "Developed a five-tier victimization framework for cyber-enabled forced criminality, built on ~29,466 cases from India's Indian Cyber Crime Coordination Centre (I4C); under revision for International Journal of Comparative and Applied Criminal Justice (ICJR).",
+        "Developed a five-tier victimization framework for cyber-enabled forced criminality, built on ~29,466 cases from India's Indian Cyber Crime Coordination Centre (I4C); accepted at International Criminal Justice Review.",
         "Established the dual victim–perpetrator framing of trafficked individuals coerced into cybercrime in \"Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime\" (Journal of Human Trafficking, 2024), the foundational study underlying this research pillar.",
         "Co-authored (with Prof. Suleman Lazarus, LSE/University of Surrey) two further studies published in leading international journals of criminology, law, and justice: a study on malware-as-a-service infrastructure within human trafficking scam compounds (Journal of Human Trafficking), and the Strait of Hormuz Geopolitical Cybercrime Cascade Framework (GCCF) tracing how geopolitical conflict propagates through global cybercrime ecosystems (Deviant Behavior).",
         "Additional foundational work: Cyber Slavery Infrastructures, a socio-technical study of forced criminality in transnational cybercrime (arXiv 2510.12814)."
@@ -462,7 +493,7 @@
       "title": "Cross-National Framing and Governance of Cybercrime",
       "details": [
         "In development: a cross-country analysis of how cyber slavery is framed in global news media, using GDELT-derived corpora, in collaboration with Prof. Jingjie Li (University of Edinburgh); targeting CHI 2027.",
-        "Constructed actor-intent and target-impact models distinguishing cybercrime, cyberattacks, and cyberterrorism, and evaluated the Budapest Convention against the proposed UN Convention against Cybercrime for the Indian legal context."
+        "Constructed actor-intent and target-impact models distinguishing cybercrime, cyberattacks, and cyberterrorism, and evaluated the Budapest Convention against the United Nations Convention against Cybercrime for the Indian legal context, published in the Journal of Economic Criminology."
       ]
     },
     {
