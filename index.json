@@ -1,618 +1,778 @@
-/* =========================================================
-   SAFE DOM QUERY
-   ========================================================= */
-const $ = (id) => document.getElementById(id);
+{
+  "navigation": [
+    "about",
+    "summary",
+    "announcements",
+    "experience",
+    "education",
+    "publications",
+    "research",
+    "projects",
+    "academic_service",
+    "teaching",
+    "grants",
+    "achievements",
+    "talks_and_presentations",
+    "activities",
+    "technical_skills",
+    "references"
+  ],
 
-/* =========================================================
-   FETCH + INIT
-   ========================================================= */
-fetch("index.json")
-  .then(res => {
-    if (!res.ok) throw new Error("Cannot load index.json");
-    return res.json();
-  })
-  .then(data => {
-    renderAbout(data.about);
-    renderSummary(data.summary);
-    renderAnnouncements(data.announcements);
-    renderExperience(data.experience);
-    renderEducation(data.education);
-    renderPublications(data.publications);
-    renderResearch(data.research);
-    renderProjects(data.projects);
-    renderAcademicService(data.academic_service);
-    renderTeaching(data.teaching);
-    renderGrants(data.grants);
-    renderAchievements(data.achievements);
-    renderTalks(data.talks_and_presentations);
-    renderActivities(data.activities);
-    renderSkills(data.technical_skills);
-    renderReferences(data.references);
-    enhanceUI();
-  })
-  .catch(err => showFatalError(err.message));
+  "about": {
+    "name": "Dr. Gargi Sarkar",
+    "affiliation": "University of Petroleum and Energy Studies (UPES), Dehradun",
+    "email": "gargi.sarkar@upes.ac.in",
+    "photo": {
+      "src": "images/picture.jpeg",
+      "alt": "Gargi Sarkar"
+    }
+  },
 
-/* =========================================================
-   RANK BADGE HELPER  ← only new addition
-   Reads p.rank from JSON and returns a coloured badge span.
-   ========================================================= */
-function renderRankBadge(rank) {
-  if (!rank || !rank.label) return "";
+  "summary": {
+    "points": [
+      "Interdisciplinary researcher working at the intersection of cybersecurity, criminology, and human-centered security. My research investigates the technological, behavioral, and operational dynamics of cybercriminal ecosystems, including online fraud, scam operations, and cyber-enabled coercion. I develop empirical methods and computational frameworks to understand, detect, and disrupt human-targeted cybercrime by integrating insights from behavioral science and criminological theory. Through collaborations with law enforcement agencies and academic partners, my work advances both scientific understanding and practical approaches to cybercrime investigation, prevention, and policing. I seek to expand this research agenda through international collaboration in human-centered security and digital forensics, while advancing empirical approaches to cybercrime investigation, prevention, and policing."
+    ]
+  },
 
-  const label = rank.label;
-  let cls = "rank-badge";
-
-  if      (label === "Q1")     cls += " rank-q1";
-  else if (label === "Q2")     cls += " rank-q2";
-  else if (label === "CORE A") cls += " rank-core-a";
-  else if (label === "CORE B") cls += " rank-core-b";
-  else                          cls += " rank-under-review";
-
-  const tooltip = rank.note ? ` title="${rank.note}"` : "";
-  return `<span class="${cls}"${tooltip}>${label}</span>`;
-}
-
-/* =========================================================
-   SORT HELPER — latest year first
-   ========================================================= */
-function sortByYearDesc(items) {
-  return items.slice().sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
-}
-
-/* =========================================================
-   PUBLICATION HELPERS  (unchanged)
-   ========================================================= */
-function getAccessLink(p) {
-  if (!p.identifier) return "";
-  if (p.identifier.type === "doi")   return `https://doi.org/${p.identifier.value}`;
-  if (p.identifier.type === "arxiv") return `https://arxiv.org/abs/${p.identifier.value}`;
-  return "";
-}
-
-function generateBibTeX(p) {
-  if (!p.identifier) return "";
-
-  const key =
-    p.authors[0].split(" ")[0].toLowerCase() +
-    p.year +
-    p.title.toLowerCase().replace(/[^a-z0-9]+/g, "").substring(0, 25);
-
-  const authors = p.authors.join(" and ");
-
-  if (p.identifier.type === "doi") {
-    return `@article{${key},
-  title   = {${p.title}},
-  author  = {${authors}},
-  journal = {${p.venue}},
-  year    = {${p.year}},
-  doi     = {${p.identifier.value}}
-}`;
+  "announcements": [
+  {
+    "date": "2026-08-30",
+    "title": "UNCC Paper Published in Journal of Economic Criminology",
+    "description": "Our paper 'Assessing the Anticipated Impact of the United Nations Convention against Cybercrime in India and Beyond' (with Prof. Suleman Lazarus and Prof. Sandeep K. Shukla) is now online in the Journal of Economic Criminology.",
+    "type": "publication"
+  },
+  {
+    "date": "2026-08-23",
+    "title": "Five-Tier Cyber-Slavery Framework Paper Accepted at International Criminal Justice Review",
+    "description": "Our paper 'A Five-Tier Framework for Understanding Cyber-Slavery and Institutional Misclassification: Evidence from 29,466 Cases in Southeast Asia' (with Prof. Suleman Lazarus, Prof. Sandeep K. Shukla, and John Akerele) has been accepted at International Criminal Justice Review.",
+    "type": "acceptance"
+  },
+  {
+    "date": "2026-08-17",
+    "title": "Joined UPES as Assistant Professor",
+    "description": "Joined the School of Computer Science (SoCS) at the University of Petroleum and Energy Studies (UPES), Dehradun, as Assistant Professor.",
+    "type": "milestone"
+  },
+  {
+    "date": "2026-08-01",
+    "title": "Strait of Hormuz Paper Published in Deviant Behavior",
+    "description": "Our paper 'Strait of Hormuz: How the 2026 US–Israel–Iran Conflict Illuminated a Cascade of Global Cybercrime' (with Prof. Suleman Lazarus) has been published in Deviant Behavior.",
+    "type": "publication"
+  },
+  {
+    "date": "2026-08-01",
+    "title": "Malware as a Service Paper Published in Journal of Human Trafficking",
+    "description": "Our paper 'Malware as a Service in Human Trafficking Operations at a Scam Compound: Cybercrime Infrastructure and Forced Labour as Structurally Interdependent' (with Prof. Suleman Lazarus) has been published in the Journal of Human Trafficking.",
+    "type": "publication"
+  },
+  {
+    "date": "2026-05-21",
+    "title": "BEACON Paper Accepted at EAI ICDF2C 2026",
+    "description": "Our paper 'BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models' has been accepted at EAI ICDF2C 2026.",
+    "type": "acceptance"
+  },
+  {
+    "date": "2026-04-02",
+    "title": "Jamtara Cybercrime Paper Accepted in Nature Portfolio Journal",
+    "description": "Our paper 'Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks' has been accepted for publication in Humanities & Social Sciences Communications (Nature Portfolio).",
+    "type": "acceptance"
+  },
+  {
+    "date": "2026-04-02",
+    "title": "Investment Fraud Narratives Paper Accepted at AsiaCCS Workshop SPAIC 2026",
+    "description": "Our paper 'From Trust to Lock-In: Human-Centered AI for Understanding Investment Fraud Narratives in Indian Digital Communities' has been accepted at the SPAIC 2026 Workshop co-located with AsiaCCS 2026.",
+    "type": "acceptance"
+  },
+  {
+    "date": "2026-02-01",
+    "title": "Research Paper Published in Computers & Security",
+    "description": "Our paper 'AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors' has been published in the journal *Computers & Security*.",
+    "type": "publication"
+  },
+  {
+    "date": "2026-01-27",
+    "title": "Job Scam Behavioral Signals Paper Released on arXiv",
+    "description": "The paper 'Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study' is now available as an arXiv preprint.",
+    "type": "preprint"
+  },
+  {
+    "date": "2025-12-15",
+    "title": "PhD Thesis Successfully Defended",
+    "description": "Successfully defended my PhD thesis titled 'Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective.'",
+    "type": "milestone"
+  },
+  {
+    "date": "2025-10-08",
+    "title": "Cyber Slavery Paper Released on arXiv",
+    "description": "The paper 'Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime' is now available as an arXiv preprint.",
+    "type": "preprint"
   }
+],
+  "experience": [
+    {
+      "institution": "University of Petroleum and Energy Studies (UPES)",
+      "location": "Dehradun, India",
+      "role": "Assistant Professor, School of Computer Science (SoCS)",
+      "period": "August 2026 – Present",
+      "responsibilities": [
+        "Teaching three courses: Research Methodology in Computer Science, Information Technology and Cyber Security, and Ethical Hacking and Penetration Testing",
+        "Research in cybercrime investigation, digital forensics, and AI/ML-based fraud detection within the School of Computer Science"
+      ]
+    },
+    {
+      "institution": "International Institute of Information Technology (IIIT) Hyderabad",
+      "location": "Hyderabad, India",
+      "role": "Post-PhD Research Scientist",
+      "period": "August 2025 – April 2026",
+      "responsibilities": [
+        "Led research in cybercrime investigation, digital evidence analysis, and emerging cybercrime analysis",
+        "Collaborated with state law enforcement agencies on applied cybercrime research and investigative frameworks"
+      ]
+    },
+    {
+      "institution": "C3iHub, Indian Institute of Technology Kanpur",
+      "location": "Kanpur, India",
+      "role": "Doctoral Researcher",
+      "period": "August 2022 – July 2025",
+      "responsibilities": [
+        "Worked on applied research projects related to cybercrime investigation and policing, alongside ongoing PhD research at IIT Kanpur",
+        "Contributed to interdisciplinary research bridging computer science, criminology, and cyber law"
+      ],
+      "note": "This research role was undertaken in parallel with the PhD program in the Department of Computer Science and Engineering, IIT Kanpur."
+    }
+  ],
 
-  if (p.identifier.type === "arxiv") {
-    return `@misc{${key},
-  title        = {${p.title}},
-  author       = {${authors}},
-  year         = {${p.year}},
-  eprint       = {${p.identifier.value}},
-  archivePrefix= {arXiv}
-}`;
+  "education": [
+    {
+      "institution": "Indian Institute of Technology Kanpur",
+      "degree": "Ph.D. in Computer Science and Engineering (Coursework CGPA: 9.5/10)",
+      "period": "2021 - 2025",
+      "location": "Kanpur, India",
+      "details": [
+        "Degree awarded: December 2025",
+        "Thesis: Digital Investigative Infrastructures for Cybercrime: A Human-Centric Approach from India's Policing Perspective",
+        "Supervisor: Prof. Sandeep Kumar Shukla (Director, IIIT Hyderabad, since Aug 2025)"
+      ]
+    },
+    {
+      "institution": "Presidency University",
+      "degree": "Master of Science (M.Sc.) in Pure Mathematics (First Class)",
+      "period": "2018 - 2020",
+      "location": "Kolkata, India"
+    },
+    {
+      "institution": "University of North Bengal",
+      "degree": "Bachelor of Science (B.Sc.) in Mathematics (First Class)",
+      "period": "2015 - 2018",
+      "location": "Siliguri, India"
+    }
+  ],
+
+  "publications": {
+    "journals": [
+      {
+        "year": 2026,
+        "status": "preprint",
+        "rank": {
+          "type": "journal",
+          "label": "Under Review",
+          "scimago": null,
+          "note": "arXiv preprint – not yet ranked"
+        },
+        "authors": ["Goni Anagha", "Vishakha Dasi Agrawal", "Gargi Sarkar", "Kavita Vemuri", "Sandeep K. Shukla"],
+        "title": "Modeling Behavioral Signals in Job Scams: A Human-Centered Security Study",
+        "venue": "arXiv",
+        "identifier": {
+          "type": "arxiv",
+          "value": "2601.19342"
+        },
+        "url": "https://arxiv.org/abs/2601.19342"
+      },
+      {
+  "year": 2025,
+  "status": "published",
+  "rank": {
+    "type": "journal",
+    "label": "Q1",
+    "scimago": "Q1",
+    "source": "Scimago / Scopus",
+    "note": "Humanities & Social Sciences Communications (Nature Portfolio) is a Q1 journal"
+  },
+  "authors": ["Gargi Sarkar", "P.V.S. Charan", "Sandeep K. Shukla"],
+  "title": "Understanding Jamtara cybercriminals: poverty, opportunity, and the rise of organized criminal networks",
+  "venue": "Humanities & Social Sciences Communications (Nature Portfolio)",
+  "identifier": {
+    "type": "doi",
+    "value": "10.1057/s41599-026-07703-0"
   }
-
-  return "";
-}
-
-function toggleBibTeX(id) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  el.style.display = el.style.display === "none" ? "block" : "none";
-}
-
-/* =========================================================
-   ABOUT
-   ========================================================= */
-function renderAbout(a) {
-  if (!a) return;
-
-  $("name").textContent = a.name;
-  $("photo").src = a.photo?.src || "";
-
-  $("phd-line").innerHTML = `
-    🎓 Ph.D. in Computer Science and Engineering<br>
-    <strong>Indian Institute of Technology Kanpur</strong>
-  `;
-
-  $("current-line").innerHTML = `
-    🏛️ Currently an Assistant Professor at<br>
-    <strong>${a.affiliation}</strong>
-  `;
-}
-
-function renderSummary(summary) {
-  if (!summary || !Array.isArray(summary.points)) return;
-  const container = $("about-summary");
-  if (!container) return;
-  container.innerHTML = summary.points
-    .map(point => `<p class="summary-point">${point}</p>`)
-    .join("");
-}
-
-/* =========================================================
-   ANNOUNCEMENTS – ROTATOR
-   ========================================================= */
-function renderAnnouncements(announcements) {
-  const c = $("announcements");
-  if (!c || !announcements || !announcements.length) return;
-
-  const header = c.querySelector("h2");
-  c.innerHTML = "";
-  if (header) c.appendChild(header);
-
-  const items = announcements
-    .slice()
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  const rotator = document.createElement("div");
-  rotator.className = "announce-rotator";
-  c.appendChild(rotator);
-
-  const nodes = items.map((a, i) => {
-    const el = document.createElement("div");
-    el.className = "announce-item";
-    if (i !== 0) el.classList.add("hidden");
-
-    el.innerHTML = `
-      <div class="announce-dot">
-        <span class="announce-icon">📢</span>
-      </div>
-      <div class="announce-content announce-card">
-        <small class="announce-date">${formatAnnouncementDate(a.date)}</small>
-        <h4>${a.title}</h4>
-        <p>${a.description}</p>
-      </div>
-    `;
-
-    rotator.appendChild(el);
-    return el;
-  });
-
-  let current = 0;
-  setInterval(() => {
-    nodes[current].classList.add("hidden");
-    current = (current + 1) % nodes.length;
-    nodes[current].classList.remove("hidden");
-  }, 4500);
-}
-
-function formatAnnouncementDate(dateStr) {
-  if (!dateStr) return "";
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("en-GB", {
-    day: "numeric", month: "short", year: "numeric"
-  });
-}
-
-/* =========================================================
-   EXPERIENCE
-   ========================================================= */
-function renderExperience(arr = []) {
-  const c = document.getElementById("experience");
-  if (!c) return;
-
-  const header = c.querySelector("h2");
-  c.innerHTML = "";
-  if (header) c.appendChild(header);
-
-  if (!arr.length) return;
-
-  arr.forEach(e => {
-    const d = document.createElement("div");
-    d.className = "item";
-
-    const responsibilitiesHTML = (e.responsibilities || [])
-      .map(r => `<li>${r}</li>`)
-      .join("");
-
-    d.innerHTML = `
-      <strong>${e.role}</strong>, ${e.institution}<br>
-      <em>${e.period}</em>
-      ${responsibilitiesHTML ? `<ul class="experience-points">${responsibilitiesHTML}</ul>` : ""}
-      ${e.note ? `<div class="experience-note">${e.note}</div>` : ""}
-    `;
-
-    c.appendChild(d);
-  });
-}
-
-/* =========================================================
-   EDUCATION
-   ========================================================= */
-function renderEducation(arr = []) {
-  const c = document.getElementById("education");
-  if (!c || !arr.length) return;
-
-  const header = c.querySelector("h2");
-  c.innerHTML = "";
-  if (header) c.appendChild(header);
-
-  arr.forEach(e => {
-    const d = document.createElement("div");
-    d.className = "item education-item";
-    const detailsHTML = (e.details || [])
-      .map(x => `<li>${x}</li>`)
-      .join("");
-    d.innerHTML = `
-      <div class="edu-header">
-        <span class="edu-degree">${e.degree}</span>
-        <span class="edu-period">${e.period || e.year || ""}</span>
-      </div>
-      <div class="edu-institution">${e.institution}</div>
-      ${detailsHTML ? `<ul class="edu-details">${detailsHTML}</ul>` : ""}
-    `;
-    c.appendChild(d);
-  });
-}
-
-/* =========================================================
-   PUBLICATIONS  ← badge injected after title, sorted latest → oldest
-   ========================================================= */
-function renderPublications(pubs) {
-  const publications = $("publications");
-  if (!publications || !pubs) return;
-
-  const sections = {
-    published:    "Journal Articles (Published)",
-    preprint:     "Preprints / Archived Manuscripts",
-    under_review: "Manuscripts Under Review",
-    conference:   "Conference Proceedings"
-  };
-
-  function renderSection(title, items) {
-    if (!items.length) return;
-
-    const sortedItems = sortByYearDesc(items);   // ← latest year first
-
-    const h = document.createElement("h3");
-    h.textContent = title;
-    publications.appendChild(h);
-
-    sortedItems.forEach((p, idx) => {
-      const d = document.createElement("div");
-      d.className = "pub-item";
-
-      const accessLink = getAccessLink(p);
-      const bibtex     = generateBibTeX(p);
-      const citeId     = `bibtex-${Date.now()}-${idx}`;
-      const badge      = renderRankBadge(p.rank);   // ← only new line
-
-      d.innerHTML = `
-        <strong>${p.title}</strong>${badge}<br>
-        ${p.authors.join(", ")}<br>
-        <em>${p.venue} (${p.year})</em>
-        <div class="pub-links">
-          ${accessLink ? `<a href="${accessLink}" target="_blank">Access</a>` : ""}
-          ${bibtex     ? `<a href="#" class="cite-btn">Cite</a>` : ""}
-        </div>
-        ${bibtex ? `<pre id="${citeId}" class="bibtex" hidden>${bibtex}</pre>` : ""}
-      `;
-
-      publications.appendChild(d);
-
-      if (bibtex) {
-        const citeBtn = d.querySelector(".cite-btn");
-        const bibEl   = d.querySelector(`#${citeId}`);
-        citeBtn.addEventListener("click", (e) => {
-          e.preventDefault();
-          bibEl.hidden = !bibEl.hidden;
-        });
+},
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Computers & Security is a top-tier Q1 cybersecurity journal"
+        },
+        "authors": ["Rohit Negi", "Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "AuditorMatch: A data-driven decision-support system for evaluating and selecting CERT-In empaneled cybersecurity auditors",
+        "venue": "Computers & Security",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.cose.2026.104849"
+        }
+      },
+      {
+        "year": 2025,
+        "status": "preprint",
+        "rank": {
+          "type": "journal",
+          "label": "Under Review",
+          "scimago": null,
+          "note": "arXiv preprint – not yet ranked"
+        },
+        "authors": [
+          "Arush Sachdeva",
+          "Rajendraprasad Saravanan",
+          "Gargi Sarkar",
+          "Kavita Vemuri",
+          "Sandeep K. Shukla"
+        ],
+        "title": "BEACON: A Unified Behavioral-Tactical Framework for Explainable Cybercrime Analysis with Large Language Models",
+        "venue": "arXiv",
+        "identifier": {
+          "type": "arxiv",
+          "value": "2512.06555"
+        }
+      },
+      {
+        "year": 2025,
+        "status": "preprint",
+        "rank": {
+          "type": "journal",
+          "label": "Under Review",
+          "scimago": null,
+          "note": "arXiv preprint – not yet ranked"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime",
+        "venue": "arXiv",
+        "identifier": {
+          "type": "arxiv",
+          "value": "2510.12814"
+        }
+      },
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Deviant Behavior is Q1"
+        },
+        "authors": ["Suleman Lazarus", "Gargi Sarkar"],
+        "title": "Strait of Hormuz: How the 2026 US–Israel–Iran Conflict Illuminated a Cascade of Global Cybercrime",
+        "venue": "Deviant Behavior",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1080/01639625.2026.2710402"
+        }
+      },
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Human Trafficking is Q1"
+        },
+        "authors": ["Suleman Lazarus", "Gargi Sarkar"],
+        "title": "Malware as a Service in Human Trafficking Operations at a Scam Compound: Cybercrime Infrastructure and Forced Labour as Structurally Interdependent",
+        "venue": "Journal of Human Trafficking",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1080/23322705.2026.2703953"
+        }
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Human Trafficking is Q1"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime",
+        "venue": "Journal of Human Trafficking",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1080/23322705.2024.2353015"
+        }
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Economic Criminology is Q1"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Reconceptualizing online offenses: A framework for distinguishing cybercrime, cyberattacks, and cyberterrorism in the Indian legal context",
+        "venue": "Journal of Economic Criminology",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.jeconc.2024.100063"
+        }
+      },
+      {
+        "year": 2024,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Economic Criminology is Q1"
+        },
+        "authors": ["Aya Aljaradat", "Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Modelling cybersecurity impacts on digital payment adoption: a game theoretic approach",
+        "venue": "Journal of Economic Criminology",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.jeconc.2024.100089"
+        }
+      },
+      {
+        "year": 2023,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Economic Criminology is Q1"
+        },
+        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
+        "title": "Behavioral analysis of cybercrime: Paving the way for effective policing strategies",
+        "venue": "Journal of Economic Criminology",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.jeconc.2023.100034"
+        }
+      },
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q1",
+          "scimago": "Q1",
+          "source": "Scimago / Scopus",
+          "note": "Journal of Economic Criminology is Q1"
+        },
+        "authors": ["Gargi Sarkar", "Suleman Lazarus", "Sandeep K. Shukla"],
+        "title": "Assessing the Anticipated Impact of the United Nations Convention against Cybercrime in India and Beyond",
+        "venue": "Journal of Economic Criminology",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1016/j.jeconc.2026.100246"
+        }
+      },
+      {
+        "year": 2026,
+        "status": "published",
+        "rank": {
+          "type": "journal",
+          "label": "Q2",
+          "scimago": "Q2",
+          "source": "Scimago / Scopus",
+          "note": "International Criminal Justice Review is Q2"
+        },
+        "authors": ["Gargi Sarkar", "Suleman Lazarus", "Sandeep K. Shukla", "John Akerele"],
+        "title": "A Five-Tier Framework for Understanding Cyber-Slavery and Institutional Misclassification: Evidence from 29,466 Cases in Southeast Asia",
+        "venue": "International Criminal Justice Review",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1177/10575677261485546"
+        }
       }
-    });
-  }
+    ],
 
-  const journals = pubs.journals || [];
+    "conference_proceedings": [
+      {
+        "year": 2026,
+        "rank": {
+          "type": "conference",
+          "label": "CORE A",
+          "core_rank": "A",
+          "source": "CORE Conference Portal",
+          "note": "AsiaCCS is CORE A ranked; SPAIC is co-located with AsiaCCS 2026"
+        },
+        "authors": ["Gargi Sarkar", "Arush Sachdeva", "Sandeep K. Shukla"],
+        "title": "From trust to lock-in: Human-centered AI for understanding investment fraud narratives in Indian digital communities",
+        "venue": "Proceedings of SPAIC '26 (co-located with ACM AsiaCCS 2026)",
+        "publisher": "ACM",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1145/3803632.3807887"
+        }
+      },
+      {
+        "year": 2023,
+        "rank": {
+          "type": "conference",
+          "label": "CORE B",
+          "core_rank": "B",
+          "source": "CORE Conference Portal",
+          "note": "ARES (International Conference on Availability, Reliability and Security) is CORE B ranked"
+        },
+        "authors": ["Gargi Sarkar", "Hardeep Singh", "Subodh Kumar", "Sandeep K. Shukla"],
+        "title": "Tactics, techniques and procedures of cybercrime: A methodology and tool for cybercrime investigation process",
+        "venue": "Proceedings of the 18th International Conference on Availability, Reliability and Security (ARES '23)",
+        "pages": "1–10",
+        "publisher": "ACM",
+        "identifier": {
+          "type": "doi",
+          "value": "10.1145/3600160.3605013"
+        }
+      }
+    ],
 
-  renderSection(sections.published,    journals.filter(p => p.status === "published"));
-  renderSection(sections.conference,   pubs.conference_proceedings || []);
-  renderSection(sections.preprint,     journals.filter(p => p.status === "preprint"));
-  renderSection(sections.under_review, journals.filter(p => p.status === "under_review"));
+    "impact": [
+      "270+ Google Scholar citations; h-index: 6; i10-index: 5.",
+      "Published 9 Q1 journal articles, 1 Q2 journal article, and 2 refereed conference papers (CORE A and CORE B), and 3 archival manuscripts.",
+      "Developed Cybercrime Navigator, a cybercrime investigation framework supported by Microsoft Research India and featured by the Department of Science and Technology (DST), Government of India."
+    ]
+  },
 
-  if (pubs.impact?.length) {
-    const h = document.createElement("h3");
-    h.textContent = "Selected Research Impact";
-    publications.appendChild(h);
-    pubs.impact.forEach(line => {
-      const d = document.createElement("div");
-      d.className = "item";
-      d.textContent = "• " + line;
-      publications.appendChild(d);
-    });
-  }
-}
-
-/* =========================================================
-   RESEARCH
-   ========================================================= */
-function renderResearch(arr = []) {
-  const c = $("research");
-  if (!c) return;
-  arr.forEach(r => {
-    const d = document.createElement("div");
-    d.className = "item";
-    d.innerHTML = `
-      <strong>${r.title}</strong>
-      <ul>${r.details.map(x => `<li>${x}</li>`).join("")}</ul>
-    `;
-    c.appendChild(d);
-  });
-}
-
-/* =========================================================
-   PROJECTS
-   ========================================================= */
-function renderProjects(arr = []) {
-  const c = $("projects");
-  if (!c) return;
-  arr.forEach(p => {
-    const d = document.createElement("div");
-    d.className = "item";
-
-    let linksHTML = "";
-    if (Array.isArray(p.links) && p.links.length) {
-      linksHTML = `<div class="project-links">${p.links
-        .map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label} &rarr;</a>`)
-        .join("")}</div>`;
-    } else if (p.url) {
-      linksHTML = `<div class="project-links"><a href="${p.url}" target="_blank" rel="noopener">View on GitHub &rarr;</a></div>`;
+  "research": [
+    {
+      "title": "Human-Centered Cybercrime Investigation Infrastructure",
+      "details": [
+        "Doctoral research (Ph.D., IIT Kanpur; supervisor: Prof. Sandeep Kumar Shukla) grounded in over 100 structured interviews with cybercrime victims and, where accessible, perpetrators, plus a self-established victim helpline at IIT Kanpur.",
+        "Led development of Cybercrime Navigator, an open-source TTP-based investigation framework spanning 14 tactics, 177 techniques, and 303 sub-techniques (MAP 0.81, P@1 0.87), funded by Microsoft Research India (INR 50L) and India's Department of Science and Technology (INR 1Cr).",
+        "Built the TGCSB corpus of 100,000+ real-world victim complaint records across 20+ modus operandi, developed in collaboration with the Telangana State Cyber Security Bureau and Uttar Pradesh Police."
+      ]
+    },
+    {
+      "title": "Computational Analysis of Behavioral Manipulation in Cyber Fraud",
+      "details": [
+        "Developed a hybrid lexicon–SBERT detection framework operationalizing eight behavioral manipulation principles (extending Cialdini's persuasion taxonomy with fraud-specific constructs) across 19,480 cyber fraud complaints.",
+        "Links manipulation intensity to financial loss, fraud archetype, platform, and geography, under major revision at ACM Transactions on Social Computing (TSC-2026-0069, \"When Manipulation Becomes Invisible\")."
+      ]
+    },
+    {
+      "title": "Cyber Slavery and the Human Trafficking–Cybercrime Nexus",
+      "details": [
+        "Developed a five-tier victimization framework for cyber-enabled forced criminality, built on ~29,466 cases from India's Indian Cyber Crime Coordination Centre (I4C); accepted at International Criminal Justice Review.",
+        "Established the dual victim–perpetrator framing of trafficked individuals coerced into cybercrime in \"Bi-directional exploitation of human trafficking victims: Both targets and perpetrators in cybercrime\" (Journal of Human Trafficking, 2024), the foundational study underlying this research pillar.",
+        "Co-authored (with Prof. Suleman Lazarus, LSE/University of Surrey) two further studies published in leading international journals of criminology, law, and justice: a study on malware-as-a-service infrastructure within human trafficking scam compounds (Journal of Human Trafficking), and the Strait of Hormuz Geopolitical Cybercrime Cascade Framework (GCCF) tracing how geopolitical conflict propagates through global cybercrime ecosystems (Deviant Behavior).",
+        "Additional foundational work: Cyber Slavery Infrastructures, a socio-technical study of forced criminality in transnational cybercrime (arXiv 2510.12814)."
+      ]
+    },
+    {
+      "title": "LLM-Based and Explainable Cybercrime Classification",
+      "details": [
+        "Co-developed BEACON, a unified behavioral-tactical framework for explainable cybercrime classification using Mistral-7B fine-tuned with QLoRA (EAI ICDF2C 2026).",
+        "Led \"From Trust to Lock-In,\" a human-centered AI study mapping staged persuasion sequences in investment fraud across Indian digital communities, using a hybrid ML pipeline (XGBoost, LightGBM, DeBERTa, RoBERTa; Macro F1 > 0.94) with SHAP explainability, on 19,480 Telangana complaints (SPAIC '26, co-located with ACM AsiaCCS 2026, CORE A)."
+      ]
+    },
+    {
+      "title": "Cross-National Framing and Governance of Cybercrime",
+      "details": [
+        "In development: a cross-country analysis of how cyber slavery is framed in global news media, using GDELT-derived corpora, in collaboration with Prof. Jingjie Li (University of Edinburgh); targeting CHI 2027.",
+        "Constructed actor-intent and target-impact models distinguishing cybercrime, cyberattacks, and cyberterrorism, and evaluated the Budapest Convention against the United Nations Convention against Cybercrime for the Indian legal context, published in the Journal of Economic Criminology."
+      ]
+    },
+    {
+      "title": "Foundational Research: Dark Web Analysis and Monitoring | M.Sc. Thesis",
+      "details": [
+        "Conducted theoretical analysis of Dark Web crawling using Tor, developed onion URL connectivity graphs, and assessed the feasibility of user tracing."
+      ]
     }
+  ],
 
-    d.innerHTML = `
-      <strong>${p.title}</strong>
-      <ul>${p.details.map(x => `<li>${x}</li>`).join("")}</ul>
-      ${linksHTML}
-    `;
-    c.appendChild(d);
-  });
-}
-
-/* =========================================================
-   ACADEMIC SERVICE
-   ========================================================= */
-function renderAcademicService(obj) {
-  const c = $("academic_service");
-  if (!c || !obj) return;
-
-  if (obj.sub_reviewer?.length) {
-    const h = document.createElement("h3");
-    h.textContent = "Sub-Reviewer";
-    c.appendChild(h);
-    const p = document.createElement("p");
-    p.className = "service-line";
-    p.textContent = obj.sub_reviewer.join(" · ");
-    c.appendChild(p);
-  }
-
-  if (obj.reviewer?.length) {
-    const h = document.createElement("h3");
-    h.textContent = "Reviewer";
-    c.appendChild(h);
-    const p = document.createElement("p");
-    p.className = "service-line";
-    p.textContent = obj.reviewer.join(" · ");
-    c.appendChild(p);
-  }
-}
-
-/* =========================================================
-   TEACHING
-   ========================================================= */
-function renderTeaching(arr = []) {
-  const c = $("teaching");
-  if (!c) return;
-
-  function courseLine(course) {
-    return `${course.code ? `${course.code}: ` : ""}${course.title}${course.duration ? ` (${course.duration})` : ""}`;
-  }
-
-  arr.forEach(t => {
-    const block = document.createElement("div");
-    block.className = "item teaching-item";
-
-    block.innerHTML = `
-      <div class="teaching-header">
-        <strong>${t.role}</strong>, ${t.institution}
-      </div>
-    `;
-
-    if (Array.isArray(t.groups) && t.groups.length) {
-      const groupList = document.createElement("div");
-      groupList.className = "teaching-groups";
-      t.groups.forEach(g => {
-        const p = document.createElement("p");
-        p.className = "teaching-group-line";
-        const label = document.createElement("strong");
-        label.textContent = g.label + ": ";
-        p.appendChild(label);
-        p.appendChild(document.createTextNode(g.courses.map(courseLine).join("; ")));
-        groupList.appendChild(p);
-      });
-      block.appendChild(groupList);
-    } else if (Array.isArray(t.courses) && t.courses.length) {
-      const ul = document.createElement("ul");
-      t.courses.forEach(course => {
-        const li = document.createElement("li");
-        li.innerHTML = `
-          ${course.code ? `<strong>${course.code}</strong>: ` : ""}
-          ${course.title}
-          ${course.duration ? ` <em>(${course.duration})</em>` : ""}
-        `;
-        ul.appendChild(li);
-      });
-      block.appendChild(ul);
+  "projects": [
+    {
+      "title": "Cybercrime Navigator",
+      "sponsor": "Microsoft Research India (CSR Fund) & C3iHub, IIT Kanpur",
+      "links": [
+        { "label": "Cybercrime-Navigator", "url": "https://github.com/gargi-sarkar-iitk/Cybercrime-Navigator" },
+        { "label": "crime-navigator-orchestrator", "url": "https://github.com/gargi-sarkar-iitk/crime-navigator-orchestrator" }
+      ],
+      "details": [
+        "Led development of an open-source web-based TTP framework for cybercrime investigation.",
+        "Divided the cybercrime lifecycle into 14 tactical stages with techniques, sub-techniques, and digital artifacts.",
+        "Designed an interactive navigator with automated modus operandi identification.",
+        "Demonstrated at the 3rd National DST TIPS Workshop; formed the basis of the ARES 2023 CORE B publication."
+      ]
+    },
+    {
+      "title": "BEACON: Behavioral-Tactical Framework for Explainable Cybercrime Analysis with LLMs",
+      "sponsor": "IIT Kanpur / IIIT Hyderabad collaboration",
+      "url": "https://github.com/gargi-sarkar-iitk/BEACON_EAI-ICDF2C-2026",
+      "details": [
+        "Co-developed a unified dual behavioral-tactical cybercrime classifier using Mistral-7B fine-tuned with QLoRA.",
+        "Produced camera-ready revisions for EAI ICDF2C 2026, including bootstrap confidence intervals computed from actual datasets and a full reproducibility README."
+      ]
+    },
+    {
+      "title": "Fraud Complaint Priority Index (FCPI)",
+      "sponsor": "Under review, JISAS",
+      "details": [
+        "Developed a data-driven prioritization index for triaging fraud complaints at scale to support law enforcement resource allocation.",
+        "Underwent full revision including correction of stale platform validation figures and formula-code alignment, with all outputs independently verified."
+      ]
+    },
+    {
+      "title": "Jamtara Cybercrime News Dataset",
+      "sponsor": "Collaboration with Prof. Suleman Lazarus (LSE/University of Surrey)",
+      "details": [
+        "Built a 101-record news dataset spanning 30 outlets and a 10-year period on Jamtara-linked cybercrime reporting.",
+        "Coding in progress against criminological theory frameworks for a forthcoming paper."
+      ]
+    },
+    {
+      "title": "Cross-National Framing of Cyber Slavery in News Media",
+      "sponsor": "Collaboration with Prof. Jingjie Li (University of Edinburgh) — in development, targeting CHI 2027",
+      "details": [
+        "Building a GDELT-derived news corpus to analyze how cyber slavery is framed across different countries' media coverage."
+      ]
+    },
+    {
+      "title": "Cyber Commando Operational Manual",
+      "sponsor": "Ministry of Home Affairs, India",
+      "details": [
+        "Co-authored national-level training resource for law enforcement cyber units.",
+        "Contributed sections on digital forensics, electronic evidence handling, and legal compliance."
+      ]
+    },
+    {
+      "title": "AI-Enabled National Portal for Efficient Search of Missing People",
+      "sponsor": "Department of Science and Technology, India",
+      "details": [
+        "Designed AI/ML-enabled web portal for missing persons identification.",
+        "Integrated facial recognition and NLP-based FIR analysis."
+      ]
+    },
+    {
+      "title": "Comparison of Network-based Intrusion Detection Systems",
+      "url": "https://github.com/gargi-sarkar-iitk/Comparison-of-Intrusion-Detection-Systems",
+      "details": [
+        "Compared Snort and Suricata IDS on IIT Kanpur C3i Centre network.",
+        "Integrated machine learning to reduce false positives."
+      ]
+    },
+    {
+      "title": "Developing Risk-Assessment Interface",
+      "url": "https://github.com/gargi-sarkar-iitk/Risk-assessment-Interface",
+      "details": [
+        "Developed web application to query national vulnerability databases.",
+        "Computed risk scores based on system threats."
+      ]
+    },
+    {
+      "title": "Breaking down Cryptosystems",
+      "url": "https://github.com/gargi-sarkar-iitk/Breaking-Cryptosystems",
+      "details": [
+        "Implemented attacks on DES, AES, RSA, and classical cryptosystems using Python and C."
+      ]
     }
+  ],
 
-    c.appendChild(block);
-  });
-}
+  "academic_service": {
+    "sub_reviewer": [
+      "ACM SAC 2024",
+      "Behaviour & Information Technology",
+      "Computers & Security",
+      "Frontiers in Psychiatry"
+    ],
+    "reviewer": [
+      "Digital Threats: Research and Practice (DTRAP)",
+      "Deviant Behavior",
+      "Journal of Criminal Psychology",
+      "Psychology, Crime and Law",
+      "Security Journal",
+      "Safer Communities",
+      "Environmental Management: Economics and Policy"
+    ]
+  },
 
-/* =========================================================
-   GRANTS, FELLOWSHIPS & AWARDS
-   ========================================================= */
-function renderGrants(arr = []) {
-  const c = $("grants");
-  if (!c || !arr.length) return;
-
-  arr.forEach(g => {
-    const d = document.createElement("div");
-    d.className = "item grant-item";
-    d.innerHTML = `
-      <div class="grant-header">
-        <strong>${g.title}</strong>
-        <span class="grant-period">${g.period || ""}</span>
-      </div>
-      <div class="grant-sponsor">${g.sponsor}${g.amount ? ` &middot; ${g.amount}` : ""}</div>
-      ${g.description ? `<div class="grant-description">${g.description}</div>` : ""}
-    `;
-    c.appendChild(d);
-  });
-}
-
-/* =========================================================
-   ACHIEVEMENTS
-   ========================================================= */
-function renderAchievements(arr = []) {
-  const c = $("achievements");
-  if (!c || !arr.length) return;
-
-  arr.forEach(a => {
-    const d = document.createElement("div");
-    d.className = "item";
-    const split = a.split(/\s[–-]\s/);
-    d.append("• ");
-    if (split.length > 1) {
-      const strong = document.createElement("strong");
-      strong.textContent = split[0];
-      const rest = document.createTextNode(" – " + split.slice(1).join(" – "));
-      d.appendChild(strong);
-      d.appendChild(rest);
-    } else {
-      d.appendChild(document.createTextNode(a));
+  "teaching": [
+    {
+      "role": "Project Mentor",
+      "institution": "International Institute of Information Technology Hyderabad",
+      "courses": [
+        {
+          "code": "CG4.402",
+          "title": "Introduction to Neuroeconomics",
+          "duration": "August 2025 – December 2025",
+          "description": "Mentoring students on projects related to behavioral economics in cyber frauds."
+        }
+      ]
+    },
+    {
+      "role": "Teaching Assistant",
+      "institution": "Indian Institute of Technology Kanpur",
+      "groups": [
+        {
+          "label": "Security & Cryptography",
+          "courses": [
+            { "code": "CS628", "title": "Computer Systems Security", "duration": "Aug–Nov 2022" },
+            { "code": "CS641", "title": "Modern Cryptology", "duration": "Jan–May 2023" },
+            { "code": "CS961", "title": "Introduction to Cryptography (e-Masters)", "duration": "Jan 2023–Present" }
+          ]
+        },
+        {
+          "label": "Machine Learning & Systems",
+          "courses": [
+            { "code": "CS771", "title": "Introduction to Machine Learning", "duration": "Aug–Nov 2023" },
+            { "code": "CS633", "title": "Parallel Computing", "duration": "Jan–May 2024" }
+          ]
+        },
+        {
+          "label": "Mathematics & Algorithms",
+          "courses": [
+            { "code": "CS345", "title": "Algorithms II", "duration": "Aug–Nov 2021; Jan–May 2022" },
+            { "code": "CS972", "title": "Introduction to Linear Algebra (e-Masters)", "duration": "Apr–Jun 2023; Jan–Mar 2024" },
+            { "code": "CS201", "title": "Discrete Mathematics", "duration": "Aug–Nov 2024" },
+            { "code": "CS202", "title": "Mathematical Logic", "duration": "Jan–Mar 2025" },
+            { "code": "CS203", "title": "Introduction to Probability", "duration": "Mar–May 2025" }
+          ]
+        },
+        {
+          "label": "Tutor",
+          "courses": [
+            { "code": "ESC101", "title": "Fundamentals of Computing", "duration": "May–Jul 2022" }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "Teaching Assistant",
+      "institution": "NPTEL",
+      "courses": [
+        { "title": "Modern Algebra" }
+      ]
     }
-    c.appendChild(d);
-  });
-}
+  ],
 
-/* =========================================================
-   TALKS
-   ========================================================= */
-function renderTalks(arr = []) {
-  const c = $("talks_and_presentations");
-  if (!c) return;
-  arr.forEach(t => {
-    const d = document.createElement("div");
-    d.className = "item";
-    d.textContent = "• " + t;
-    c.appendChild(d);
-  });
-}
+  "grants": [
+    {
+      "title": "C3iHub Doctoral Research Fellowship",
+      "sponsor": "IIT Kanpur (C3iHub)",
+      "period": "2022 – 2025",
+      "amount": "INR 25,80,000",
+      "description": "Awarded a competitive doctoral research fellowship to conduct research on cybercrime investigation and digital policing."
+    },
+    {
+      "title": "Cybercrime Navigator: Phase I",
+      "sponsor": "Microsoft India (CSR Grant)",
+      "period": "2022 – 2024",
+      "amount": "INR 50,00,000",
+      "description": "Scientific Lead for the development of AI-assisted cybercrime investigation technologies."
+    },
+    {
+      "title": "Cybercrime Navigator: Phase II",
+      "sponsor": "Dept. of Science & Technology (DST), Govt. of India",
+      "period": "2024 – Present",
+      "amount": "INR 1,00,00,000",
+      "description": "Scientific Lead for the next phase of AI-enabled cybercrime investigation technologies under a DST-funded national project."
+    }
+  ],
 
-/* =========================================================
-   ACTIVITIES
-   ========================================================= */
-function renderActivities(arr = []) {
-  const c = $("activities");
-  if (!c) return;
-  arr.forEach(a => {
-    const d = document.createElement("div");
-    d.className = "item";
-    d.textContent = "• " + a;
-    c.appendChild(d);
-  });
-}
+  "achievements": [
+    "ISEC Best PhD Award (Shortlisted), 2026 – PhD thesis shortlisted by the International Society of Economic Criminology (ISEC) for outstanding doctoral research in economic criminology.",
+    "Darkathon – National Finalist, 2022 – Selected as a national finalist by the Narcotics Control Bureau, Government of India, for developing solutions targeting anonymity in dark-web narcotics markets.",
+    "GATE, Mathematics, 2021 – Qualified one of India's premier national competitive examinations for postgraduate engineering education and research recruitment.",
+    "JAM, Mathematics, 2018 – Qualified India's national entrance examination for admission to postgraduate science programmes at the Indian Institutes of Technology (IITs).",
+    "Qualified JEE Mains 2015 – National-level entrance examination for undergraduate engineering programs in IITs, NITs, and other centrally funded technical institutions."
+  ],
 
-/* =========================================================
-   SKILLS
-   ========================================================= */
-function renderSkills(skills = {}) {
-  const c = $("technical_skills");
-  if (!c || typeof skills !== "object") return;
+  "talks_and_presentations": [
+    "Invited talk at ARES 2023, Italy",
+    "Invited talk at c0c0n XVI International Cyber Security Conference",
+    "Lecture in Advanced Certification Program in Cyber Security and Cyber Defense (TalentSprint)"
+  ],
 
-  Object.entries(skills).forEach(([category, items]) => {
-    const block = document.createElement("div");
-    block.className = "item";
-    const h = document.createElement("strong");
-    h.textContent = category;
-    block.appendChild(h);
-    const ul = document.createElement("ul");
-    ul.className = "skills-grid";
-    items.forEach(skill => {
-      const li = document.createElement("li");
-      li.textContent = skill;
-      ul.appendChild(li);
-    });
-    block.appendChild(ul);
-    c.appendChild(block);
-  });
-}
+  "activities": [
+    "Founder and Lead, Cybercrime Victim Support Initiative at IIT Kanpur",
+    "Organizer, HACK IITK 2024",
+    "Presented Cybercrime Navigator at DST TIPS Workshop"
+  ],
 
-/* =========================================================
-   REFERENCES
-   ========================================================= */
-function renderReferences(arr = []) {
-  const c = $("references");
-  if (!c) return;
-  arr.forEach(r => {
-    const d = document.createElement("div");
-    d.className = "ref";
-    d.innerHTML = `
-      <strong>${r.name}</strong>, ${r.designation}<br>
-      ${r.institution}<br>
-      ${r.email}
-    `;
-    c.appendChild(d);
-  });
-}
+  "technical_skills": {
+    "Research Methods": [
+      "Empirical Security Research",
+      "Mixed-Methods Research",
+      "Human-Centered Security",
+      "Computational Criminology",
+      "Cybercrime Measurement",
+      "Behavioral Analysis",
+      "Interview-Based Research",
+      "Qualitative Analysis",
+      "Document Analysis",
+      "Policy Analysis"
+    ],
+    "Cybersecurity & Investigation": [
+      "Cybercrime Investigation",
+      "Digital Evidence Analysis",
+      "OSINT",
+      "Fraud and Scam Ecosystem Analysis",
+      "Dark Web Analysis (Tor)",
+      "Cyber Threat Intelligence",
+      "CERT-In Compliance and Audit Understanding"
+    ],
+    "AI & Data Analysis": [
+      "Large Language Models (Applied)",
+      "Natural Language Processing",
+      "Explainable AI",
+      "Unsupervised Learning",
+      "Behavioral and Tactical Modeling"
+    ],
+    "Programming & Tools": [
+      "Python", "C", "MATLAB", "HTML/CSS", "LaTeX", "Markdown"
+    ],
+    "Languages": [
+      "English (Full Professional Proficiency)",
+      "Bengali (Native)",
+      "Hindi (Full Professional Proficiency)"
+    ]
+  },
 
-/* =========================================================
-   UI ENHANCEMENTS
-   ========================================================= */
-function enhanceUI() {
-  announcementCarousel();
-  scrollReveal();
-}
-
-function announcementCarousel() {
-  const items = document.querySelectorAll(".announce");
-  if (!items.length) return;
-  let i = 0;
-  items.forEach((x, idx) => x.style.display = idx === 0 ? "block" : "none");
-  setInterval(() => {
-    items[i].style.display = "none";
-    i = (i + 1) % items.length;
-    items[i].style.display = "block";
-  }, 4000);
-}
-
-function scrollReveal() {
-  const els = document.querySelectorAll(".item, .pub-item, .announce, .skill, .ref");
-  const obs = new IntersectionObserver(
-    e => e.forEach(x => x.isIntersecting && x.target.classList.add("visible")),
-    { threshold: 0.15 }
-  );
-  els.forEach(el => {
-    el.classList.add("reveal");
-    obs.observe(el);
-  });
-}
-
-/* =========================================================
-   FATAL ERROR UI
-   ========================================================= */
-function showFatalError(msg) {
-  const d = document.createElement("div");
-  d.style.background = "#fee2e2";
-  d.style.padding = "12px";
-  d.style.margin = "20px";
-  d.style.border = "1px solid #fca5a5";
-  d.textContent = "Site failed to load: " + msg;
-  document.body.prepend(d);
+  "references": [
+    {
+      "name": "Prof. Sandeep Kumar Shukla",
+      "designation": "Poonam and Prabhu Goel Chair Professor",
+      "institution": "Indian Institute of Technology Kanpur",
+      "email": "sandeeps@cse.iitk.ac.in",
+      "relation": "Ph.D. Thesis Supervisor"
+    },
+    {
+      "name": "Prof. Manindra Agrawal",
+      "designation": "Institute Director and Professor",
+      "institution": "Indian Institute of Technology Kanpur",
+      "email": "manindra@iitk.ac.in",
+      "relation": "Ph.D. Coursework Instructor and TA Supervisor"
+    },
+    {
+      "name": "Prof. Avishek Adhikari",
+      "designation": "Professor and Head",
+      "institution": "Presidency University, Kolkata",
+      "email": "avishek.maths@presiuniv.ac.in",
+      "relation": "M.Sc. Thesis Supervisor"
+    }
+  ]
 }
