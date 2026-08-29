@@ -589,6 +589,13 @@ section h2 {
   border: 1px solid #155a32;
 }
 
+/* Q2 — muted teal, one step down from the Q1 green, still reads as "good" */
+.rank-q2 {
+  background: #0f766e;
+  color: #fff;
+  border: 1px solid #0b5c56;
+}
+
 /* CORE A — your --primary navy */
 .rank-core-a {
   background: var(--primary);
