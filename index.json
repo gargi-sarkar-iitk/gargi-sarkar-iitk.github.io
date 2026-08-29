@@ -241,23 +241,7 @@
           "value": "2512.06555"
         }
       },
-      {
-        "year": 2025,
-        "status": "preprint",
-        "rank": {
-          "type": "journal",
-          "label": "Under Review",
-          "scimago": null,
-          "note": "arXiv preprint – not yet ranked"
-        },
-        "authors": ["Gargi Sarkar", "Sandeep K. Shukla"],
-        "title": "Cyber Slavery Infrastructures: A Socio-Technical Study of Forced Criminality in Transnational Cybercrime",
-        "venue": "arXiv",
-        "identifier": {
-          "type": "arxiv",
-          "value": "2510.12814"
-        }
-      },
+
       {
         "year": 2026,
         "status": "published",
