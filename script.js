@@ -43,6 +43,7 @@ function renderRankBadge(rank) {
   let cls = "rank-badge";
 
   if      (label === "Q1")     cls += " rank-q1";
+  else if (label === "Q2")     cls += " rank-q2";
   else if (label === "CORE A") cls += " rank-core-a";
   else if (label === "CORE B") cls += " rank-core-b";
   else                          cls += " rank-under-review";
