@@ -53,6 +53,13 @@ function renderRankBadge(rank) {
 }
 
 /* =========================================================
+   SORT HELPER — latest year first
+   ========================================================= */
+function sortByYearDesc(items) {
+  return items.slice().sort((a, b) => (parseInt(b.year) || 0) - (parseInt(a.year) || 0));
+}
+
+/* =========================================================
    PUBLICATION HELPERS  (unchanged)
    ========================================================= */
 function getAccessLink(p) {
@@ -247,7 +254,7 @@ function renderEducation(arr = []) {
 }
 
 /* =========================================================
-   PUBLICATIONS  ← badge injected after title, nothing else changed
+   PUBLICATIONS  ← badge injected after title, sorted latest → oldest
    ========================================================= */
 function renderPublications(pubs) {
   const publications = $("publications");
@@ -263,11 +270,13 @@ function renderPublications(pubs) {
   function renderSection(title, items) {
     if (!items.length) return;
 
+    const sortedItems = sortByYearDesc(items);   // ← latest year first
+
     const h = document.createElement("h3");
     h.textContent = title;
     publications.appendChild(h);
 
-    items.forEach((p, idx) => {
+    sortedItems.forEach((p, idx) => {
       const d = document.createElement("div");
       d.className = "pub-item";
 
